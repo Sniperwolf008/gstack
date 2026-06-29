@@ -146,7 +146,7 @@
       } catch (err) {
         note.innerHTML =
           'Senden hat nicht geklappt. Schreib uns direkt an ' +
-          '<a href="mailto:info@dimasi-garage.ch">info@dimasi-garage.ch</a>.';
+          '<a href="mailto:info.dimasigarage@gmail.com">info.dimasigarage@gmail.com</a>.';
         note.className = "form__note is-err";
       } finally {
         if (submitBtn) submitBtn.disabled = false;
