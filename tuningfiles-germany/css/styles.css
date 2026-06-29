@@ -596,6 +596,22 @@ body::before {
 .to-top:hover { transform: translateY(-3px); }
 
 /* =====================================================
+   Icons (einheitliche Linien-Icons in Chips)
+   ===================================================== */
+.card__icon, .gallery__icn, .stat__icon {
+  display: inline-grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--accent-soft); color: var(--accent);
+  margin-bottom: 1.1rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.stat__icon { display: grid; margin: 0 auto 1.1rem; }
+.card__icon svg, .gallery__icn svg, .stat__icon svg { width: 26px; height: 26px; }
+
+.cta__perks li { display: flex; align-items: center; gap: .6rem; }
+.perk-check { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+
+/* =====================================================
    Responsive
    ===================================================== */
 @media (max-width: 1080px) {
