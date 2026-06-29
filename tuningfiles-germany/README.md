@@ -56,14 +56,17 @@ tuningfiles-germany/
 ├── index.html        # Seitenstruktur & Inhalte
 ├── css/styles.css    # Design-System & Layout
 ├── js/main.js        # Animationen, Counter, Navigation, Formular
-├── assets/img/       # Bilder (Platzhalter zum Austauschen)
+├── impressum.html    # Impressum (Schweiz)
+├── datenschutz.html  # Datenschutzerklärung (revDSG)
+├── netlify.toml      # Hosting-Config (Publish-Pfad + Header)
+├── assets/img/
 │   ├── logo.png          # Dimasi Garage Logo (freigestellt)
-│   ├── emblem.png        # Emblem für die Navigation
-│   ├── favicon-dg.png    # Favicon (Emblem)
-│   ├── hero.svg          # Hero-Visual (Platzhalter)
-│   ├── workshop.svg      # Werkstatt/Team in „Warum wir“ (Platzhalter)
-│   └── result-1…4.svg    # Galerie (Platzhalter)
+│   ├── emblem.png        # Emblem (Navigation + Hero-Visual)
+│   └── favicon-dg.png    # Favicon (Emblem)
 └── README.md
+
+Hinweis: Hero, „Ergebnis“-Sektion und „Warum wir“ nutzen reine CSS-/SVG-Design-Visuals
+(kein Foto). Echte oder KI-Fotos lassen sich später jederzeit ergänzen.
 ```
 
 ## Echte Bilder einsetzen (wichtigster Qualitäts-Hebel)

@@ -380,22 +380,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    Bilder: Hero-Visual, Werkstatt, Galerie
    ===================================================== */
 .hero__visual {
-  border-radius: var(--radius-lg); overflow: hidden;
-  border: 1px solid var(--border-strong); box-shadow: var(--shadow);
-  aspect-ratio: 16 / 11; background: var(--surface);
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-lg); border: 1px solid var(--border-strong); box-shadow: var(--shadow);
+  aspect-ratio: 16 / 11;
+  background: linear-gradient(160deg, #1b1e27 0%, #0b0d12 100%);
+  display: grid; place-items: center;
 }
-.hero__photo { width: 100%; height: 100%; object-fit: cover; }
+.hero__visual-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 42%, rgba(255,77,0,.38), transparent 60%);
+}
+.hero__visual-streaks {
+  position: absolute; inset: -20%;
+  background: repeating-linear-gradient(115deg, transparent 0 26px, rgba(255,255,255,.035) 26px 27px);
+  mask-image: linear-gradient(115deg, transparent, #000 60%);
+  -webkit-mask-image: linear-gradient(115deg, transparent, #000 60%);
+}
+.hero__visual-emblem {
+  position: relative; width: 56%; max-width: 230px; height: auto;
+  filter: drop-shadow(0 14px 36px rgba(255,77,0,.45));
+  animation: floaty 5s ease-in-out infinite;
+}
+@keyframes floaty { 0%,100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 .gauge--overlay {
   position: relative; z-index: 2; width: 90%;
   margin: -34px auto 0; box-shadow: var(--shadow);
 }
-
-.media-photo {
-  border-radius: var(--radius-lg); overflow: hidden;
-  border: 1px solid var(--border); box-shadow: var(--shadow);
-  margin-bottom: 1.2rem; aspect-ratio: 5 / 4; background: var(--surface);
-}
-.media-photo img { width: 100%; height: 100%; object-fit: cover; }
 
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
 .gallery__item {
@@ -411,6 +421,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 1.5rem 1.1rem .9rem; font-family: var(--font-head); font-weight: 600; font-size: .95rem;
   background: linear-gradient(transparent, rgba(0,0,0,.78)); color: #fff;
 }
+
+/* Designed gallery tiles (kein Foto) */
+.gallery__item { background: linear-gradient(155deg, var(--surface-2), #0c0e13); transition: transform .25s ease, border-color .25s ease; }
+.gallery__item:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+.gallery__deco { position: absolute; inset: 0; background: radial-gradient(circle at 28% 22%, rgba(255,77,0,.20), transparent 55%); }
+.gallery__content { position: relative; z-index: 1; min-height: 210px; display: flex; flex-direction: column; justify-content: center; padding: 2.2rem; }
+.gallery__item--wide .gallery__content { min-height: 180px; }
+.gallery__icn { font-size: 2.1rem; margin-bottom: .7rem; }
+.gallery__content h3 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: .45rem; }
+.gallery__content p { color: var(--text-muted); font-size: .98rem; max-width: 42ch; }
 
 /* Honeypot (für Menschen unsichtbar) */
 .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
