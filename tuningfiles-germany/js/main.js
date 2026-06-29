@@ -223,4 +223,21 @@
       window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
     });
   }
+
+  /* ============ Interaktiver Hexagon-Spotlight (Maus + Finger) ============ */
+  const hex = document.getElementById("hexFx");
+  if (hex) {
+    let hx = 0, hy = 0, raf = 0;
+    const apply = () => {
+      raf = 0;
+      hex.style.setProperty("--hx", hx + "px");
+      hex.style.setProperty("--hy", hy + "px");
+    };
+    const move = (x, y) => { hx = x; hy = y; if (!raf) raf = requestAnimationFrame(apply); };
+    window.addEventListener("pointermove", (e) => move(e.clientX, e.clientY), { passive: true });
+    window.addEventListener("touchmove", (e) => {
+      const t = e.touches[0];
+      if (t) move(t.clientX, t.clientY);
+    }, { passive: true });
+  }
 })();
