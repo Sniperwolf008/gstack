@@ -68,7 +68,7 @@ tuningfiles-germany/
 
 ## Echte Bilder einsetzen (wichtigster Qualitäts-Hebel)
 
-Im Projekt liegen markenkonforme **Platzhalter** mit Maßangaben. Tausche sie 1:1
+Im Projekt liegen markenkonforme **Platzhalter** mit Massangaben. Tausche sie 1:1
 gegen deine echten Fotos – das nimmt sofort den „KI-Look“ (siehe Leitfaden, Kapitel 05).
 
 So geht's:
@@ -76,7 +76,7 @@ So geht's:
 1. Lege deine Fotos in `assets/img/` ab.
 2. Behalte entweder die Dateinamen bei (`hero.svg` → `hero.jpg` etc.) und passe die
    `src`-Endung in `index.html` an, **oder** überschreibe direkt die Platzhalter.
-3. Empfohlene Größen stehen im Platzhalter selbst:
+3. Empfohlene Grössen stehen im Platzhalter selbst:
    - **hero** ~1600×1100, **workshop** ~1100×880, **result-1…4** ~900×700
 4. Echte Fotos von dir, deinem Team, deiner Werkstatt und Kundenfahrzeugen wirken
    am besten – keine Stockfotos.
@@ -95,7 +95,7 @@ verstecktes `form-name`-Feld, Honeypot gegen Spam).
   auf Netlify. Binde das Formular dort sonst an einen Dienst wie Formspree oder
   eine eigene API an (Endpoint im `fetch`-Aufruf in `js/main.js` anpassen).
 
-Ersetze außerdem die Beispiel-Adresse `info@dimasi-garage.de` durch deine
+Ersetze ausserdem die Beispiel-Adresse `info@dimasi-garage.ch` durch deine
 echte Kontaktadresse (in `index.html` und `js/main.js`).
 
 ## Anpassen
@@ -103,5 +103,5 @@ echte Kontaktadresse (in `index.html` und `js/main.js`).
 - **Texte/Angebot**: direkt in `index.html`
 - **Farben/Schriften**: Tokens oben in `css/styles.css` (`:root`)
 - **Echte Bilder** statt Platzhalter einsetzen (siehe Abschnitt oben) — laut
-  Leitfaden der größte Hebel gegen den „KI-Look".
+  Leitfaden der grösste Hebel gegen den „KI-Look".
 - **Formular** ist für Netlify Forms vorbereitet (siehe Abschnitt oben).
