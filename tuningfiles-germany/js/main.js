@@ -15,7 +15,7 @@
     navToggle.addEventListener("click", () => {
       const open = navLinks.classList.toggle("is-open");
       navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+      navToggle.setAttribute("aria-label", open ? "Menü schliessen" : "Menü öffnen");
     });
     navLinks.querySelectorAll("a").forEach((a) =>
       a.addEventListener("click", () => {
@@ -58,7 +58,7 @@
     requestAnimationFrame(tick);
   }
   function formatNum(n) {
-    return n.toLocaleString("de-DE");
+    return n.toLocaleString("de-CH");
   }
 
   /* --- Reveal + Counter via IntersectionObserver --- */
@@ -146,7 +146,7 @@
       } catch (err) {
         note.innerHTML =
           'Senden hat nicht geklappt. Schreib uns direkt an ' +
-          '<a href="mailto:info@dimasi-garage.de">info@dimasi-garage.de</a>.';
+          '<a href="mailto:info@dimasi-garage.ch">info@dimasi-garage.ch</a>.';
         note.className = "form__note is-err";
       } finally {
         if (submitBtn) submitBtn.disabled = false;
