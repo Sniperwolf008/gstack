@@ -451,7 +451,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Film-Korn für Tiefe (über allem, klickdurchlässig) */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-  opacity: .045; mix-blend-mode: soft-light;
+  opacity: .035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
@@ -517,18 +517,19 @@ body::before {
 
 /* --- Aurora-Hintergrund im Hero --- */
 .hero__aurora {
-  position: absolute; inset: -25% -10% auto -10%; height: 150%; z-index: 0; pointer-events: none;
+  position: absolute; inset: -30% -15%; z-index: 0; pointer-events: none;
   filter: blur(70px); opacity: .55; mix-blend-mode: screen;
   background:
     radial-gradient(40% 50% at 22% 28%, rgba(255, 77, 0, .55), transparent 70%),
     radial-gradient(36% 46% at 72% 38%, rgba(255, 138, 0, .45), transparent 70%),
     radial-gradient(32% 42% at 48% 66%, rgba(255, 198, 92, .30), transparent 70%);
-  background-size: 180% 180%;
-  animation: aurora 16s ease-in-out infinite alternate;
+  will-change: transform;
+  animation: aurora 18s ease-in-out infinite alternate;
 }
 @keyframes aurora {
-  0%   { background-position: 0% 0%, 100% 0%, 50% 100%; transform: translateY(0) rotate(0deg) scale(1); }
-  100% { background-position: 100% 100%, 0% 100%, 50% 0%; transform: translateY(-3%) rotate(6deg) scale(1.08); }
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1.05); }
+  50%  { transform: translate3d(2%, -2%, 0) rotate(4deg) scale(1.14); }
+  100% { transform: translate3d(-1.5%, 1.5%, 0) rotate(-3deg) scale(1.06); }
 }
 
 /* --- Shimmer-Text (Lichtglanz wandert über die Headline) --- */
@@ -566,10 +567,8 @@ body::before {
 .card > *, .vehicle > *, .gallery__item > *, .stat > * { position: relative; z-index: 1; }
 
 /* --- 3D-Tilt --- */
-.card, .vehicle, .gallery__item { transform-style: preserve-3d; will-change: transform; }
-
-/* --- Magnetische Buttons --- */
-.btn--primary { will-change: transform; }
+.card, .vehicle, .gallery__item { transform-style: preserve-3d; }
+.card:hover, .vehicle:hover, .gallery__item:hover { will-change: transform; }
 
 /* --- Meteor-/Partikel-Effekt --- */
 .meteors { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; border-radius: inherit; }
