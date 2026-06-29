@@ -17,7 +17,7 @@ Statistiken oder Bewertungen** — stattdessen ehrliche Vertrauens- und Leistung
 - **Werte-Tiles** (individuell, schnell, geprüft, fair) — ohne erfundene Zahlen
 - **Leistungen**: Stage 1/2/3, Eco-Tuning, Getriebe & Schaltverhalten, DPF/OPF,
   AGR/EGR, AdBlue/SCR, Pop & Bang / Launch Control, Vmax/Limiter
-- **Fahrzeugtypen**: PKW, LKW, Landmaschinen, Motorrad/Marine
+- **Fahrzeuge**: spezialisiert auf PKW (Kompakt & Limousine, SUV, Sport & Performance, Eco)
 - **Ablauf** in 4 Schritten
 - **Warum wir** mit Werkstatt-Bild und animiertem Prüfstand-Diagramm (SVG)
 - **Galerie** (Bild-Platzhalter für echte Projekte)
