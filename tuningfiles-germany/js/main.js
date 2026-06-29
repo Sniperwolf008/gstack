@@ -28,7 +28,9 @@
   /* --- Nav-Hintergrund + Scroll-Progress --- */
   const nav = document.getElementById("nav");
   const progress = document.getElementById("scrollProgress");
-  function onScroll() {
+  let scrollTicking = false;
+  function updateScroll() {
+    scrollTicking = false;
     const y = window.scrollY || document.documentElement.scrollTop;
     if (nav) nav.classList.toggle("is-scrolled", y > 12);
     if (progress) {
@@ -36,8 +38,11 @@
       progress.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
     }
   }
+  function onScroll() {
+    if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(updateScroll); }
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  updateScroll();
 
   /* --- Animierte Counter --- */
   function animateCounter(el) {
