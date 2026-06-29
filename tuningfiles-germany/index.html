@@ -12,7 +12,9 @@
   <meta property="og:description" content="Mehr Leistung, weniger Verbrauch, perfekt abgestimmt. Individuelles Chiptuning für dein Fahrzeug – TÜV-konform und in Minuten geliefert." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="assets/img/hero.svg" />
 
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -38,7 +40,7 @@
         <a href="#leistungen">Leistungen</a>
         <a href="#fahrzeuge">Fahrzeuge</a>
         <a href="#ablauf">Ablauf</a>
-        <a href="#warum">Warum wir</a>
+        <a href="#galerie">Galerie</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt" class="btn btn--small btn--primary">Kostenlose Anfrage</a>
       </nav>
@@ -83,9 +85,12 @@
         </ul>
       </div>
 
-      <!-- Live power gauge card -->
+      <!-- Hero visual + live power gauge -->
       <div class="hero__card reveal" data-reveal>
-        <div class="gauge">
+        <div class="hero__visual">
+          <img class="hero__photo" src="assets/img/hero.svg" width="1600" height="1100" alt="Leistungsgesteigertes Fahrzeug von TuningFiles Germany" />
+        </div>
+        <div class="gauge gauge--overlay">
           <div class="gauge__label">Leistungszuwachs Stage 1</div>
           <div class="gauge__value"><span class="counter" data-target="34" data-suffix="%">0</span></div>
           <div class="gauge__bars">
@@ -313,6 +318,9 @@
         </div>
 
         <div class="split__media reveal" data-reveal>
+          <figure class="media-photo">
+            <img src="assets/img/workshop.svg" width="1100" height="880" alt="Werkstatt und Prüfstand von TuningFiles Germany" />
+          </figure>
           <div class="dyno">
             <div class="dyno__head">
               <span>Prüfstand-Diagramm</span>
@@ -343,8 +351,38 @@
       </div>
     </section>
 
+    <!-- ============ Galerie / Ergebnisse ============ -->
+    <section class="section" id="galerie">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Ergebnisse</span>
+          <h2 class="section__title">Echte Fahrzeuge, <span class="text-gradient">echte Leistung</span></h2>
+          <p class="section__lead">Ein Auszug aus unseren Projekten. Jedes Fahrzeug individuell abgestimmt und auf dem Prüfstand kontrolliert.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--wide reveal" data-reveal>
+            <img src="assets/img/result-1.svg" width="900" height="700" alt="Kundenfahrzeug nach Leistungssteigerung" loading="lazy" />
+            <figcaption>Stage 2 · +94 PS</figcaption>
+          </figure>
+          <figure class="gallery__item reveal" data-reveal>
+            <img src="assets/img/result-2.svg" width="900" height="700" alt="Kundenfahrzeug nach Chiptuning" loading="lazy" />
+            <figcaption>Stage 1 · +58 PS</figcaption>
+          </figure>
+          <figure class="gallery__item reveal" data-reveal>
+            <img src="assets/img/result-3.svg" width="900" height="700" alt="Fahrzeug auf dem Leistungsprüfstand" loading="lazy" />
+            <figcaption>Prüfstand-Lauf</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide reveal" data-reveal>
+            <img src="assets/img/result-4.svg" width="900" height="700" alt="Vorher-Nachher-Vergleich einer Optimierung" loading="lazy" />
+            <figcaption>Eco-Tuning · −1,4 l/100 km</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ Testimonials ============ -->
-    <section class="section" id="bewertungen">
+    <section class="section section--alt" id="bewertungen">
       <div class="container">
         <div class="section__head reveal" data-reveal>
           <span class="eyebrow">Kundenstimmen</span>
@@ -373,7 +411,7 @@
     </section>
 
     <!-- ============ FAQ ============ -->
-    <section class="section section--alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal" data-reveal>
           <span class="eyebrow">Häufige Fragen</span>
@@ -422,7 +460,14 @@
             </ul>
           </div>
 
-          <form class="form" id="anfrageForm" novalidate>
+          <form class="form" id="anfrageForm" name="anfrage" method="POST"
+                data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <!-- Netlify: Formularname für das Backend -->
+            <input type="hidden" name="form-name" value="anfrage" />
+            <!-- Honeypot gegen Spam-Bots (für Menschen unsichtbar) -->
+            <p class="form__hp" aria-hidden="true">
+              <label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
             <div class="form__row">
               <label>
                 <span>Name</span>

@@ -88,11 +88,25 @@
     counters.forEach(animateCounter);
   }
 
-  /* --- Formular-Feedback (Demo, keine echte Übertragung) --- */
+  /* --- Anfrageformular: Netlify Forms mit lokalem Fallback ---
+     Hosting auf Netlify -> AJAX-POST an "/" (Netlify nimmt die Anfrage an,
+     erkennbar am data-netlify-Attribut + verstecktem form-name-Feld).
+     Lokale Vorschau (file://) -> nur Demo-Erfolgsmeldung, kein Versand. */
   const form = document.getElementById("anfrageForm");
   const note = document.getElementById("formNote");
+
+  function encode(data) {
+    return Object.keys(data)
+      .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
+      .join("&");
+  }
+  function firstName(form) {
+    const v = (form.elements.namedItem("name") || {}).value || "";
+    return v ? ", " + v.split(" ")[0] : "";
+  }
+
   if (form && note) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         note.textContent = "Bitte fülle Name, E-Mail und Fahrzeug aus.";
@@ -100,10 +114,43 @@
         form.reportValidity();
         return;
       }
-      const name = (form.elements.namedItem("name") || {}).value || "";
-      note.textContent = `Danke${name ? ", " + name.split(" ")[0] : ""}! Deine Anfrage ist eingegangen. Wir melden uns meist innerhalb von 30 Minuten.`;
-      note.className = "form__note is-ok";
-      form.reset();
+
+      const okMsg = `Danke${firstName(form)}! Deine Anfrage ist eingegangen. Wir melden uns meist innerhalb von 30 Minuten.`;
+
+      // Lokale Vorschau ohne Backend -> Demo-Bestätigung
+      if (location.protocol === "file:") {
+        note.textContent = okMsg + " (Lokale Vorschau – kein echter Versand.)";
+        note.className = "form__note is-ok";
+        form.reset();
+        return;
+      }
+
+      // Live (Netlify): echte Übertragung
+      const data = {};
+      new FormData(form).forEach((value, key) => { data[key] = value; });
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      note.textContent = "Wird gesendet …";
+      note.className = "form__note";
+
+      try {
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode(data),
+        });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        note.textContent = okMsg;
+        note.className = "form__note is-ok";
+        form.reset();
+      } catch (err) {
+        note.innerHTML =
+          'Senden hat nicht geklappt. Schreib uns direkt an ' +
+          '<a href="mailto:info@tuningfiles-germany.de">info@tuningfiles-germany.de</a>.';
+        note.className = "form__note is-err";
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 })();
