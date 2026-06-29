@@ -23,6 +23,12 @@
   --accent-soft: rgba(255, 77, 0, .14);
   --gradient:  linear-gradient(100deg, #ff8a00 0%, #ff4d00 55%, #ff2d00 100%);
 
+  /* --- Luxus: Metallic-Schimmer (Gold/Chrom) + Glas --- */
+  --metal:     linear-gradient(135deg, #fbecc6 0%, #e7c277 28%, #b6883b 52%, #f6e0a6 78%, #cda14f 100%);
+  --glass-bg:  linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+  --glass-hi:  inset 0 1px 0 rgba(255,255,255,.07);
+  --hairline:  rgba(255,255,255,.10);
+
   /* --- Typografie --- */
   --font-head: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -434,6 +440,73 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Honeypot (für Menschen unsichtbar) */
 .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+
+/* =====================================================
+   Luxus-Layer — Glas, Metallic, Micro-Interaktionen
+   ===================================================== */
+
+/* Film-Korn für Tiefe (über allem, klickdurchlässig) */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+  opacity: .045; mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Metallic-Schimmer für kleine Labels (Eyebrows) — Gold neben Orange */
+.eyebrow, .text-metal {
+  background: var(--metal);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* Glas-Navigation: Haarlinie + Tiefe beim Scrollen */
+.nav.is-scrolled { box-shadow: var(--glass-hi), 0 12px 34px -20px rgba(0,0,0,.85); }
+
+/* Animierte Unterstreichung der Nav-Links */
+.nav__links a:not(.btn) { position: relative; }
+.nav__links a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -5px; height: 2px;
+  background: var(--gradient); border-radius: 2px; transition: right .3s ease;
+}
+.nav__links a:not(.btn):hover::after { right: 0; }
+
+/* Glas-Panels: feines Lichthighlight oben + Verlaufsfläche */
+.card, .stat, .vehicle, .quote, .faq__item {
+  background-image: var(--glass-bg);
+  box-shadow: var(--glass-hi);
+}
+.gauge, .dyno, .cta__box, .form {
+  box-shadow: var(--glass-hi), var(--shadow);
+}
+
+/* Edler Hover-Glow */
+.card:hover, .vehicle:hover, .stat:hover, .gallery__item:hover, .quote:hover {
+  box-shadow: var(--glass-hi), 0 26px 54px -26px rgba(255, 77, 0, .38);
+}
+
+/* Button-Sheen: Licht-Sweep über den CTA */
+.btn--primary { position: relative; overflow: hidden; }
+.btn--primary::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -160%; width: 55%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: skewX(-20deg); transition: left .65s cubic-bezier(.2, .8, .2, 1);
+}
+.btn--primary:hover::after { left: 160%; }
+
+/* Atmendes Ambient-Licht im Hero */
+.hero__glow { animation: heroPulse 9s ease-in-out infinite; }
+@keyframes heroPulse {
+  0%, 100% { transform: translateX(-50%) scale(1);    opacity: .85; }
+  50%      { transform: translateX(-50%) scale(1.14); opacity: 1; }
+}
+
+/* Sichtbare, markenkonforme Fokus-Zustände (Barrierefreiheit) */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* Mehr Ruhe / Weissraum */
+.section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; }
+.section__head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
 
 /* =====================================================
    Responsive
