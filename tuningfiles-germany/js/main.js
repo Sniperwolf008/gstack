@@ -153,4 +153,74 @@
       }
     });
   }
+
+  /* ============ Moderne Effekte (Stil 21st.dev) ============ */
+  if (!prefersReduced) {
+    const tiltSel = ".card, .vehicle, .gallery__item";
+    const spotSel = ".card, .vehicle, .gallery__item, .stat";
+
+    document.querySelectorAll(spotSel).forEach((el) => {
+      const tiltable = el.matches(tiltSel);
+      let raf = 0;
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        el.style.setProperty("--mx", (x / r.width) * 100 + "%");
+        el.style.setProperty("--my", (y / r.height) * 100 + "%");
+        if (!tiltable) return;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const rx = (0.5 - y / r.height) * 6;
+          const ry = (x / r.width - 0.5) * 6;
+          el.style.transform =
+            "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-4px)";
+        });
+      });
+      if (tiltable) {
+        el.addEventListener("pointerleave", () => {
+          if (raf) cancelAnimationFrame(raf);
+          el.style.transform = "";
+        });
+      }
+    });
+
+    // Magnetische Buttons
+    document.querySelectorAll(".btn--primary").forEach((btn) => {
+      btn.addEventListener("pointermove", (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = "translate(" + mx * 0.18 + "px," + my * 0.3 + "px)";
+      });
+      btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
+    });
+
+    // Meteor-Effekt in die CTA-Karte
+    const ctaBox = document.querySelector(".cta__box");
+    if (ctaBox) {
+      const layer = document.createElement("div");
+      layer.className = "meteors";
+      for (let i = 0; i < 12; i++) {
+        const m = document.createElement("span");
+        m.className = "meteor";
+        m.style.left = Math.round((i / 12) * 100 + (i % 3) * 4) + "%";
+        m.style.animationDuration = 3 + (i % 4) + "s";
+        m.style.animationDelay = i * 0.6 + "s";
+        layer.appendChild(m);
+      }
+      ctaBox.insertBefore(layer, ctaBox.firstChild);
+    }
+  }
+
+  // Zurück-nach-oben-Button
+  const toTop = document.getElementById("toTop");
+  if (toTop) {
+    const toggleTop = () => toTop.classList.toggle("is-visible", (window.scrollY || 0) > 600);
+    window.addEventListener("scroll", toggleTop, { passive: true });
+    toggleTop();
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+    });
+  }
 })();

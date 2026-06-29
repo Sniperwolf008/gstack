@@ -50,6 +50,7 @@
   <main id="top">
     <!-- ============ Hero ============ -->
     <section class="hero">
+      <div class="hero__aurora" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="hero__grid-bg" aria-hidden="true"></div>
       <div class="container hero__inner">
@@ -59,7 +60,7 @@
         <h1 class="hero__title reveal" data-reveal>
           Mehr Leistung.<br />
           Besseres Schaltverhalten.<br />
-          <span class="text-gradient">Weniger Verbrauch.</span>
+          <span class="text-gradient shimmer">Weniger Verbrauch.</span>
         </h1>
         <p class="hero__sub reveal" data-reveal>
           Dimasi Garage holt mehr aus deinem Auto: individuelle Software-Optimierung
@@ -84,7 +85,7 @@
 
       <!-- Hero visual + live power gauge -->
       <div class="hero__card reveal" data-reveal>
-        <div class="hero__visual">
+        <div class="hero__visual beam">
           <span class="hero__visual-streaks" aria-hidden="true"></span>
           <span class="hero__visual-glow" aria-hidden="true"></span>
           <img class="hero__visual-logo" src="assets/img/logo.png" width="568" height="680" alt="Dimasi Garage" />
@@ -463,7 +464,7 @@
     <!-- ============ CTA / Kontakt ============ -->
     <section class="section cta" id="kontakt">
       <div class="container">
-        <div class="cta__box reveal" data-reveal>
+        <div class="cta__box beam reveal" data-reveal>
           <div class="cta__glow" aria-hidden="true"></div>
           <div class="cta__text">
             <span class="eyebrow">Kostenlose Anfrage</span>
@@ -576,6 +577,10 @@
       Motorsport- und Exporteinsatz ausserhalb öffentlicher Strassen bestimmt.
     </p>
   </footer>
+
+  <button class="to-top" id="toTop" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
 
   <script src="js/main.js" defer></script>
 </body>

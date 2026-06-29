@@ -512,6 +512,90 @@ body::before {
 .section__head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
 
 /* =====================================================
+   Moderne Effekte (Stil 21st.dev)
+   ===================================================== */
+
+/* --- Aurora-Hintergrund im Hero --- */
+.hero__aurora {
+  position: absolute; inset: -25% -10% auto -10%; height: 150%; z-index: 0; pointer-events: none;
+  filter: blur(70px); opacity: .55; mix-blend-mode: screen;
+  background:
+    radial-gradient(40% 50% at 22% 28%, rgba(255, 77, 0, .55), transparent 70%),
+    radial-gradient(36% 46% at 72% 38%, rgba(255, 138, 0, .45), transparent 70%),
+    radial-gradient(32% 42% at 48% 66%, rgba(255, 198, 92, .30), transparent 70%);
+  background-size: 180% 180%;
+  animation: aurora 16s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%; transform: translateY(0) rotate(0deg) scale(1); }
+  100% { background-position: 100% 100%, 0% 100%, 50% 0%; transform: translateY(-3%) rotate(6deg) scale(1.08); }
+}
+
+/* --- Shimmer-Text (Lichtglanz wandert über die Headline) --- */
+.shimmer {
+  background: linear-gradient(100deg, #ff8a00 0%, #ff4d00 38%, #ffe7c2 50%, #ff4d00 62%, #ff2d00 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer { to { background-position: -220% 0; } }
+
+/* --- Border-Beam (Lichtpunkt wandert um den Rahmen) --- */
+@property --beam-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.beam { position: relative; }
+.beam::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px;
+  pointer-events: none; z-index: 4;
+  background: conic-gradient(from var(--beam-angle), transparent 58%, var(--accent-2) 78%, #ffe6b8 88%, var(--accent) 95%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: beamspin 6s linear infinite;
+}
+@keyframes beamspin { to { --beam-angle: 360deg; } }
+
+/* --- Spotlight-Karten (Licht folgt dem Cursor) --- */
+.card, .vehicle, .gallery__item, .stat { --mx: 50%; --my: 50%; }
+.card::after, .vehicle::after, .gallery__item::after, .stat::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+  opacity: 0; transition: opacity .35s ease;
+  background: radial-gradient(220px circle at var(--mx) var(--my), rgba(255, 138, 0, .16), transparent 55%);
+}
+.card:hover::after, .vehicle:hover::after, .gallery__item:hover::after, .stat:hover::after { opacity: 1; }
+.card > *, .vehicle > *, .gallery__item > *, .stat > * { position: relative; z-index: 1; }
+
+/* --- 3D-Tilt --- */
+.card, .vehicle, .gallery__item { transform-style: preserve-3d; will-change: transform; }
+
+/* --- Magnetische Buttons --- */
+.btn--primary { will-change: transform; }
+
+/* --- Meteor-/Partikel-Effekt --- */
+.meteors { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; border-radius: inherit; }
+.meteor {
+  position: absolute; top: -12%; width: 2px; height: 64px; border-radius: 2px;
+  background: linear-gradient(180deg, rgba(255, 210, 150, .9), transparent);
+  opacity: 0; animation: meteor linear infinite;
+}
+@keyframes meteor {
+  0%   { transform: translate(0, 0) rotate(32deg); opacity: 0; }
+  8%   { opacity: 1; }
+  100% { transform: translate(220px, 680px) rotate(32deg); opacity: 0; }
+}
+
+/* --- Zurück-nach-oben-Button --- */
+.to-top {
+  position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 120;
+  width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%;
+  color: #fff; background: var(--gradient); box-shadow: var(--shadow-glow);
+  opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.to-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { transform: translateY(-3px); }
+
+/* =====================================================
    Responsive
    ===================================================== */
 @media (max-width: 1080px) {
