@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuningFiles Germany – Leistungssteigerung & Chiptuning vom Profi</title>
+  <meta name="description" content="Professionelle Leistungssteigerung, Chiptuning & ECU-Optimierung für PKW, LKW, Landmaschinen und Motorrad. Stage 1 & 2, Eco-Tuning, DPF/EGR/AdBlue-Optimierung. TÜV-konform, individuell, in Minuten." />
+  <meta name="theme-color" content="#0a0b0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TuningFiles Germany – Leistungssteigerung vom Profi" />
+  <meta property="og:description" content="Mehr Leistung, weniger Verbrauch, perfekt abgestimmt. Individuelles Chiptuning für dein Fahrzeug – TÜV-konform und in Minuten geliefert." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ============ Progress bar ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="TuningFiles Germany Startseite">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 3 14h7l-1 8 11-13h-8l1-7z"/>
+          </svg>
+        </span>
+        <span class="brand__text">TuningFiles<span class="brand__accent"> Germany</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#fahrzeuge">Fahrzeuge</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#warum">Warum wir</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt" class="btn btn--small btn--primary">Kostenlose Anfrage</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <span class="badge reveal" data-reveal>
+          <span class="badge__dot"></span> Über 18.000 abgestimmte Fahrzeuge · Made in Germany
+        </span>
+        <h1 class="hero__title reveal" data-reveal>
+          Mehr Leistung.<br />
+          Weniger Verbrauch.<br />
+          <span class="text-gradient">Perfekt abgestimmt.</span>
+        </h1>
+        <p class="hero__sub reveal" data-reveal>
+          Individuelle Leistungssteigerung und Chiptuning für PKW, LKW, Landmaschinen
+          und Motorrad. Keine Massenware vom Band – jede Datei wird von echten Technikern
+          für dein Fahrzeug optimiert. TÜV-konform und in Minuten geliefert.
+        </p>
+        <div class="hero__cta reveal" data-reveal>
+          <a href="#kontakt" class="btn btn--primary btn--large">
+            Jetzt kostenlos anfragen
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#leistungen" class="btn btn--ghost btn--large">Leistungen ansehen</a>
+        </div>
+
+        <ul class="hero__trust reveal" data-reveal>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> TÜV-konforme Abstimmung</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Prüfstand-getestet</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Geld-zurück-Garantie</li>
+        </ul>
+      </div>
+
+      <!-- Live power gauge card -->
+      <div class="hero__card reveal" data-reveal>
+        <div class="gauge">
+          <div class="gauge__label">Leistungszuwachs Stage 1</div>
+          <div class="gauge__value"><span class="counter" data-target="34" data-suffix="%">0</span></div>
+          <div class="gauge__bars">
+            <div class="gauge__bar"><span style="--w:62%"><i>Serie</i></span></div>
+            <div class="gauge__bar gauge__bar--tuned"><span style="--w:96%"><i>Getunt</i></span></div>
+          </div>
+          <div class="gauge__meta">
+            <div><strong class="counter" data-target="62" data-suffix=" PS">0</strong><span>Mehrleistung Ø</span></div>
+            <div><strong class="counter" data-target="78" data-suffix=" Nm">0</strong><span>Mehr Drehmoment Ø</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Logos / trust strip ============ -->
+    <section class="strip" aria-label="Unterstützte Marken">
+      <div class="container strip__inner">
+        <span class="strip__label">Für nahezu jede Marke optimiert</span>
+        <div class="strip__marquee">
+          <div class="strip__track">
+            <span>Audi</span><span>BMW</span><span>Mercedes-Benz</span><span>VW</span><span>Porsche</span><span>Seat</span><span>Škoda</span><span>Ford</span><span>Opel</span><span>Renault</span><span>Peugeot</span><span>Volvo</span><span>MAN</span><span>Scania</span><span>John Deere</span>
+            <span>Audi</span><span>BMW</span><span>Mercedes-Benz</span><span>VW</span><span>Porsche</span><span>Seat</span><span>Škoda</span><span>Ford</span><span>Opel</span><span>Renault</span><span>Peugeot</span><span>Volvo</span><span>MAN</span><span>Scania</span><span>John Deere</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Stats ============ -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="counter" data-target="18000" data-suffix="+">0</span></div>
+          <div class="stat__label">abgestimmte Fahrzeuge</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="counter" data-target="15" data-suffix=" Jahre">0</span></div>
+          <div class="stat__label">Erfahrung im Motortuning</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="counter" data-target="98" data-suffix="%">0</span></div>
+          <div class="stat__label">Weiterempfehlungsrate</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__num"><span class="counter" data-target="30" data-suffix=" Min">0</span></div>
+          <div class="stat__label">Ø Lieferzeit der Datei</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Leistungen / Services ============ -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Unsere Leistungen</span>
+          <h2 class="section__title">Alles rund um <span class="text-gradient">Leistung & Optimierung</span></h2>
+          <p class="section__lead">
+            Von der reinen Mehrleistung bis zur kompletten Software-Optimierung. Jede Datei
+            wird individuell auf deinem Steuergerätestand aufgebaut – kein Datenbank-Copy-Paste.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">⚡</div>
+            <h3>Stage 1 Leistungssteigerung</h3>
+            <p>Optimierte Software auf Seriehardware. Mehr PS, mehr Drehmoment und ein spürbar besseres Ansprechverhalten – im sicheren Rahmen.</p>
+            <span class="card__tag">+25–35 % Leistung</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">🚀</div>
+            <h3>Stage 2 & Stage 3</h3>
+            <p>Abstimmung für Hardware-Umbauten wie Downpipe, Ladeluftkühler oder größerer Turbo. Maximale Performance, sauber kalibriert.</p>
+            <span class="card__tag">Hardware-abgestimmt</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">🍃</div>
+            <h3>Eco-Tuning</h3>
+            <p>Spritspar-Optimierung für Vielfahrer und Flotten. Mehr Drehmoment im unteren Bereich bedeutet entspanntes Fahren bei weniger Verbrauch.</p>
+            <span class="card__tag">bis −15 % Verbrauch</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">🔧</div>
+            <h3>DPF / OPF Optimierung</h3>
+            <p>Software-Lösungen rund um Partikelfilter inklusive Regenerationssteuerung – für den Motorsport- und Exporteinsatz.</p>
+            <span class="card__tag">Motorsport / Export</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">♻️</div>
+            <h3>AGR / EGR Optimierung</h3>
+            <p>Saubere Abgasrückführungs-Logik gegen verkokte Ventile und Folgeschäden. Präzise im Steuergerät umgesetzt.</p>
+            <span class="card__tag">weniger Verkokung</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">💧</div>
+            <h3>AdBlue / SCR Optimierung</h3>
+            <p>Lösungen rund um das SCR-System für Land-, Bau- und Nutzfahrzeuge im internationalen Einsatz.</p>
+            <span class="card__tag">Nutzfahrzeug / Export</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">🔥</div>
+            <h3>Pop &amp; Bang / Launch Control</h3>
+            <p>Knall- und Schuss-Sound, Launch Control und Hardcut-Begrenzer für das echte Motorsport-Erlebnis.</p>
+            <span class="card__tag">Sound &amp; Sport</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">⏱️</div>
+            <h3>Vmax &amp; Limiter</h3>
+            <p>Aufhebung oder Anpassung der Geschwindigkeitsbegrenzung, Drehzahlbegrenzer und Start/Stopp – exakt nach deinem Wunsch.</p>
+            <span class="card__tag">individuell</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon">🛠️</div>
+            <h3>DTC &amp; Fehlercodes</h3>
+            <p>Saubere Bereinigung gespeicherter Fehlercodes (DTC-Removal) und Anpassungen wie Drallklappen oder Kaltstart.</p>
+            <span class="card__tag">sauber gelöst</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Fahrzeuge ============ -->
+    <section class="section section--alt" id="fahrzeuge">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Fahrzeugtypen</span>
+          <h2 class="section__title">Für jedes Fahrzeug die <span class="text-gradient">passende Datei</span></h2>
+          <p class="section__lead">Egal ob Daily, Arbeitstier oder Saison-Bike – wir haben die richtige Abstimmung.</p>
+        </div>
+
+        <div class="vehicles">
+          <div class="vehicle reveal" data-reveal>
+            <div class="vehicle__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17H3v-5l2-4h11l3 4h2v5h-2M9 17h6"/></svg>
+            </div>
+            <h3>PKW &amp; SUV</h3>
+            <p>Benziner und Diesel jeder Klasse – vom Kleinwagen bis zum Performance-SUV.</p>
+          </div>
+          <div class="vehicle reveal" data-reveal>
+            <div class="vehicle__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17V7h11v10M13 10h5l3 3v4h-3M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+            </div>
+            <h3>LKW &amp; Nutzfahrzeuge</h3>
+            <p>Mehr Drehmoment und weniger Verbrauch für Transporter, Sattelzug und Flotte.</p>
+          </div>
+          <div class="vehicle reveal" data-reveal>
+            <div class="vehicle__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M7 15h4l3-6h3l1 5M5 9h4"/></svg>
+            </div>
+            <h3>Landmaschinen</h3>
+            <p>Traktoren und Erntemaschinen mit mehr Durchzug für effizientere Arbeit.</p>
+          </div>
+          <div class="vehicle reveal" data-reveal>
+            <div class="vehicle__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M5 15h6l3-4h3M10 8h4"/></svg>
+            </div>
+            <h3>Motorrad &amp; Marine</h3>
+            <p>Bikes und Bootsmotoren – präzise abgestimmt für Sound und Leistung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Ablauf ============ -->
+    <section class="section" id="ablauf">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">So einfach geht's</span>
+          <h2 class="section__title">In 4 Schritten zu <span class="text-gradient">mehr Leistung</span></h2>
+          <p class="section__lead">Transparent, schnell und ohne Risiko. Du weißt jederzeit, was passiert.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal" data-reveal>
+            <span class="step__num">01</span>
+            <h3>Anfrage stellen</h3>
+            <p>Sende uns dein Fahrzeug, Motor und gewünschte Optimierung. In Minuten erhältst du ein konkretes Angebot.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">02</span>
+            <h3>Datei auslesen</h3>
+            <p>Du liest die Software deines Steuergeräts aus – wir unterstützen dich bei der passenden Methode.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">03</span>
+            <h3>Individuelle Abstimmung</h3>
+            <p>Unsere Techniker optimieren deine Datei von Hand und prüfen sie auf Sicherheit und Fahrbarkeit.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">04</span>
+            <h3>Aufspielen &amp; genießen</h3>
+            <p>Du spielst die fertige Datei zurück – fertig. Mehr Leistung, sauberer Lauf, sofort spürbar.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Warum wir ============ -->
+    <section class="section section--alt" id="warum">
+      <div class="container split">
+        <div class="split__text reveal" data-reveal>
+          <span class="eyebrow">Warum TuningFiles Germany</span>
+          <h2 class="section__title">Echte Technik. <span class="text-gradient">Kein Copy-Paste.</span></h2>
+          <p class="section__lead">
+            Viele Anbieter ziehen einfach Standard-Dateien aus einer Datenbank. Wir nicht.
+            Jede Abstimmung entsteht individuell auf deinem Software-Stand – von Technikern,
+            die seit 15 Jahren nichts anderes machen.
+          </p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Individuelle Abstimmung statt Datenbank-Ware</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auf dem Leistungsprüfstand validiert</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Persönlicher Ansprechpartner per WhatsApp</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Geld-zurück-Garantie bei Nichtgefallen</li>
+          </ul>
+          <a href="#kontakt" class="btn btn--primary btn--large">Unverbindlich anfragen
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="split__media reveal" data-reveal>
+          <div class="dyno">
+            <div class="dyno__head">
+              <span>Prüfstand-Diagramm</span>
+              <span class="dyno__badge">Live</span>
+            </div>
+            <svg class="dyno__chart" viewBox="0 0 320 180" preserveAspectRatio="none" role="img" aria-label="Leistungsdiagramm Serie gegen Tuning">
+              <defs>
+                <linearGradient id="fillTuned" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(255,77,0,.45)"/>
+                  <stop offset="100%" stop-color="rgba(255,77,0,0)"/>
+                </linearGradient>
+              </defs>
+              <g class="dyno__grid">
+                <line x1="0" y1="45" x2="320" y2="45"/>
+                <line x1="0" y1="90" x2="320" y2="90"/>
+                <line x1="0" y1="135" x2="320" y2="135"/>
+              </g>
+              <path class="dyno__line dyno__line--stock" d="M0,150 C70,140 120,120 180,95 C240,72 290,68 320,70" />
+              <path class="dyno__area" d="M0,140 C70,120 120,80 180,55 C240,35 290,32 320,34 L320,180 L0,180 Z" fill="url(#fillTuned)" stroke="none"/>
+              <path class="dyno__line dyno__line--tuned" d="M0,140 C70,120 120,80 180,55 C240,35 290,32 320,34" />
+            </svg>
+            <div class="dyno__legend">
+              <span><i class="dot dot--stock"></i> Serie</span>
+              <span><i class="dot dot--tuned"></i> Nach Tuning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Testimonials ============ -->
+    <section class="section" id="bewertungen">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Kundenstimmen</span>
+          <h2 class="section__title">Was unsere Kunden <span class="text-gradient">wirklich sagen</span></h2>
+          <div class="rating reveal" data-reveal>
+            <span class="rating__stars" aria-hidden="true">★★★★★</span>
+            <span class="rating__text"><strong>4,9 / 5</strong> aus über 1.200 Bewertungen</span>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote reveal" data-reveal>
+            <blockquote>„Stage 1 auf meinem Golf GTI – der Unterschied ist Wahnsinn. Sauber abgestimmt, läuft butterweich und zieht endlich richtig durch."</blockquote>
+            <figcaption><strong>Marcel K.</strong><span>VW Golf GTI</span></figcaption>
+          </figure>
+          <figure class="quote reveal" data-reveal>
+            <blockquote>„Für meine Flotte aus 12 Transportern das Eco-Tuning gebucht. Spürbar weniger Verbrauch und mehr Durchzug am Berg. Top Beratung per WhatsApp."</blockquote>
+            <figcaption><strong>Sabine R.</strong><span>Fuhrpark-Leitung</span></figcaption>
+          </figure>
+          <figure class="quote reveal" data-reveal>
+            <blockquote>„Schnelle Lieferung, faire Preise und ein echter Ansprechpartner statt Hotline. Genau so muss Tuning laufen. Klare Empfehlung."</blockquote>
+            <figcaption><strong>Dennis B.</strong><span>BMW 335d</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Häufige Fragen</span>
+          <h2 class="section__title">Gut zu <span class="text-gradient">wissen</span></h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal" data-reveal>
+            <summary>Ist die Leistungssteigerung sicher für meinen Motor?</summary>
+            <p>Ja. Wir stimmen jede Datei innerhalb sicherer Toleranzen ab und behalten Bauteilschutz, Abgaswerte und Fahrbarkeit im Blick. Stage 1 bewegt sich im Rahmen dessen, was die Hardware dauerhaft verträgt.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Wie schnell bekomme ich meine Datei?</summary>
+            <p>In den meisten Fällen innerhalb von 30 Minuten bis wenigen Stunden nach Eingang deiner Originaldatei. Komplexe Projekte sprechen wir vorher individuell ab.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Brauche ich spezielles Equipment?</summary>
+            <p>Du benötigst ein Auslesegerät, um die Software deines Steuergeräts zu lesen und zurückzuschreiben. Wir beraten dich, welches zu deinem Fahrzeug passt – oder vermitteln einen Partner in deiner Nähe.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Was kostet die Optimierung?</summary>
+            <p>Der Preis hängt von Fahrzeug und Umfang ab. Stelle einfach eine kostenlose Anfrage – du erhältst ein transparentes Festpreis-Angebot, bevor irgendetwas passiert.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Gibt es eine Garantie?</summary>
+            <p>Ja. Sollte dir das Ergebnis nicht gefallen, bekommst du dein Geld zurück. Außerdem liefern wir die Originaldatei mit, sodass du jederzeit zum Serienstand zurückkehren kannst.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / Kontakt ============ -->
+    <section class="section cta" id="kontakt">
+      <div class="container">
+        <div class="cta__box reveal" data-reveal>
+          <div class="cta__glow" aria-hidden="true"></div>
+          <div class="cta__text">
+            <span class="eyebrow">Kostenlose Anfrage</span>
+            <h2 class="section__title">Hol mehr aus deinem<br /><span class="text-gradient">Fahrzeug heraus.</span></h2>
+            <p class="section__lead">Sag uns, was du fährst und was du dir wünschst. Du bekommst ein
+              unverbindliches Festpreis-Angebot – meist noch am selben Tag.</p>
+            <ul class="cta__perks">
+              <li>✅ Antwort meist innerhalb von 30 Minuten</li>
+              <li>✅ Festpreis vorab – keine versteckten Kosten</li>
+              <li>✅ Persönliche Beratung statt Hotline</li>
+            </ul>
+          </div>
+
+          <form class="form" id="anfrageForm" novalidate>
+            <div class="form__row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Max Mustermann" required />
+              </label>
+              <label>
+                <span>E-Mail</span>
+                <input type="email" name="email" placeholder="max@email.de" required />
+              </label>
+            </div>
+            <div class="form__row">
+              <label>
+                <span>Fahrzeug</span>
+                <input type="text" name="fahrzeug" placeholder="z. B. Audi A4 2.0 TDI" required />
+              </label>
+              <label>
+                <span>Gewünschte Leistung</span>
+                <select name="leistung">
+                  <option>Stage 1</option>
+                  <option>Stage 2 / Stage 3</option>
+                  <option>Eco-Tuning</option>
+                  <option>DPF / EGR / AdBlue</option>
+                  <option>Pop &amp; Bang / Launch Control</option>
+                  <option>Sonstiges</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Nachricht (optional)</span>
+              <textarea name="nachricht" rows="3" placeholder="Erzähl uns kurz von deinem Projekt …"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--large btn--block">
+              Anfrage absenden
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-8l1-7z"/></svg>
+          </span>
+          <span class="brand__text">TuningFiles<span class="brand__accent"> Germany</span></span>
+        </a>
+        <p>Individuelle Leistungssteigerung und Software-Optimierung für jedes Fahrzeug. Made in Germany.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Leistungen</h4>
+        <a href="#leistungen">Stage 1 &amp; 2</a>
+        <a href="#leistungen">Eco-Tuning</a>
+        <a href="#leistungen">DPF / EGR / AdBlue</a>
+        <a href="#leistungen">Pop &amp; Bang</a>
+      </div>
+      <div class="footer__col">
+        <h4>Unternehmen</h4>
+        <a href="#warum">Über uns</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#bewertungen">Bewertungen</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <a href="#kontakt">Kostenlose Anfrage</a>
+        <a href="mailto:info@tuningfiles-germany.de">info@tuningfiles-germany.de</a>
+        <a href="#kontakt">WhatsApp-Beratung</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 TuningFiles Germany. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+    <p class="container footer__disclaimer">
+      Hinweis: Leistungssteigerungen müssen nach geltendem Recht eingetragen und versichert werden.
+      Filter- und Abgas-Optimierungen sind ausschließlich für den Motorsport- und Exporteinsatz außerhalb
+      öffentlicher Straßen bestimmt.
+    </p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
