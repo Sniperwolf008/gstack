@@ -233,11 +233,19 @@
       hex.style.setProperty("--hx", hx + "px");
       hex.style.setProperty("--hy", hy + "px");
     };
-    const move = (x, y) => { hx = x; hy = y; if (!raf) raf = requestAnimationFrame(apply); };
+    const move = (x, y) => {
+      hx = x; hy = y;
+      hex.classList.add("is-active");
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    const hide = () => hex.classList.remove("is-active");
+
     window.addEventListener("pointermove", (e) => move(e.clientX, e.clientY), { passive: true });
-    window.addEventListener("touchmove", (e) => {
-      const t = e.touches[0];
-      if (t) move(t.clientX, t.clientY);
-    }, { passive: true });
+    window.addEventListener("pointerdown", (e) => move(e.clientX, e.clientY), { passive: true });
+    // Finger losgelassen -> Leuchtpunkt ausblenden (wie ins Wasser getippt)
+    window.addEventListener("pointerup", (e) => { if (e.pointerType !== "mouse") hide(); }, { passive: true });
+    window.addEventListener("pointercancel", hide, { passive: true });
+    // Maus verlässt die Seite -> ausblenden
+    document.addEventListener("mouseleave", hide);
   }
 })();

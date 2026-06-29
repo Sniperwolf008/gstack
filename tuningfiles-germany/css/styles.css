@@ -664,6 +664,6 @@ body::before {
           mask: radial-gradient(circle 130px at center, #000 0%, #000 32%, transparent 62%);
   transform: translate3d(calc(var(--hx) - 150px), calc(var(--hy) - 150px), 0);
   will-change: transform, background-position;
-  opacity: .95;
+  opacity: 0; transition: opacity .5s ease;
 }
-@media (hover: none) { .hex-fx::after { opacity: .8; } }
+.hex-fx.is-active::after { opacity: .95; }
