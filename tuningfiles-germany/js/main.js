@@ -1,5 +1,5 @@
 /* =====================================================
-   TuningFiles Germany — Interaktionen
+   Dimasi Garage — Interaktionen
    Scroll-Reveal, animierte Counter, Navigation,
    Scroll-Progress und Formular-Feedback.
    ===================================================== */
@@ -115,7 +115,7 @@
         return;
       }
 
-      const okMsg = `Danke${firstName(form)}! Deine Anfrage ist eingegangen. Wir melden uns meist innerhalb von 30 Minuten.`;
+      const okMsg = `Danke${firstName(form)}! Deine Anfrage ist eingegangen. Wir melden uns schnellstmöglich bei dir.`;
 
       // Lokale Vorschau ohne Backend -> Demo-Bestätigung
       if (location.protocol === "file:") {
@@ -146,7 +146,7 @@
       } catch (err) {
         note.innerHTML =
           'Senden hat nicht geklappt. Schreib uns direkt an ' +
-          '<a href="mailto:info@tuningfiles-germany.de">info@tuningfiles-germany.de</a>.';
+          '<a href="mailto:info@dimasi-garage.de">info@dimasi-garage.de</a>.';
         note.className = "form__note is-err";
       } finally {
         if (submitBtn) submitBtn.disabled = false;

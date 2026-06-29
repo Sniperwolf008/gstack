@@ -1,5 +1,5 @@
 /* =====================================================
-   TuningFiles Germany — Design System
+   Dimasi Garage — Design System
    Aufgebaut nach dem "Premium Webseiten"-Leitfaden:
    konsistente Tokens (Farben, Schriften, Abstände),
    echte Inhalte, dezente Animationen, voll responsive.
@@ -119,6 +119,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--gradient); color: #fff; box-shadow: var(--shadow-glow);
 }
 .brand__accent { color: var(--accent); }
+.brand__logo { height: 38px; width: auto; }
 
 .nav__links { display: flex; align-items: center; gap: 1.8rem; }
 .nav__links a { font-size: .95rem; color: var(--text-muted); font-weight: 500; transition: color .2s ease; }
@@ -211,9 +212,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ===================================================== */
 .stats { padding: var(--space-8) 0; }
 .stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-.stat { text-align: center; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.stat { text-align: center; padding: 1.7rem 1.4rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: transform .25s ease, border-color .25s ease; }
+.stat:hover { transform: translateY(-4px); border-color: var(--border-strong); }
 .stat__num { font-family: var(--font-head); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1; }
 .stat__num .counter { background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stat__icon { font-size: 1.9rem; margin-bottom: .7rem; }
+.stat__title { font-family: var(--font-head); font-weight: 700; font-size: 1.3rem; background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .stat__label { color: var(--text-muted); font-size: .92rem; margin-top: .5rem; }
 
 /* =====================================================
@@ -280,6 +284,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .dot { display: inline-block; width: 12px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: .4rem; }
 .dot--stock { background: var(--text-dim); } .dot--tuned { background: var(--accent); }
 
+/* --- Trust grid --- */
+.trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
 /* --- Testimonials --- */
 .rating { display: inline-flex; align-items: center; gap: .7rem; margin-top: 1.2rem; }
 .rating__stars { color: #ffb800; font-size: 1.3rem; letter-spacing: 2px; }
@@ -333,6 +340,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ===================================================== */
 .footer { background: var(--bg-soft); border-top: 1px solid var(--border); padding-top: var(--space-8); }
 .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: var(--space-6); }
+.footer__logo { display: inline-block; }
+.footer__logo img { height: 88px; width: auto; }
 .footer__brand p { color: var(--text-muted); font-size: .94rem; margin-top: 1rem; max-width: 320px; }
 .footer__col h4 { font-family: var(--font-head); font-size: .95rem; margin-bottom: 1rem; }
 .footer__col a { display: block; color: var(--text-muted); font-size: .92rem; margin-bottom: .6rem; transition: color .2s ease; }
@@ -401,7 +410,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 @media (max-width: 900px) {
   .cards, .vehicles, .steps { grid-template-columns: repeat(2, 1fr); }
-  .quotes { grid-template-columns: 1fr; }
+  .quotes, .trust { grid-template-columns: 1fr; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .split, .cta__box { grid-template-columns: 1fr; }
   .split__media { order: -1; }
