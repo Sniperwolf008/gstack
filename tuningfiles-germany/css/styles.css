@@ -661,3 +661,51 @@ body::before {
   opacity: 0; transition: opacity .5s ease;
 }
 .hex-fx.is-active::after { opacity: .95; }
+
+/* =====================================================
+   Intro: Scroll-Tacho (gibt Gas beim Scrollen)
+   ===================================================== */
+.intro { position: relative; height: 200vh; z-index: 140; }
+.intro__sticky {
+  position: sticky; top: 0; height: 100vh; display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 42%, #15171f 0%, #06070a 72%); overflow: hidden;
+}
+.intro__inner { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; will-change: opacity; }
+.tacho-wrap { position: relative; display: grid; place-items: center; }
+.tacho { width: min(76vw, 360px); height: auto; }
+.tacho__track   { fill: none; stroke: rgba(255,255,255,.07); stroke-width: 14; stroke-linecap: round; }
+.tacho__redline { fill: none; stroke: rgba(255,40,40,.45); stroke-width: 14; stroke-linecap: round; }
+.tacho__progress {
+  fill: none; stroke: url(#tachoGrad); stroke-width: 14; stroke-linecap: round;
+  stroke-dasharray: 565; stroke-dashoffset: 565;
+  filter: drop-shadow(0 0 7px rgba(255,90,0,.55));
+  transition: stroke-dashoffset .12s linear;
+}
+#tachoTicks line { stroke: rgba(255,255,255,.28); stroke-width: 2; }
+#tachoTicks text { fill: var(--text-muted); font-family: var(--font-head); font-size: 15px; font-weight: 600; }
+.tacho__needle {
+  transform-box: view-box; transform-origin: 150px 150px; transform: rotate(-135deg);
+  transition: transform .12s ease-out;
+}
+.tacho__needle line { stroke: #fff; stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 4px rgba(255,90,0,.7)); }
+.tacho__hub { fill: var(--accent); stroke: #fff; stroke-width: 2; }
+.tacho__readout { position: absolute; bottom: 22%; text-align: center; display: flex; flex-direction: column; line-height: 1; }
+.tacho__readout strong { font-family: var(--font-head); font-size: clamp(2rem, 7vw, 2.8rem); color: #fff; letter-spacing: -.02em; }
+.tacho__readout span { font-size: .78rem; color: var(--text-dim); letter-spacing: .12em; margin-top: .35rem; }
+.intro.is-redline .tacho__readout strong { color: #ff3b3b; }
+.intro__brand { font-family: var(--font-head); font-weight: 700; font-size: clamp(1.4rem, 5vw, 2rem); letter-spacing: .04em; }
+.intro__brand span { color: var(--accent); }
+.intro__hint { display: inline-flex; align-items: center; gap: .5rem; color: var(--text-muted); font-size: .95rem; transition: opacity .3s ease; }
+.intro__hint svg { animation: hintbounce 1.6s ease-in-out infinite; }
+@keyframes hintbounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+.intro__skip {
+  position: absolute; top: calc(env(safe-area-inset-top, 0px) + 1.1rem); right: 1.2rem;
+  color: var(--text-muted); font-size: .85rem; padding: .5rem .9rem;
+  border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.03);
+  transition: color .2s ease, border-color .2s ease;
+}
+.intro__skip:hover { color: var(--text); border-color: var(--border-strong); }
+
+/* Navigation während des Tacho-Intros ausblenden */
+.nav { transition: background .3s ease, border-color .3s ease, opacity .4s ease; }
+body.intro-on .nav { opacity: 0; pointer-events: none; }

@@ -51,6 +51,43 @@
   </header>
 
   <main id="top">
+    <!-- ============ Intro: Scroll-Tacho ============ -->
+    <section class="intro" id="intro" aria-label="Intro – scrollen zum Starten">
+      <div class="intro__sticky">
+        <div class="intro__inner" id="introInner">
+          <div class="tacho-wrap">
+            <svg class="tacho" viewBox="0 0 300 300" role="img" aria-label="Drehzahlmesser">
+              <defs>
+                <linearGradient id="tachoGrad" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#ff8a00"/>
+                  <stop offset="65%" stop-color="#ff4d00"/>
+                  <stop offset="100%" stop-color="#ff1a1a"/>
+                </linearGradient>
+              </defs>
+              <path class="tacho__track" d="M65.15 234.85 A120 120 0 1 1 234.85 234.85"/>
+              <path class="tacho__redline" d="M267.7 173.4 A120 120 0 0 1 234.85 234.85"/>
+              <g id="tachoTicks"></g>
+              <path class="tacho__progress" d="M65.15 234.85 A120 120 0 1 1 234.85 234.85"/>
+              <g class="tacho__needle" id="tachoNeedle">
+                <line x1="150" y1="150" x2="150" y2="52"/>
+              </g>
+              <circle class="tacho__hub" cx="150" cy="150" r="10"/>
+            </svg>
+            <div class="tacho__readout">
+              <strong id="rpmVal">0</strong>
+              <span>U/min</span>
+            </div>
+          </div>
+          <div class="intro__brand">DIMASI<span> GARAGE</span></div>
+          <div class="intro__hint" id="introHint">
+            <span>Scrollen &amp; Gas geben</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <button class="intro__skip" id="introSkip" type="button">Überspringen</button>
+      </div>
+    </section>
+
     <!-- ============ Hero ============ -->
     <section class="hero">
       <div class="hero__aurora" aria-hidden="true"></div>
