@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-label="Platzhalter: Hero-Fahrzeug">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14161d"/>
+      <stop offset="1" stop-color="#0b0d12"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8a00"/>
+      <stop offset="1" stop-color="#ff2d00"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect width="1600" height="1100" fill="url(#grid)"/>
+  <rect x="14" y="14" width="1572" height="1072" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="10 10" rx="18"/>
+  <rect x="14" y="14" width="120" height="6" fill="url(#acc)" rx="3"/>
+  <g transform="translate(800, 522)">
+    <g transform="translate(-34,-30)" fill="none" stroke="url(#acc)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="8" width="64" height="48" rx="7"/>
+      <circle cx="24" cy="26" r="7"/>
+      <path d="M6 52 28 34l12 10 10-9 14 12"/>
+    </g>
+  </g>
+  <text x="800" y="590" fill="#f4f5f7" font-family="'Space Grotesk',Inter,sans-serif" font-size="62" font-weight="700" text-anchor="middle">Hero-Fahrzeug</text>
+  <text x="800" y="664.4" fill="#9aa0ad" font-family="Inter,sans-serif" font-size="31" text-anchor="middle">Dein bestes Fahrzeugfoto · empf. 1600×1100</text>
+</svg>
