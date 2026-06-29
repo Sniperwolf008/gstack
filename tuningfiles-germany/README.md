@@ -1,24 +1,29 @@
-# TuningFiles Germany — Premium Landing Page
+# Dimasi Garage — Premium Landing Page
 
-Eine vollständige, responsive Landing Page für Leistungssteigerung & Chiptuning,
-gebaut nach dem Leitfaden „Claude Design baut dir Premium Webseiten" (skalieren.com / Deniz Deke).
+Eine vollständige, responsive Landing Page für **Dimasi Garage** (Chiptuning &
+Software-Optimierung), gebaut nach dem Leitfaden „Claude Design baut dir Premium
+Webseiten" (skalieren.com / Deniz Deke).
 
 Vorbild für den Funktionsumfang: **tuningfilesgermany.de** (Leistungssteigerung +
-komplettes Service-Angebot). Umgesetzt mit eigenem, konsistentem Design-System.
+komplettes Service-Angebot). Inhalte und Branding sind auf Dimasi Garage zugeschnitten
+(echtes Logo, Schwarz/Orange, drei Werte: seriös, schnell, kompromisslos). Da Dimasi
+Garage ein Startup im Aufbau ist, enthält die Seite bewusst **keine erfundenen
+Statistiken oder Bewertungen** — stattdessen ehrliche Vertrauens- und Leistungsargumente.
 
 ## Was die Seite enthält
 
-- **Hero** mit Headline, Subheadline, Trust-Punkten und animiertem Leistungs-Gauge
+- **Hero** mit Logo, Headline, Trust-Punkten, Bild-Visual und animiertem Leistungs-Gauge
 - **Marken-Strip** (Audi, BMW, Mercedes …) als laufendes Band
-- **Stats** mit animierten Zählern
-- **Leistungen**: Stage 1/2/3, Eco-Tuning, DPF/OPF, AGR/EGR, AdBlue/SCR,
-  Pop & Bang / Launch Control, Vmax/Limiter, DTC/Fehlercodes
+- **Werte-Tiles** (individuell, schnell, geprüft, fair) — ohne erfundene Zahlen
+- **Leistungen**: Stage 1/2/3, Eco-Tuning, Getriebe & Schaltverhalten, DPF/OPF,
+  AGR/EGR, AdBlue/SCR, Pop & Bang / Launch Control, Vmax/Limiter
 - **Fahrzeugtypen**: PKW, LKW, Landmaschinen, Motorrad/Marine
 - **Ablauf** in 4 Schritten
-- **Warum wir** mit animiertem Prüfstand-Diagramm (SVG)
-- **Bewertungen** (Testimonials + Sterne)
+- **Warum wir** mit Werkstatt-Bild und animiertem Prüfstand-Diagramm (SVG)
+- **Galerie** (Bild-Platzhalter für echte Projekte)
+- **Vertrauen** (Entwickler-Know-how, geprüfte Partner, faire Preise)
 - **FAQ** (Accordion)
-- **Kontakt/CTA** mit Anfrageformular
+- **Kontakt/CTA** mit Anfrageformular (Netlify Forms)
 - **Footer** inkl. rechtlichem Hinweis
 
 ## Design-System (Tokens in `css/styles.css`)
@@ -52,10 +57,12 @@ tuningfiles-germany/
 ├── css/styles.css    # Design-System & Layout
 ├── js/main.js        # Animationen, Counter, Navigation, Formular
 ├── assets/img/       # Bilder (Platzhalter zum Austauschen)
-│   ├── favicon.svg
-│   ├── hero.svg          # Hero-Visual
-│   ├── workshop.svg      # Werkstatt/Team in „Warum wir“
-│   └── result-1…4.svg    # Galerie / Ergebnisse
+│   ├── logo.png          # Dimasi Garage Logo (freigestellt)
+│   ├── emblem.png        # Emblem für die Navigation
+│   ├── favicon-dg.png    # Favicon (Emblem)
+│   ├── hero.svg          # Hero-Visual (Platzhalter)
+│   ├── workshop.svg      # Werkstatt/Team in „Warum wir“ (Platzhalter)
+│   └── result-1…4.svg    # Galerie (Platzhalter)
 └── README.md
 ```
 
@@ -88,7 +95,7 @@ verstecktes `form-name`-Feld, Honeypot gegen Spam).
   auf Netlify. Binde das Formular dort sonst an einen Dienst wie Formspree oder
   eine eigene API an (Endpoint im `fetch`-Aufruf in `js/main.js` anpassen).
 
-Ersetze außerdem die Beispiel-Adresse `info@tuningfiles-germany.de` durch deine
+Ersetze außerdem die Beispiel-Adresse `info@dimasi-garage.de` durch deine
 echte Kontaktadresse (in `index.html` und `js/main.js`).
 
 ## Anpassen
