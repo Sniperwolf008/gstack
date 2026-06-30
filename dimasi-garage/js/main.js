@@ -93,25 +93,15 @@
     counters.forEach(animateCounter);
   }
 
-  /* --- Anfrageformular: Netlify Forms mit lokalem Fallback ---
-     Hosting auf Netlify -> AJAX-POST an "/" (Netlify nimmt die Anfrage an,
-     erkennbar am data-netlify-Attribut + verstecktem form-name-Feld).
-     Lokale Vorschau (file://) -> nur Demo-Erfolgsmeldung, kein Versand. */
+  /* --- Anfrageformular: zuverlaessiger Versand per E-Mail ---
+     Oeffnet das Mailprogramm mit allen Angaben vorausgefuellt. Funktioniert
+     ohne Backend und ohne Drittanbieter auf jedem Geraet (auch iOS Safari),
+     weil window.location synchron im Klick-Kontext gesetzt wird. */
   const form = document.getElementById("anfrageForm");
   const note = document.getElementById("formNote");
 
-  function encode(data) {
-    return Object.keys(data)
-      .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-      .join("&");
-  }
-  function firstName(form) {
-    const v = (form.elements.namedItem("name") || {}).value || "";
-    return v ? ", " + v.split(" ")[0] : "";
-  }
-
   if (form && note) {
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         note.textContent = "Bitte fülle Name, E-Mail und Fahrzeug aus.";
@@ -120,57 +110,28 @@
         return;
       }
 
-      const okMsg = `Danke${firstName(form)}! Deine Anfrage ist eingegangen. Wir melden uns schnellstmöglich bei dir.`;
-
-      // Lokale Vorschau ohne Backend -> Demo-Bestätigung
-      if (location.protocol === "file:") {
-        note.textContent = okMsg + " (Lokale Vorschau – kein echter Versand.)";
-        note.className = "form__note is-ok";
-        form.reset();
-        return;
-      }
-
-      // Live (Netlify): echte Übertragung
       const data = {};
       new FormData(form).forEach((value, key) => { data[key] = value; });
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
-      note.textContent = "Wird gesendet …";
-      note.className = "form__note";
 
-      try {
-        const res = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode(data),
-        });
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        note.textContent = okMsg;
-        note.className = "form__note is-ok";
-        form.reset();
-      } catch (err) {
-        // Fallback, damit keine Anfrage verloren geht: vorbefuelltes E-Mail
-        // mit allen Angaben. Ein Klick -> Mailprogramm oeffnet sich.
-        const subject = encodeURIComponent(
-          "Anfrage Dimasi Garage" + (data.name ? " - " + data.name : "")
-        );
-        const body = encodeURIComponent(
-          "Name: " + (data.name || "") + "\n" +
-          "E-Mail: " + (data.email || "") + "\n" +
-          "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
-          "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
-          "Nachricht: " + (data.nachricht || "")
-        );
-        const mailto =
-          "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
-        note.innerHTML =
-          'Senden hat gerade nicht geklappt. ' +
-          '<a href="' + mailto + '">Anfrage per E-Mail senden</a>' +
-          ' – ein Klick, dein Mailprogramm oeffnet sich mit allen Angaben.';
-        note.className = "form__note is-err";
-      } finally {
-        if (submitBtn) submitBtn.disabled = false;
-      }
+      const subject = encodeURIComponent(
+        "Anfrage Dimasi Garage" + (data.name ? " - " + data.name : "")
+      );
+      const body = encodeURIComponent(
+        "Name: " + (data.name || "") + "\n" +
+        "E-Mail: " + (data.email || "") + "\n" +
+        "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
+        "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
+        "Nachricht: " + (data.nachricht || "")
+      );
+
+      note.innerHTML =
+        "Dein Mailprogramm öffnet sich mit deiner Anfrage – bitte nur noch auf " +
+        "<strong>Senden</strong> tippen. Klappt das nicht, schreib direkt an " +
+        '<a href="mailto:info.dimasigarage@gmail.com">info.dimasigarage@gmail.com</a>.';
+      note.className = "form__note is-ok";
+
+      window.location.href =
+        "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
     });
   }
 
