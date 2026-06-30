@@ -149,9 +149,24 @@
         note.className = "form__note is-ok";
         form.reset();
       } catch (err) {
+        // Fallback, damit keine Anfrage verloren geht: vorbefuelltes E-Mail
+        // mit allen Angaben. Ein Klick -> Mailprogramm oeffnet sich.
+        const subject = encodeURIComponent(
+          "Anfrage Dimasi Garage" + (data.name ? " - " + data.name : "")
+        );
+        const body = encodeURIComponent(
+          "Name: " + (data.name || "") + "\n" +
+          "E-Mail: " + (data.email || "") + "\n" +
+          "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
+          "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
+          "Nachricht: " + (data.nachricht || "")
+        );
+        const mailto =
+          "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
         note.innerHTML =
-          'Senden hat nicht geklappt. Schreib uns direkt an ' +
-          '<a href="mailto:info.dimasigarage@gmail.com">info.dimasigarage@gmail.com</a>.';
+          'Senden hat gerade nicht geklappt. ' +
+          '<a href="' + mailto + '">Anfrage per E-Mail senden</a>' +
+          ' – ein Klick, dein Mailprogramm oeffnet sich mit allen Angaben.';
         note.className = "form__note is-err";
       } finally {
         if (submitBtn) submitBtn.disabled = false;
