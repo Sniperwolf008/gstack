@@ -119,6 +119,10 @@
     { keys: ["eintrag", "tuev", "tuv", "strassenverkehrsamt", "versicherung", "legal", "gesetz", "eingetragen"],
       reply: "Hinweis: Leistungssteigerungen müssen beim zuständigen <strong>Strassenverkehrsamt</strong> eingetragen und der Versicherung gemeldet werden. Filter-/Abgas-Optimierungen sind nur für Motorsport/Export ausserhalb öffentlicher Strassen bestimmt." },
 
+    { keys: ["galerie", "projekte", "bilder", "fotos", "instagram", "insta", "beispiele", "referenzen"],
+      reply: "Unsere <strong>echten Projekte</strong> zeigen wir auf Instagram – schau gern rein: <a href=\"https://www.instagram.com/dimasigarage\" target=\"_blank\" rel=\"noopener\">@dimasigarage auf Instagram</a>.",
+      chips: CONTACT_CHIPS },
+
     { keys: ["zahlung", "zahlungsart", "bezahlen", "zahlen", "twint", "barzahlung", "kreditkarte", "ec karte"],
       reply: "Bei uns kannst du <strong>bar, per TWINT oder mit Karte</strong> bezahlen – ganz wie's dir passt.",
       chips: CONTACT_CHIPS },
