@@ -110,6 +110,7 @@
       "E-Mail: " + (data.email || "") + "\n" +
       "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
       "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
+      "Wunschtermin: " + (data.wunschtermin || "") + "\n" +
       "Nachricht: " + (data.nachricht || "")
     );
     return "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
@@ -154,6 +155,7 @@
             "E-Mail": data.email || "",
             Fahrzeug: data.fahrzeug || "",
             Leistung: data.leistung || "",
+            Wunschtermin: data.wunschtermin || "",
             Nachricht: data.nachricht || "",
           }),
         });
