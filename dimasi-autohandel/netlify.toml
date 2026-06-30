@@ -1,4 +1,4 @@
-# Netlify-Konfiguration für Dimasi Automobile (statische Seite, kein Build-Schritt)
+# Netlify-Konfiguration für AURION Automobile (statische Seite, kein Build-Schritt)
 # Beim Deploy aus diesem Ordner ist die Seite das Veröffentlichungsverzeichnis.
 [build]
   publish = "."

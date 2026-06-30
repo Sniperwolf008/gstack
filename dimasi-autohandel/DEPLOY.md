@@ -1,4 +1,4 @@
-# Deploy — Dimasi Automobile
+# Deploy — AURION Automobile
 
 Die Seite ist eine **reine statische Seite** (kein Build-Schritt) und lässt sich
 kostenlos hosten. Empfohlen: **Netlify**.

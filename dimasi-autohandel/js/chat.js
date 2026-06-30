@@ -1,9 +1,9 @@
 /* =====================================================
-   Dimasi Automobile — FAQ-Chatbot
+   AURION Automobile — FAQ-Chatbot
    100% clientseitig, kostenlos, keine Drittanbieter, kein Tracking.
 
    Aufbau bewusst modular:
-   - DimasiBot.resolve(text)  = das "Gehirn" (Intent-Erkennung).
+   - AurionBot.resolve(text)  = das "Gehirn" (Intent-Erkennung).
      Diese eine Funktion liesse sich spaeter durch einen KI-Aufruf
      (z. B. ueber eine Netlify-Funktion) als Fallback ersetzen,
      ohne die Oberflaeche unten anzufassen.
@@ -54,7 +54,7 @@
   /* --- Die Intents. Reihenfolge = Prioritaet (spezifisch vor allgemein). --- */
   var INTENTS = [
     { keys: ["hallo", "hi", "hey", "servus", "gruezi", "guten tag", "moin", "hallo zusammen"],
-      reply: "Hallo! 👋 Ich bin der Assistent von <strong>Dimasi Automobile</strong>. Frag mich zu Kaufen, Verkaufen, Eintausch, Bestand oder Kontakt – oder tipp einfach los." },
+      reply: "Hallo! 👋 Ich bin der Assistent von <strong>AURION Automobile</strong>. Frag mich zu Kaufen, Verkaufen, Eintausch, Bestand oder Kontakt – oder tipp einfach los." },
 
     { keys: ["danke", "merci", "thx", "vielen dank", "super danke"],
       reply: "Gern! 🚗 Wenn du loslegen willst, stell einfach eine kostenlose Anfrage – meist gibt's noch am selben Tag eine Antwort.", chips: CONTACT_CHIPS },
@@ -107,7 +107,7 @@
       chips: CONTACT_CHIPS },
 
     { keys: ["kontakt", "anrufen", "telefon", "nummer", "email", "mail", "whatsapp", "erreich", "termin", "buchen", "anfrage", "anfragen", "melden"],
-      reply: "So erreichst du Dimasi Automobile:<ul><li>✉️ " + mailLink() + " <em>(jederzeit)</em></li><li>📞 " + callLink() + " <em>(nur während der Arbeitszeiten)</em></li></ul>Am schnellsten geht eine <strong>kostenlose Anfrage</strong> – rund um die Uhr:",
+      reply: "So erreichst du AURION Automobile:<ul><li>✉️ " + mailLink() + " <em>(jederzeit)</em></li><li>📞 " + callLink() + " <em>(nur während der Arbeitszeiten)</em></li></ul>Am schnellsten geht eine <strong>kostenlose Anfrage</strong> – rund um die Uhr:",
       chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] }
   ];
 
@@ -117,7 +117,7 @@
   };
 
   /* --- DAS GEHIRN: Text -> Antwort. Hier kaeme spaeter ein KI-Fallback rein. --- */
-  var DimasiBot = {
+  var AurionBot = {
     resolve: function (text) {
       var n = normalize(text);
       if (!n) return FALLBACK;
@@ -199,7 +199,7 @@
 
   function respond(text) {
     var typing = addMsg('<span class="dg-typing"><span></span><span></span><span></span></span>', "bot");
-    var res = DimasiBot.resolve(text);
+    var res = AurionBot.resolve(text);
     setTimeout(function () {
       typing.innerHTML = res.reply;
       renderChips(res.chips);
@@ -211,7 +211,7 @@
     root.classList.add("is-open");
     if (!started) {
       started = true;
-      addMsg("Hallo! 👋 Ich bin der Assistent von <strong>Dimasi Automobile</strong>. Möchtest du kaufen, verkaufen oder eintauschen?", "bot");
+      addMsg("Hallo! 👋 Ich bin der Assistent von <strong>AURION Automobile</strong>. Möchtest du kaufen, verkaufen oder eintauschen?", "bot");
       renderChips(DEFAULT_CHIPS);
     }
     setTimeout(function () { input.focus({ preventScroll: true }); }, 250);
@@ -229,11 +229,11 @@
 
     panel = el("div", "dg-chat__panel");
     panel.setAttribute("role", "dialog");
-    panel.setAttribute("aria-label", "Dimasi Automobile Chat");
+    panel.setAttribute("aria-label", "AURION Automobile Chat");
 
     var head = el("div", "dg-chat__head",
       '<span class="dg-chat__avatar">DA</span>' +
-      '<span><span class="dg-chat__title">Dimasi Automobile</span>' +
+      '<span><span class="dg-chat__title">AURION Automobile</span>' +
       '<span class="dg-chat__status">Antwortet sofort</span></span>');
     var closeBtn = el("button", "dg-chat__close", ICON_CLOSE);
     closeBtn.type = "button";

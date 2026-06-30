@@ -1,5 +1,5 @@
 /* =====================================================
-   Dimasi Automobile — Interaktionen
+   AURION Automobile — Interaktionen
    Scroll-Reveal, animierte Counter, Navigation,
    Scroll-Progress und Formular-Feedback.
    ===================================================== */
@@ -103,7 +103,7 @@
 
   function mailtoFallback(data) {
     const subject = encodeURIComponent(
-      "Anfrage Dimasi Automobile" + (data.name ? " - " + data.name : "")
+      "Anfrage AURION Automobile" + (data.name ? " - " + data.name : "")
     );
     const body = encodeURIComponent(
       "Name: " + (data.name || "") + "\n" +
@@ -146,7 +146,7 @@
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
-            _subject: "Neue Anfrage – Dimasi Automobile",
+            _subject: "Neue Anfrage – AURION Automobile",
             _template: "table",
             _captcha: "false",
             _replyto: data.email || "",

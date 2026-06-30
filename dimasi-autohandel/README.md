@@ -1,6 +1,6 @@
-# Dimasi Automobile — Autohandel Landing Page
+# AURION Automobile — Autohandel Landing Page
 
-Eine vollständige, responsive Landing Page für **Dimasi Automobile** (Autohandel in
+Eine vollständige, responsive Landing Page für **AURION Automobile** (Autohandel in
 Winterthur). Fokus: **Kauf, Verkauf und Eintausch** von Fahrzeugen.
 
 Eigenständiges Projekt. Das Design-System (Tokens, Layout, Effekte) orientiert sich am
