@@ -60,7 +60,7 @@
       reply: "Gern! 🚗 Wenn du loslegen willst, stell einfach eine kostenlose Anfrage – meist gibt's noch am selben Tag eine Antwort.", chips: CONTACT_CHIPS },
 
     { keys: ["frontscheibe", "scheibe", "scheiben", "steinschlag", "riss", "glas", "windschutz", "sprung"],
-      reply: "Steinschlag oder Riss in der Frontscheibe? Wir <strong>reparieren kleine Steinschläge</strong> und <strong>tauschen beschädigte Frontscheiben</strong> fachgerecht. Steinschlag ist über die Teilkasko oft gedeckt – wir wickeln die Versicherung ab und übernehmen je nach Fall sogar deinen <strong>Selbstbehalt</strong> (ganz oder teilweise). Termine gibt's kurzfristig.",
+      reply: "Steinschlag oder Riss in der Frontscheibe? Wir <strong>reparieren kleine Steinschläge</strong> und <strong>tauschen beschädigte Frontscheiben</strong> fachgerecht – inklusive Kalibrierung der Kamera- und Assistenzsysteme. Steinschlag ist über die Teilkasko oft gedeckt – wir wickeln die Versicherung ab und übernehmen je nach Fall sogar deinen <strong>Selbstbehalt</strong> (ganz oder teilweise). Termine gibt's kurzfristig.",
       chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] },
 
     { keys: ["verkaufen", "verkauf", "ankauf", "auto loswerden"],
@@ -118,6 +118,10 @@
 
     { keys: ["eintrag", "tuev", "tuv", "strassenverkehrsamt", "versicherung", "legal", "gesetz", "eingetragen"],
       reply: "Hinweis: Leistungssteigerungen müssen beim zuständigen <strong>Strassenverkehrsamt</strong> eingetragen und der Versicherung gemeldet werden. Filter-/Abgas-Optimierungen sind nur für Motorsport/Export ausserhalb öffentlicher Strassen bestimmt." },
+
+    { keys: ["zahlung", "zahlungsart", "bezahlen", "zahlen", "twint", "barzahlung", "kreditkarte", "ec karte"],
+      reply: "Bei uns kannst du <strong>bar, per TWINT oder mit Karte</strong> bezahlen – ganz wie's dir passt.",
+      chips: CONTACT_CHIPS },
 
     { keys: ["leistung", "leistungen", "stage", "chiptuning", "tuning", "mehr ps", "leistungssteigerung", "optimierung", "bietet", "anbieten", "service", "was macht ihr", "was koennt ihr"],
       reply: "Wir bieten <strong>individuelle Software-Optimierung</strong> – das komplette Angebot:<ul>" +
