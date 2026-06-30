@@ -48,7 +48,12 @@ dimasi-autohandel/
 ├── 404.html          # Fehlerseite
 ├── netlify.toml      # Hosting-Config (Publish-Pfad + Header)
 ├── __forms.html      # Netlify-Formular-Erkennung
-├── assets/img/       # Logo, Emblem, Favicon
+├── assets/img/       # SVG-Logo, Emblem, Favicon (+ PNG-Fallbacks, OG-Bild)
+│   ├── logo.svg          # Gestapeltes Logo (Emblem + Schriftzug) — Hero, Footer, 404
+│   ├── emblem.svg        # Auto-Emblem — Navigation
+│   ├── favicon.svg       # Favicon (+ favicon-32.png als Fallback)
+│   ├── apple-touch-icon.png  # iOS-Homescreen-Icon
+│   └── og-image.png      # Social-Share-Vorschaubild (1200×630)
 └── README.md
 ```
 
