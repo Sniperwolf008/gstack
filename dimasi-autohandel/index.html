@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dimasi Automobile – Autohandel in Winterthur: Kauf, Verkauf & Eintausch</title>
+  <meta name="description" content="Dimasi Automobile aus Winterthur (Schweiz): Fahrzeuge kaufen, verkaufen und eintauschen. Geprüfte Occasionen, faire Ankaufspreise und unkomplizierter Eintausch deines aktuellen Autos." />
+  <meta name="theme-color" content="#0a0b0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dimasi Automobile – Autohandel: Kauf, Verkauf & Eintausch" />
+  <meta property="og:description" content="Fahrzeuge kaufen, verkaufen und eintauschen in Winterthur. Geprüfte Occasionen, faire Preise, persönliche Beratung." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_CH" />
+  <meta property="og:image" content="assets/img/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon-dg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+</head>
+<body>
+  <!-- ============ Progress bar ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ Interaktiver Hexagon-Hintergrund ============ -->
+  <div class="hex-fx" id="hexFx" aria-hidden="true"></div>
+
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="Dimasi Automobile Startseite">
+        <img class="brand__logo" src="assets/img/emblem.png" width="165" height="160" alt="" aria-hidden="true" />
+        <span class="brand__text">DIMASI<span class="brand__accent"> AUTOMOBILE</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="#angebot">Angebot</a>
+        <a href="#fahrzeuge">Fahrzeuge</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#eintausch">Eintausch</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt" class="btn btn--small btn--primary">Kostenlose Anfrage</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="hero__aurora" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <span class="badge reveal" data-reveal>
+          <span class="badge__dot"></span> Dimasi Automobile · Winterthur · Autohandel
+        </span>
+        <h1 class="hero__title reveal" data-reveal>
+          Fahrzeuge kaufen.<br />
+          Verkaufen.<br />
+          <span class="text-gradient shimmer">Eintauschen.</span>
+        </h1>
+        <p class="hero__sub reveal" data-reveal>
+          Dimasi Automobile ist dein Ansprechpartner für den unkomplizierten Autohandel:
+          geprüfte Occasionen zum fairen Preis, ein schneller Ankauf deines Fahrzeugs und
+          ein einfacher Eintausch beim nächsten Auto. Persönlich beraten, ehrlich kalkuliert.
+        </p>
+        <div class="hero__cta reveal" data-reveal>
+          <a href="#kontakt" class="btn btn--primary btn--large">
+            Jetzt kostenlos anfragen
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#fahrzeuge" class="btn btn--ghost btn--large">Fahrzeuge ansehen</a>
+        </div>
+
+        <ul class="hero__trust reveal" data-reveal>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Geprüfte Fahrzeuge</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Faire Ankaufspreise</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Eintausch möglich</li>
+        </ul>
+      </div>
+
+      <!-- Hero visual + Handels-Übersicht -->
+      <div class="hero__card reveal" data-reveal>
+        <div class="hero__visual beam">
+          <span class="hero__visual-streaks" aria-hidden="true"></span>
+          <span class="hero__visual-glow" aria-hidden="true"></span>
+          <img class="hero__visual-logo" src="assets/img/logo.png" width="568" height="680" alt="Dimasi Automobile" />
+        </div>
+        <div class="gauge gauge--overlay">
+          <div class="gauge__label">Unser Geschäft</div>
+          <div class="gauge__value"><span class="counter" data-target="3" data-suffix="">0</span></div>
+          <div class="gauge__sublabel">Wege, mit uns zu handeln</div>
+          <div class="gauge__meta gauge__meta--3">
+            <div><strong>Kauf</strong><span>Occasion finden</span></div>
+            <div><strong>Verkauf</strong><span>Auto an uns</span></div>
+            <div><strong>Eintausch</strong><span>Alt gegen neu</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Marken-Strip ============ -->
+    <section class="strip" aria-label="Marken, die wir handeln">
+      <div class="container strip__inner">
+        <span class="strip__label">Wir handeln nahezu jede Marke</span>
+        <div class="strip__marquee">
+          <div class="strip__track">
+            <span>Audi</span><span>BMW</span><span>Mercedes-Benz</span><span>VW</span><span>Porsche</span><span>Seat</span><span>Škoda</span><span>Ford</span><span>Opel</span><span>Renault</span><span>Peugeot</span><span>Volvo</span><span>Toyota</span><span>Hyundai</span><span>Mazda</span>
+            <span>Audi</span><span>BMW</span><span>Mercedes-Benz</span><span>VW</span><span>Porsche</span><span>Seat</span><span>Škoda</span><span>Ford</span><span>Opel</span><span>Renault</span><span>Peugeot</span><span>Volvo</span><span>Toyota</span><span>Hyundai</span><span>Mazda</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Werte ============ -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal" data-reveal>
+          <div class="stat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div class="stat__title">Geprüft</div>
+          <div class="stat__label">Jedes Fahrzeug wird vor dem Verkauf kontrolliert und ehrlich beschrieben</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-8l1-7z"/></svg></div>
+          <div class="stat__title">Schnell</div>
+          <div class="stat__label">Zügige Bewertung, kurze Wege und eine klare Antwort ohne langes Warten</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
+          <div class="stat__title">Fair</div>
+          <div class="stat__label">Marktgerechte Preise beim Kauf wie beim Verkauf – ohne versteckte Kosten</div>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <div class="stat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+          <div class="stat__title">Eintausch</div>
+          <div class="stat__label">Dein aktuelles Auto in Zahlung geben und beim nächsten direkt verrechnen</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Angebot / So handeln wir ============ -->
+    <section class="section" id="angebot">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Unser Angebot</span>
+          <h2 class="section__title">Alles rund um <span class="text-gradient">Kauf, Verkauf & Eintausch</span></h2>
+          <p class="section__lead">
+            Drei klare Wege, mit uns ins Geschäft zu kommen. Egal ob du ein Auto suchst, deins
+            verkaufen willst oder beides verbinden möchtest – wir machen es unkompliziert.
+          </p>
+        </div>
+
+        <div class="cards cards--3">
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17H3v-5l2-4h11l3 4h2v5h-2M9 17h6"/></svg></div>
+            <h3>Fahrzeug kaufen</h3>
+            <p>Geprüfte Occasionen aus unserem Bestand – vom sparsamen Daily bis zur Limousine. Jedes Auto ehrlich beschrieben, Probefahrt jederzeit möglich.</p>
+            <span class="card__tag">Occasionen</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h3>Fahrzeug verkaufen</h3>
+            <p>Du willst dein Auto loswerden? Wir kaufen es an – faire Bewertung, schnelle Abwicklung, Barzahlung oder Überweisung. Ummeldung inklusive.</p>
+            <span class="card__tag">Ankauf</span>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+            <h3>Auto eintauschen</h3>
+            <p>Altes Auto in Zahlung geben, neues mitnehmen. Wir bewerten dein Fahrzeug und verrechnen den Eintauschwert direkt mit deinem nächsten Auto.</p>
+            <span class="card__tag">Eintausch</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Fahrzeuge / Bestand ============ -->
+    <section class="section section--alt" id="fahrzeuge">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Aktuelle Auswahl</span>
+          <h2 class="section__title">Fahrzeuge im <span class="text-gradient">Angebot</span></h2>
+          <p class="section__lead">Eine Auswahl aus unserem Bestand. Der genaue Bestand wechselt laufend – frag einfach an, wir finden das passende Auto für dich.</p>
+        </div>
+
+        <div class="listings">
+          <article class="listing reveal" data-reveal>
+            <div class="listing__media" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17H3v-5l2-4h11l3 4h2v5h-2M9 17h6"/></svg>
+              <span class="listing__badge">Occasion</span>
+            </div>
+            <div class="listing__body">
+              <h3>VW Golf 1.5 TSI</h3>
+              <ul class="listing__specs">
+                <li>Jg. 2019</li><li>78'000 km</li><li>Benzin</li><li>Handschaltung</li>
+              </ul>
+              <div class="listing__foot">
+                <span class="listing__price">auf Anfrage</span>
+                <a href="#kontakt" class="btn btn--small btn--ghost">Anfragen</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing reveal" data-reveal>
+            <div class="listing__media" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm14 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M3 17v-4l2-5h9l4 5h3v4h-2M7 17h8M9 8v5"/></svg>
+              <span class="listing__badge">Occasion</span>
+            </div>
+            <div class="listing__body">
+              <h3>Audi Q5 2.0 TDI quattro</h3>
+              <ul class="listing__specs">
+                <li>Jg. 2018</li><li>96'000 km</li><li>Diesel</li><li>Automat</li>
+              </ul>
+              <div class="listing__foot">
+                <span class="listing__price">auf Anfrage</span>
+                <a href="#kontakt" class="btn btn--small btn--ghost">Anfragen</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing reveal" data-reveal>
+            <div class="listing__media" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17H3v-5l2-4h11l3 4h2v5h-2M9 17h6"/></svg>
+              <span class="listing__badge">Occasion</span>
+            </div>
+            <div class="listing__body">
+              <h3>BMW 320d Touring</h3>
+              <ul class="listing__specs">
+                <li>Jg. 2020</li><li>64'000 km</li><li>Diesel</li><li>Automat</li>
+              </ul>
+              <div class="listing__foot">
+                <span class="listing__price">auf Anfrage</span>
+                <a href="#kontakt" class="btn btn--small btn--ghost">Anfragen</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing reveal" data-reveal>
+            <div class="listing__media" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M5 17H3v-5l2-4h11l3 4h2v5h-2M9 17h6"/></svg>
+              <span class="listing__badge">Occasion</span>
+            </div>
+            <div class="listing__body">
+              <h3>Mercedes-Benz A 180</h3>
+              <ul class="listing__specs">
+                <li>Jg. 2019</li><li>52'000 km</li><li>Benzin</li><li>Automat</li>
+              </ul>
+              <div class="listing__foot">
+                <span class="listing__price">auf Anfrage</span>
+                <a href="#kontakt" class="btn btn--small btn--ghost">Anfragen</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing reveal" data-reveal>
+            <div class="listing__media" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm14 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/><path d="M3 17v-4l2-5h9l4 5h3v4h-2M7 17h8M9 8v5"/></svg>
+              <span class="listing__badge">Occasion</span>
+            </div>
+            <div class="listing__body">
+              <h3>Škoda Octavia Combi</h3>
+              <ul class="listing__specs">
+                <li>Jg. 2021</li><li>41'000 km</li><li>Benzin</li><li>Automat</li>
+              </ul>
+              <div class="listing__foot">
+                <span class="listing__price">auf Anfrage</span>
+                <a href="#kontakt" class="btn btn--small btn--ghost">Anfragen</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing listing--cta reveal" data-reveal>
+            <div class="listing__body listing__body--cta">
+              <h3>Nicht das Richtige dabei?</h3>
+              <p>Unser Bestand wechselt laufend. Sag uns, was du suchst – wir melden uns, sobald ein passendes Fahrzeug verfügbar ist.</p>
+              <a href="#kontakt" class="btn btn--primary btn--small">Suchauftrag stellen
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+        <p class="listings__note">Die gezeigten Fahrzeuge sind Beispiele aus typischem Bestand. Verfügbarkeit, Preise und Ausstattung auf Anfrage; Zwischenverkauf vorbehalten.</p>
+      </div>
+    </section>
+
+    <!-- ============ Ablauf ============ -->
+    <section class="section" id="ablauf">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">So einfach geht's</span>
+          <h2 class="section__title">In 4 Schritten zum <span class="text-gradient">Abschluss</span></h2>
+          <p class="section__lead">Transparent und ohne Risiko – ob du kaufst, verkaufst oder eintauschst. Du weisst jederzeit, woran du bist.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal" data-reveal>
+            <span class="step__num">01</span>
+            <h3>Anfrage stellen</h3>
+            <p>Sag uns, ob du kaufen, verkaufen oder eintauschen willst – mit Fahrzeug und ein paar Eckdaten. In Minuten gestellt.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">02</span>
+            <h3>Bewertung & Angebot</h3>
+            <p>Wir bewerten das Fahrzeug fair und melden uns mit einem konkreten Angebot oder einer passenden Auswahl zurück.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">03</span>
+            <h3>Probefahrt & Begutachtung</h3>
+            <p>Beim Kauf machst du eine Probefahrt, beim Verkauf schauen wir dein Auto an – persönlich und unverbindlich.</p>
+          </li>
+          <li class="step reveal" data-reveal>
+            <span class="step__num">04</span>
+            <h3>Abschluss & Übergabe</h3>
+            <p>Kaufvertrag, Zahlung und Ummeldung wickeln wir sauber ab. Du fährst los oder gibst dein Auto entspannt ab.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Eintausch (Split) ============ -->
+    <section class="section section--alt" id="eintausch">
+      <div class="container split">
+        <div class="split__text reveal" data-reveal>
+          <span class="eyebrow">Eintausch & Ankauf</span>
+          <h2 class="section__title">Altes Auto in Zahlung, <span class="text-gradient">neues fahren.</span></h2>
+          <p class="section__lead">
+            Du musst dein aktuelles Auto nicht selbst inserieren und auf Käufer warten.
+            Wir nehmen es in Zahlung oder kaufen es direkt an – fair bewertet und mit dem
+            Eintauschwert sofort verrechnet, wenn du bei uns ein Fahrzeug kaufst.
+          </p>
+          <ul class="checklist">
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Faire, marktgerechte Bewertung</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Eintauschwert direkt verrechnet</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ummeldung & Abmeldung übernehmen wir</li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auszahlung per Bar oder Überweisung</li>
+          </ul>
+          <a href="#kontakt" class="btn btn--primary btn--large">Fahrzeug bewerten lassen
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="split__media reveal" data-reveal>
+          <div class="dyno">
+            <div class="dyno__head">
+              <span>Eintausch-Rechnung</span>
+              <span class="dyno__badge">Beispiel</span>
+            </div>
+            <div class="trade">
+              <div class="trade__row">
+                <span class="trade__label">Neues Fahrzeug</span>
+                <span class="trade__value">24'900.–</span>
+              </div>
+              <div class="trade__row trade__row--minus">
+                <span class="trade__label">– Eintausch deines Autos</span>
+                <span class="trade__value">8'500.–</span>
+              </div>
+              <div class="trade__divider"></div>
+              <div class="trade__row trade__row--total">
+                <span class="trade__label">Du zahlst noch</span>
+                <span class="trade__value text-gradient">16'400.–</span>
+              </div>
+              <p class="trade__hint">Beispielrechnung in CHF. Dein tatsächlicher Eintauschwert hängt von Modell, Zustand und Kilometerstand ab.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Vorteile / Galerie ============ -->
+    <section class="section" id="vorteile">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Deine Vorteile</span>
+          <h2 class="section__title">Warum mit uns <span class="text-gradient">handeln</span></h2>
+          <p class="section__lead">Persönlich, ehrlich und ohne Überraschungen – beim Kauf wie beim Verkauf.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--wide reveal" data-reveal>
+            <span class="gallery__deco" aria-hidden="true"></span>
+            <div class="gallery__content">
+              <div class="gallery__icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <h3>Geprüfte Fahrzeuge</h3>
+              <p>Jedes Auto wird vor dem Verkauf kontrolliert und ehrlich beschrieben – keine bösen Überraschungen.</p>
+            </div>
+          </figure>
+          <figure class="gallery__item reveal" data-reveal>
+            <span class="gallery__deco" aria-hidden="true"></span>
+            <div class="gallery__content">
+              <div class="gallery__icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
+              <h3>Faire Preise</h3>
+              <p>Marktgerecht kalkuliert – ohne versteckte Kosten.</p>
+            </div>
+          </figure>
+          <figure class="gallery__item reveal" data-reveal>
+            <span class="gallery__deco" aria-hidden="true"></span>
+            <div class="gallery__content">
+              <div class="gallery__icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-8l1-7z"/></svg></div>
+              <h3>Schnelle Abwicklung</h3>
+              <p>Kurze Wege, klare Antworten.</p>
+            </div>
+          </figure>
+          <figure class="gallery__item gallery__item--wide reveal" data-reveal>
+            <span class="gallery__deco" aria-hidden="true"></span>
+            <div class="gallery__content">
+              <div class="gallery__icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+              <h3>Eintausch & Ummeldung inklusive</h3>
+              <p>Wir nehmen dein altes Auto in Zahlung und kümmern uns um den Papierkram.</p>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Vertrauen ============ -->
+    <section class="section section--alt" id="vertrauen">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Vertrauen</span>
+          <h2 class="section__title">Worauf du dich <span class="text-gradient">verlassen kannst</span></h2>
+          <p class="section__lead">Wir bauen Dimasi Automobile auf ehrliche Beratung und sauberen Handel auf – nicht auf leere Versprechen.</p>
+        </div>
+
+        <div class="trust">
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div>
+            <h3>Ehrliche Beratung</h3>
+            <p>Wir sagen dir offen, was ein Fahrzeug wert ist und wo es Stärken oder Schwächen hat – ob beim Kauf oder beim Ankauf.</p>
+          </article>
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h8"/></svg></div>
+            <h3>Saubere Abwicklung</h3>
+            <p>Kaufvertrag, Zahlung und Ummeldung laufen klar und nachvollziehbar – alles schriftlich, nichts auf Zuruf.</p>
+          </article>
+          <article class="card reveal" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.41l8.7 8.71a2.43 2.43 0 0 0 3.42 0l6.58-6.59a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></div>
+            <h3>Faire Preise</h3>
+            <p>Wir orientieren uns am Markt und bleiben fair – beim Verkaufspreis genauso wie beim Eintauschwert deines Autos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Häufige Fragen</span>
+          <h2 class="section__title">Gut zu <span class="text-gradient">wissen</span></h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal" data-reveal>
+            <summary>Wie läuft der Verkauf meines Autos an euch ab?</summary>
+            <p>Du schickst uns über das Anfrageformular ein paar Eckdaten (Modell, Jahr, Kilometer, Zustand). Wir bewerten dein Fahrzeug fair, machen dir ein Angebot und schauen es uns bei Interesse persönlich an. Bei Einigung übernehmen wir Zahlung und Ummeldung.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Kann ich mein altes Auto eintauschen?</summary>
+            <p>Ja. Du gibst dein aktuelles Auto in Zahlung, wir bewerten es und verrechnen den Eintauschwert direkt mit dem Fahrzeug, das du bei uns kaufst. So zahlst du nur die Differenz.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Sind die Fahrzeuge geprüft?</summary>
+            <p>Jedes Fahrzeug in unserem Bestand wird vor dem Verkauf kontrolliert und ehrlich beschrieben. Bei Bedarf besprechen wir gern eine frische MFK oder zeigen dir die Serviceunterlagen.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Was kostet eine Bewertung oder Anfrage?</summary>
+            <p>Anfrage und Bewertung sind kostenlos und unverbindlich. Du bekommst eine klare Einschätzung, bevor irgendetwas entschieden wird.</p>
+          </details>
+          <details class="faq__item reveal" data-reveal>
+            <summary>Bietet ihr eine Probefahrt an?</summary>
+            <p>Klar. Beim Kauf kannst du jederzeit eine Probefahrt vereinbaren – damit du dich vor dem Abschluss in Ruhe vom Fahrzeug überzeugen kannst.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / Kontakt ============ -->
+    <section class="section cta" id="kontakt">
+      <div class="container">
+        <div class="cta__box beam reveal" data-reveal>
+          <div class="cta__glow" aria-hidden="true"></div>
+          <div class="cta__text">
+            <span class="eyebrow">Kostenlose Anfrage</span>
+            <h2 class="section__title">Kaufen, verkaufen<br /><span class="text-gradient">oder eintauschen?</span></h2>
+            <p class="section__lead">Sag uns, worum es geht. Du bekommst eine unverbindliche Einschätzung
+              oder ein konkretes Angebot – meist noch am selben Tag.</p>
+            <ul class="cta__perks">
+              <li><svg class="perk-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12A9 9 0 1 1 12 3"/><path d="m9 11 3 3L21 5"/></svg> Schnelle, persönliche Antwort</li>
+              <li><svg class="perk-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12A9 9 0 1 1 12 3"/><path d="m9 11 3 3L21 5"/></svg> Faire Bewertung – keine versteckten Kosten</li>
+              <li><svg class="perk-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12A9 9 0 1 1 12 3"/><path d="m9 11 3 3L21 5"/></svg> Beratung von Mensch zu Mensch, keine Hotline</li>
+            </ul>
+          </div>
+
+          <form class="form" id="anfrageForm" name="anfrage" method="POST"
+                data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <!-- Netlify: Formularname für das Backend -->
+            <input type="hidden" name="form-name" value="anfrage" />
+            <!-- Honeypot gegen Spam-Bots (für Menschen unsichtbar) -->
+            <p class="form__hp" aria-hidden="true">
+              <label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
+            <div class="form__row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Max Mustermann" required />
+              </label>
+              <label>
+                <span>E-Mail</span>
+                <input type="email" name="email" placeholder="max@email.ch" required />
+              </label>
+            </div>
+            <div class="form__row">
+              <label>
+                <span>Anliegen</span>
+                <select name="anliegen">
+                  <option>Fahrzeug kaufen</option>
+                  <option>Fahrzeug verkaufen</option>
+                  <option>Eintausch</option>
+                  <option>Suchauftrag</option>
+                  <option>Sonstiges</option>
+                </select>
+              </label>
+              <label>
+                <span>Fahrzeug</span>
+                <input type="text" name="fahrzeug" placeholder="z. B. VW Golf 1.5 TSI, Jg. 2019" required />
+              </label>
+            </div>
+            <label>
+              <span>Nachricht (optional)</span>
+              <textarea name="nachricht" rows="3" placeholder="Kilometerstand, Zustand, Wunschmodell oder Budget …"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--large btn--block">
+              Anfrage absenden
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="footer__logo" aria-label="Dimasi Automobile Startseite">
+          <img src="assets/img/logo.png" width="568" height="680" alt="Dimasi Automobile" />
+        </a>
+        <p>Dimasi Automobile – dein Autohandel in Winterthur. Fahrzeuge kaufen, verkaufen und eintauschen. Geprüft, fair und persönlich.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Angebot</h4>
+        <a href="#angebot">Fahrzeug kaufen</a>
+        <a href="#angebot">Fahrzeug verkaufen</a>
+        <a href="#eintausch">Eintausch</a>
+        <a href="#fahrzeuge">Bestand</a>
+      </div>
+      <div class="footer__col">
+        <h4>Unternehmen</h4>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#vertrauen">Vertrauen</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info.dimasigarage@gmail.com">info.dimasigarage@gmail.com</a>
+        <a href="tel:+41912081545">091 208 15 45</a>
+        <a href="#kontakt">Kostenlose Anfrage</a>
+        <address class="footer__addr">
+          Dimasi Automobile<br />
+          Zürcherstrasse 300<br />
+          8406 Winterthur<br />
+          Schweiz
+        </address>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Dimasi Automobile. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="container footer__disclaimer">
+      Hinweis: Alle Fahrzeugangaben ohne Gewähr. Verfügbarkeit, Preise und Ausstattung können sich
+      ändern; Zwischenverkauf bleibt vorbehalten. Massgebend ist der schriftliche Kaufvertrag.
+    </p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/chat.js" defer></script>
+</body>
+</html>
