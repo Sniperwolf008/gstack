@@ -43,10 +43,17 @@ python3 -m http.server 8080
 # http://localhost:8080
 ```
 
-## Hosting (wie im Leitfaden, Kapitel 07)
+## Hosting & Auto-Deploy
 
-- **Netlify**: Account erstellen, den Ordner `dimasi-garage/` per Drag & Drop
-  ins Deploy-Feld ziehen — sofort live mit kostenloser Subdomain.
+Kostenloser automatischer Deploy zu Netlify ist eingerichtet: jeder Push, der
+etwas unter `dimasi-garage/` aendert, veroeffentlicht die Seite auf
+**https://dimasigarage.netlify.app**. Details und der einmalige Einrichtungs-
+schritt (ein Token-Secret) stehen in **[DEPLOY.md](DEPLOY.md)**.
+
+Manuelle Alternativen:
+
+- **Netlify (Drag & Drop)**: Account erstellen, den Ordner `dimasi-garage/` per
+  Drag & Drop ins Deploy-Feld ziehen — sofort live mit kostenloser Subdomain.
 - **Vercel**: Repository verbinden, Vercel deployed automatisch bei jedem Push.
 
 ## Struktur
