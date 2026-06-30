@@ -182,7 +182,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Hero gauge card */
 .hero__card {
   position: absolute; right: max(1.5rem, calc(50% - var(--maxw) / 2 + 1.5rem)); top: 50%;
-  transform: translateY(-42%); z-index: 3; width: 360px;
+  transform: translateY(-42%); z-index: 5; width: 360px;
 }
 .gauge {
   background: linear-gradient(180deg, var(--surface-2), var(--surface));
@@ -609,7 +609,7 @@ body::before {
    Responsive
    ===================================================== */
 @media (max-width: 1080px) {
-  .hero__card { position: static; transform: none; width: 100%; max-width: 420px; margin-top: 3rem; }
+  .hero__card { position: relative; z-index: 5; transform: none; width: 100%; max-width: 420px; margin-top: 3rem; }
   .hero__inner { max-width: 100%; }
 }
 @media (max-width: 900px) {
