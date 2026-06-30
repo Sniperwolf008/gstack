@@ -19,7 +19,7 @@
     # Inhalts-Quellen-Whitelist (Defense-in-Depth gegen Injection/Clickjacking).
     # script-src ohne 'unsafe-inline' moeglich, weil es keine Inline-Skripte gibt.
     # Google-Fonts-Domains noetig, solange die Schriften extern geladen werden.
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
     # HTML/CSS/JS immer beim Browser revalidieren, damit neue Deploys
     # sofort sichtbar sind. Langlebige Bilder (/assets/*) werden unten
     # davon ausgenommen. Zusammen mit ?v=<commit> an CSS/JS laedt selbst
