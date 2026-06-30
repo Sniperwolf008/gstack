@@ -120,7 +120,7 @@
       reply: "Hinweis: Leistungssteigerungen müssen beim zuständigen <strong>Strassenverkehrsamt</strong> eingetragen und der Versicherung gemeldet werden. Filter-/Abgas-Optimierungen sind nur für Motorsport/Export ausserhalb öffentlicher Strassen bestimmt." },
 
     { keys: ["galerie", "projekte", "bilder", "fotos", "instagram", "insta", "beispiele", "referenzen"],
-      reply: "Unsere <strong>echten Projekte</strong> zeigen wir auf Instagram – schau gern rein: <a href=\"https://www.instagram.com/dimasigarage\" target=\"_blank\" rel=\"noopener\">@dimasigarage auf Instagram</a>.",
+      reply: "Unsere <strong>echten Projekte</strong> zeigen wir auf Instagram – schau gern rein: <a href=\"https://www.instagram.com/dimasigarage\" target=\"_blank\" rel=\"noopener\">@DimasiGarage auf Instagram</a>.",
       chips: CONTACT_CHIPS },
 
     { keys: ["zahlung", "zahlungsart", "bezahlen", "zahlen", "twint", "barzahlung", "kreditkarte", "ec karte"],
