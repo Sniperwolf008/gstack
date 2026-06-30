@@ -47,7 +47,7 @@ python3 -m http.server 8080
 
 Kostenloser automatischer Deploy zu Netlify ist eingerichtet: jeder Push, der
 etwas unter `dimasi-garage/` aendert, veroeffentlicht die Seite auf
-**https://dimasi-garage.netlify.app**. Details und der einmalige Einrichtungs-
+**https://dimasigarage.netlify.app**. Details und der einmalige Einrichtungs-
 schritt (ein Token-Secret) stehen in **[DEPLOY.md](DEPLOY.md)**.
 
 Manuelle Alternativen:

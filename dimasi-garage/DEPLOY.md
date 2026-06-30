@@ -3,16 +3,20 @@
 Die Seite wird **kostenlos und automatisch** zu Netlify veroeffentlicht.
 Jeder Push, der etwas unter `dimasi-garage/` aendert, loest einen Deploy aus.
 
-- **Live-URL (Produktion):** https://dimasi-garage.netlify.app
+- **Live-URL (Produktion):** https://dimasigarage.netlify.app
 - **Plattform:** Netlify (Free-Plan, kein Build-Schritt — reine statische Seite)
 - **Mechanik:** GitHub Actions Workflow `.github/workflows/deploy-dimasi-garage.yml`
-- **Netlify-Site:** `dimasi-garage` (Site-ID `50ee92ef-b038-490c-8466-c7101235243e`)
+- **Netlify-Site:** `dimasigarage` (Site-ID `a0c6ad40-7217-46f8-a9b6-aabdd2d8f557`)
+
+> Aufraeumen: Es gab kurzzeitig ein leeres Duplikat `dimasi-garage` (mit
+> Bindestrich). Das wird nicht genutzt — im Netlify-Dashboard unter
+> *Project configuration -> Danger zone -> Delete project* entfernen.
 
 ## Wie der Auto-Deploy funktioniert
 
 | Auf welchem Branch? | Was passiert? |
 |---------------------|----------------|
-| Push auf `main`     | Produktions-Deploy auf https://dimasi-garage.netlify.app |
+| Push auf `main`     | Produktions-Deploy auf https://dimasigarage.netlify.app |
 | Push auf anderen Branch | Deploy-Preview mit eigener Vorschau-URL (in den Action-Logs) |
 | Manuell             | Tab **Actions** -> *Deploy Dimasi Garage* -> *Run workflow* |
 
