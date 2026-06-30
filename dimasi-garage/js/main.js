@@ -93,15 +93,30 @@
     counters.forEach(animateCounter);
   }
 
-  /* --- Anfrageformular: zuverlaessiger Versand per E-Mail ---
-     Oeffnet das Mailprogramm mit allen Angaben vorausgefuellt. Funktioniert
-     ohne Backend und ohne Drittanbieter auf jedem Geraet (auch iOS Safari),
-     weil window.location synchron im Klick-Kontext gesetzt wird. */
+  /* --- Anfrageformular: Versand direkt auf der Seite ueber FormSubmit ---
+     POST an den FormSubmit-AJAX-Endpoint -> Anfrage kommt per E-Mail an,
+     ohne dass sich die Mail-App oeffnet. Faellt der Online-Versand aus,
+     bieten wir ein vorausgefuelltes E-Mail als Netz an. */
   const form = document.getElementById("anfrageForm");
   const note = document.getElementById("formNote");
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/info.dimasigarage@gmail.com";
+
+  function mailtoFallback(data) {
+    const subject = encodeURIComponent(
+      "Anfrage Dimasi Garage" + (data.name ? " - " + data.name : "")
+    );
+    const body = encodeURIComponent(
+      "Name: " + (data.name || "") + "\n" +
+      "E-Mail: " + (data.email || "") + "\n" +
+      "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
+      "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
+      "Nachricht: " + (data.nachricht || "")
+    );
+    return "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
+  }
 
   if (form && note) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         note.textContent = "Bitte fülle Name, E-Mail und Fahrzeug aus.";
@@ -113,25 +128,51 @@
       const data = {};
       new FormData(form).forEach((value, key) => { data[key] = value; });
 
-      const subject = encodeURIComponent(
-        "Anfrage Dimasi Garage" + (data.name ? " - " + data.name : "")
-      );
-      const body = encodeURIComponent(
-        "Name: " + (data.name || "") + "\n" +
-        "E-Mail: " + (data.email || "") + "\n" +
-        "Fahrzeug: " + (data.fahrzeug || "") + "\n" +
-        "Gewuenschte Leistung: " + (data.leistung || "") + "\n" +
-        "Nachricht: " + (data.nachricht || "")
-      );
+      // Lokale Vorschau (file://) -> Demo-Bestaetigung ohne echten Versand.
+      if (location.protocol === "file:") {
+        note.textContent = "Danke! Deine Anfrage ist eingegangen. (Lokale Vorschau – kein echter Versand.)";
+        note.className = "form__note is-ok";
+        form.reset();
+        return;
+      }
 
-      note.innerHTML =
-        "Dein Mailprogramm öffnet sich mit deiner Anfrage – bitte nur noch auf " +
-        "<strong>Senden</strong> tippen. Klappt das nicht, schreib direkt an " +
-        '<a href="mailto:info.dimasigarage@gmail.com">info.dimasigarage@gmail.com</a>.';
-      note.className = "form__note is-ok";
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      note.textContent = "Wird gesendet …";
+      note.className = "form__note";
 
-      window.location.href =
-        "mailto:info.dimasigarage@gmail.com?subject=" + subject + "&body=" + body;
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: "Neue Anfrage – Dimasi Garage",
+            _template: "table",
+            _captcha: "false",
+            _replyto: data.email || "",
+            Name: data.name || "",
+            "E-Mail": data.email || "",
+            Fahrzeug: data.fahrzeug || "",
+            Leistung: data.leistung || "",
+            Nachricht: data.nachricht || "",
+          }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || !(json.success === "true" || json.success === true)) {
+          throw new Error("send failed");
+        }
+        note.textContent = "Danke! Deine Anfrage ist eingegangen. Wir melden uns schnellstmöglich bei dir.";
+        note.className = "form__note is-ok";
+        form.reset();
+      } catch (err) {
+        note.innerHTML =
+          "Online-Versand klappt gerade nicht. " +
+          '<a href="' + mailtoFallback(data) + '">Anfrage per E-Mail senden</a>' +
+          " – ein Klick, dein Mailprogramm öffnet sich mit allen Angaben.";
+        note.className = "form__note is-err";
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
