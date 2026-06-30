@@ -1,0 +1,56 @@
+name: Deploy Dimasi Garage
+
+# Kostenloser Auto-Deploy der statischen Dimasi-Garage-Seite zu Netlify.
+# Laeuft nur, wenn sich Dateien unter dimasi-garage/ aendern.
+#   - Push auf main            -> Produktions-Deploy (dimasi-garage.netlify.app)
+#   - Push auf andere Branches -> Deploy-Preview (eigene Vorschau-URL)
+#   - workflow_dispatch        -> manuell ausloesbar
+#
+# Einmalige Einrichtung: Netlify Personal Access Token als Repo-Secret
+# NETLIFY_AUTH_TOKEN hinterlegen. Siehe dimasi-garage/DEPLOY.md.
+
+on:
+  push:
+    paths:
+      - 'dimasi-garage/**'
+      - '.github/workflows/deploy-dimasi-garage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-dimasi-garage-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dimasi-garage
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 50ee92ef-b038-490c-8466-c7101235243e
+        run: |
+          if [ -z "${NETLIFY_AUTH_TOKEN}" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN fehlt. Siehe dimasi-garage/DEPLOY.md zur Einrichtung."
+            exit 1
+          fi
+          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then
+            echo "Produktions-Deploy nach main..."
+            npx --yes netlify-cli@17 deploy --dir=. --prod \
+              --message "main@${GITHUB_SHA::7} via GitHub Actions"
+          else
+            echo "Deploy-Preview fuer ${GITHUB_REF}..."
+            npx --yes netlify-cli@17 deploy --dir=. \
+              --message "${GITHUB_REF_NAME}@${GITHUB_SHA::7} via GitHub Actions"
+          fi
