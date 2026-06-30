@@ -4,7 +4,7 @@ Eine vollständige, responsive Landing Page für **Dimasi Garage** (Chiptuning &
 Software-Optimierung), gebaut nach dem Leitfaden „Claude Design baut dir Premium
 Webseiten" (skalieren.com / Deniz Deke).
 
-Vorbild für den Funktionsumfang: **tuningfilesgermany.de** (Leistungssteigerung +
+Vorbild für den Funktionsumfang: etablierte Chiptuning-Anbieter (Leistungssteigerung +
 komplettes Service-Angebot). Inhalte und Branding sind auf Dimasi Garage zugeschnitten
 (echtes Logo, Schwarz/Orange, drei Werte: seriös, schnell, kompromisslos). Da Dimasi
 Garage ein Startup im Aufbau ist, enthält die Seite bewusst **keine erfundenen
@@ -38,21 +38,21 @@ Statistiken oder Bewertungen** — stattdessen ehrliche Vertrauens- und Leistung
 Einfach `index.html` im Browser öffnen, oder ein kleiner Server:
 
 ```bash
-cd tuningfiles-germany
+cd dimasi-garage
 python3 -m http.server 8080
 # http://localhost:8080
 ```
 
 ## Hosting (wie im Leitfaden, Kapitel 07)
 
-- **Netlify**: Account erstellen, den Ordner `tuningfiles-germany/` per Drag & Drop
+- **Netlify**: Account erstellen, den Ordner `dimasi-garage/` per Drag & Drop
   ins Deploy-Feld ziehen — sofort live mit kostenloser Subdomain.
 - **Vercel**: Repository verbinden, Vercel deployed automatisch bei jedem Push.
 
 ## Struktur
 
 ```
-tuningfiles-germany/
+dimasi-garage/
 ├── index.html        # Seitenstruktur & Inhalte
 ├── css/styles.css    # Design-System & Layout
 ├── js/main.js        # Animationen, Counter, Navigation, Formular
