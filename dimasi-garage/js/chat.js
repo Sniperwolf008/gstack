@@ -21,17 +21,12 @@
     phone: "+41912081545",
     phoneLabel: "091 208 15 45",
     email: "info.dimasigarage@gmail.com",
-    waText: "Hallo Dimasi Garage, ich habe eine Frage zur Optimierung meines Fahrzeugs:",
     maps: "https://maps.google.com/?q=Z%C3%BCrcherstrasse%20300%2C%208406%20Winterthur"
   };
 
   /* --- Wiederverwendbare Kontakt-Bausteine --- */
   function callLink() { return '<a href="tel:' + CONTACT.phone + '">' + CONTACT.phoneLabel + "</a>"; }
   function mailLink() { return '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + "</a>"; }
-  function waLink() {
-    return '<a href="https://wa.me/' + CONTACT.phone.replace(/[^0-9]/g, "") +
-      "?text=" + encodeURIComponent(CONTACT.waText) + '" target="_blank" rel="noopener">WhatsApp</a>';
-  }
 
   var DEFAULT_CHIPS = [
     { label: "Leistungen & Stages", q: "leistungen" },
@@ -41,8 +36,8 @@
     { label: "Kontakt", q: "kontakt" }
   ];
   var CONTACT_CHIPS = [
-    { label: "WhatsApp schreiben", action: "wa" },
-    { label: "Kostenlose Anfrage", action: "anfrage" }
+    { label: "Kostenlose Anfrage", action: "anfrage" },
+    { label: "Anrufen", action: "call" }
   ];
 
   /* --- Textnormalisierung: klein, ohne Umlaute, ohne Satzzeichen --- */
@@ -106,7 +101,7 @@
       chips: CONTACT_CHIPS },
 
     { keys: ["oeffnungszeit", "geoeffnet", "wann offen", "wann habt", "offen", "zeiten"],
-      reply: "<strong>Anrufen</strong> am besten während der Arbeitszeiten. Rund um die Uhr erreichst du uns per <strong>WhatsApp</strong> oder über das Anfrageformular – Francesco meldet sich zügig, meist am selben Tag.",
+      reply: "<strong>Anrufen</strong> am besten während der Arbeitszeiten. Rund um die Uhr erreichst du uns über das <strong>Anfrageformular</strong> – Francesco meldet sich zügig, meist am selben Tag.",
       chips: CONTACT_CHIPS },
 
     { keys: ["eintrag", "tuev", "tuv", "strassenverkehrsamt", "versicherung", "legal", "gesetz", "eingetragen"],
@@ -127,13 +122,13 @@
       chips: [{ label: "Stage 1", q: "stage 1" }, { label: "Stage 2/3", q: "stage 2" }, { label: "Eco-Tuning", q: "eco" }, { label: "Was kostet es?", q: "preis" }] },
 
     { keys: ["kontakt", "anrufen", "telefon", "nummer", "email", "mail", "whatsapp", "erreich", "termin", "buchen", "anfrage", "anfragen", "melden"],
-      reply: "Am schnellsten erreichst du uns per <strong>WhatsApp</strong> – rund um die Uhr:<ul><li>💬 " + waLink() + " <em>(jederzeit, am besten)</em></li><li>✉️ " + mailLink() + "</li><li>📞 " + callLink() + " <em>(nur während der Arbeitszeiten)</em></li></ul>Oder stell direkt eine kostenlose Anfrage:",
-      chips: [{ label: "WhatsApp schreiben", action: "wa" }, { label: "Kostenlose Anfrage", action: "anfrage" }] }
+      reply: "So erreichst du Dimasi Garage:<ul><li>✉️ " + mailLink() + " <em>(jederzeit)</em></li><li>📞 " + callLink() + " <em>(nur während der Arbeitszeiten)</em></li></ul>Am schnellsten geht eine <strong>kostenlose Anfrage</strong> – rund um die Uhr:",
+      chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] }
   ];
 
   var FALLBACK = {
-    reply: "Das kann ich dir hier nicht sicher beantworten – aber Francesco hilft dir persönlich weiter. Am besten per <strong>WhatsApp</strong> (rund um die Uhr) oder mit einer kostenlosen Anfrage; Anrufe am besten während der Arbeitszeiten. Meist gibt's noch am selben Tag eine Antwort.",
-    chips: [{ label: "WhatsApp schreiben", action: "wa" }, { label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Preis", q: "preis" }]
+    reply: "Das kann ich dir hier nicht sicher beantworten – aber Francesco hilft dir persönlich weiter. Am besten mit einer <strong>kostenlosen Anfrage</strong> (rund um die Uhr); Anrufe am besten während der Arbeitszeiten. Meist gibt's noch am selben Tag eine Antwort.",
+    chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }, { label: "Preis", q: "preis" }]
   };
 
   /* --- DAS GEHIRN: Text -> Antwort. Hier kaeme spaeter ein KI-Fallback rein. --- */
@@ -212,10 +207,6 @@
         var name = document.querySelector('#anfrageForm input[name="name"]');
         if (name) name.focus({ preventScroll: true });
       }, 600);
-    } else if (action === "wa") {
-      var wa = "https://wa.me/" + CONTACT.phone.replace(/[^0-9]/g, "") +
-        "?text=" + encodeURIComponent(CONTACT.waText);
-      window.open(wa, "_blank", "noopener");
     } else if (action === "call") {
       window.location.href = "tel:" + CONTACT.phone;
     }
