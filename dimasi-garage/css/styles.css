@@ -111,8 +111,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ===================================================== */
 .nav {
   position: sticky; top: 0; z-index: 100;
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
-  background: rgba(10, 11, 15, .55);
+  background: rgba(10, 11, 15, .72);
   border-bottom: 1px solid transparent;
   transition: background .3s ease, border-color .3s ease;
 }
@@ -609,7 +610,11 @@ body::before {
    Responsive
    ===================================================== */
 @media (max-width: 1080px) {
-  .hero__card { position: relative; z-index: 5; transform: none; width: 100%; max-width: 420px; margin-top: 3rem; }
+  .hero__card {
+    position: relative; top: auto; right: auto; bottom: auto; left: auto;
+    transform: none; z-index: 5;
+    width: calc(100% - 3rem); max-width: 420px; margin: 3rem auto 0;
+  }
   .hero__inner { max-width: 100%; }
 }
 @media (max-width: 900px) {
@@ -623,7 +628,7 @@ body::before {
 @media (max-width: 760px) {
   .nav__links {
     position: fixed; inset: 72px 0 auto 0; flex-direction: column; align-items: stretch;
-    gap: 0; padding: 1rem 1.5rem 2rem; background: rgba(10,11,15,.97); backdrop-filter: blur(14px);
+    gap: 0; padding: 1rem 1.5rem 2rem; background: rgba(10,11,15,.97); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform .3s ease;
   }
   .nav__links.is-open { transform: translateY(0); }
