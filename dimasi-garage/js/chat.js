@@ -60,7 +60,7 @@
       reply: "Gern! 🚗 Wenn du loslegen willst, stell einfach eine kostenlose Anfrage – meist gibt's noch am selben Tag eine Antwort.", chips: CONTACT_CHIPS },
 
     { keys: ["frontscheibe", "scheibe", "scheiben", "steinschlag", "riss", "glas", "windschutz", "sprung"],
-      reply: "Steinschlag oder Riss in der Frontscheibe? Wir <strong>reparieren kleine Steinschläge</strong> und <strong>tauschen beschädigte Frontscheiben</strong> fachgerecht – inklusive Kalibrierung der Kamera- und Assistenzsysteme. Steinschlag ist über die Teilkasko oft gedeckt – wir wickeln die Versicherung ab und übernehmen je nach Fall sogar deinen <strong>Selbstbehalt</strong> (ganz oder teilweise). Termine gibt's kurzfristig.",
+      reply: "Steinschlag oder Riss in der Frontscheibe? Wir <strong>reparieren kleine Steinschläge</strong> und <strong>tauschen beschädigte Frontscheiben</strong> fachgerecht. (Die Kalibrierung der Assistenzsysteme bauen wir gerade auf.) Steinschlag ist über die Teilkasko oft gedeckt – wir wickeln die Versicherung ab und übernehmen je nach Fall sogar deinen <strong>Selbstbehalt</strong> (ganz oder teilweise). Termine gibt's kurzfristig.",
       chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] },
 
     { keys: ["verkaufen", "verkauf", "ankauf", "auto loswerden"],
