@@ -1,0 +1,4 @@
+Contact: mailto:info.dimasigarage@gmail.com
+Preferred-Languages: de, en
+Canonical: https://dimasigarage.netlify.app/.well-known/security.txt
+Expires: 2027-06-30T00:00:00.000Z
