@@ -239,6 +239,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- Service cards --- */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.section-cta { display: flex; justify-content: center; margin-top: 2.4rem; }
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 1.6rem; position: relative; overflow: hidden;
