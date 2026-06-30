@@ -178,46 +178,18 @@
     });
   }
 
-  /* ============ Moderne Effekte (Stil 21st.dev) ============ */
+  /* ============ Dezente Effekte ============
+     Nur ein sanfter Spotlight-Glanz, der dem Cursor folgt – ohne
+     Layout-Verschiebung. Karten-Tilt und magnetische Buttons wurden
+     entfernt, weil sie auf dem Desktop ruckelten und Elemente verschoben. */
   if (!prefersReduced) {
-    const tiltSel = ".card, .vehicle, .gallery__item";
     const spotSel = ".card, .vehicle, .gallery__item, .stat";
-
     document.querySelectorAll(spotSel).forEach((el) => {
-      const tiltable = el.matches(tiltSel);
-      let raf = 0;
       el.addEventListener("pointermove", (e) => {
         const r = el.getBoundingClientRect();
-        const x = e.clientX - r.left;
-        const y = e.clientY - r.top;
-        el.style.setProperty("--mx", (x / r.width) * 100 + "%");
-        el.style.setProperty("--my", (y / r.height) * 100 + "%");
-        if (!tiltable) return;
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          const rx = (0.5 - y / r.height) * 6;
-          const ry = (x / r.width - 0.5) * 6;
-          el.style.transform =
-            "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-4px)";
-        });
+        el.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
+        el.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
       });
-      if (tiltable) {
-        el.addEventListener("pointerleave", () => {
-          if (raf) cancelAnimationFrame(raf);
-          el.style.transform = "";
-        });
-      }
-    });
-
-    // Magnetische Buttons
-    document.querySelectorAll(".btn--primary").forEach((btn) => {
-      btn.addEventListener("pointermove", (e) => {
-        const r = btn.getBoundingClientRect();
-        const mx = e.clientX - r.left - r.width / 2;
-        const my = e.clientY - r.top - r.height / 2;
-        btn.style.transform = "translate(" + mx * 0.18 + "px," + my * 0.3 + "px)";
-      });
-      btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
     });
 
     // Meteor-Effekt in die CTA-Karte
