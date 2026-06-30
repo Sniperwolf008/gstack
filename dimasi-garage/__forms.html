@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head><meta charset="UTF-8" /><title>Netlify Forms</title></head>
+<body>
+  <!-- Diese Datei dient NUR der Netlify-Formular-Erkennung beim Deploy.
+       Sie spiegelt das echte Formular aus index.html (gleicher name + gleiche
+       Felder), damit Netlify das Formular "anfrage" zuverlaessig registriert,
+       auch bei CLI-/Prebuilt-Deploys. Sie wird von Besuchern nicht aufgerufen. -->
+  <form name="anfrage" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="anfrage" />
+    <input name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="fahrzeug" />
+    <select name="leistung">
+      <option>Stage 1</option>
+      <option>Stage 2 / Stage 3</option>
+      <option>Eco-Tuning</option>
+      <option>DPF / EGR / AdBlue</option>
+      <option>Pop &amp; Bang / Launch Control</option>
+      <option>Sonstiges</option>
+    </select>
+    <textarea name="nachricht"></textarea>
+  </form>
+</body>
+</html>
