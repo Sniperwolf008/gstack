@@ -36,6 +36,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Cache-bust asset references
+        run: |
+          ver="${GITHUB_SHA::8}"
+          sed -i "s#href=\"css/styles.css\"#href=\"css/styles.css?v=${ver}\"#g; s#src=\"js/main.js\"#src=\"js/main.js?v=${ver}\"#g" ./*.html
+          echo "Asset-Version: ${ver}"
+
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
