@@ -610,7 +610,11 @@ body::before {
    Responsive
    ===================================================== */
 @media (max-width: 1080px) {
-  .hero__card { position: relative; z-index: 5; transform: none; width: 100%; max-width: 420px; margin-top: 3rem; }
+  .hero__card {
+    position: relative; top: auto; right: auto; bottom: auto; left: auto;
+    transform: none; z-index: 5;
+    width: calc(100% - 3rem); max-width: 420px; margin: 3rem auto 0;
+  }
   .hero__inner { max-width: 100%; }
 }
 @media (max-width: 900px) {
