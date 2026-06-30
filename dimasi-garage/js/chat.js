@@ -29,10 +29,10 @@
   function mailLink() { return '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + "</a>"; }
 
   var DEFAULT_CHIPS = [
-    { label: "Leistungen & Stages", q: "leistungen" },
-    { label: "Was kostet es?", q: "preis" },
-    { label: "Wie lange dauert es?", q: "dauer" },
-    { label: "Welche Autos?", q: "autos" },
+    { label: "Tuning & Stages", q: "leistungen" },
+    { label: "Frontscheiben", q: "frontscheibe" },
+    { label: "An- & Verkauf", q: "verkaufen" },
+    { label: "Preis", q: "preis" },
     { label: "Kontakt", q: "kontakt" }
   ];
   var CONTACT_CHIPS = [
@@ -58,6 +58,18 @@
 
     { keys: ["danke", "merci", "thx", "vielen dank", "super danke"],
       reply: "Gern! 🚗 Wenn du loslegen willst, stell einfach eine kostenlose Anfrage – meist gibt's noch am selben Tag eine Antwort.", chips: CONTACT_CHIPS },
+
+    { keys: ["frontscheibe", "scheibe", "scheiben", "steinschlag", "riss", "glas", "windschutz", "sprung"],
+      reply: "Steinschlag oder Riss in der Frontscheibe? Wir <strong>reparieren kleine Steinschläge</strong> und <strong>tauschen beschädigte Frontscheiben</strong> fachgerecht. Steinschlag ist über die Teilkasko oft gedeckt – bei der Abwicklung helfen wir, und Termine gibt's kurzfristig.",
+      chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] },
+
+    { keys: ["verkaufen", "verkauf", "ankauf", "auto loswerden"],
+      reply: "Wir <strong>kaufen dein Auto an</strong> – faire, marktgerechte Bewertung, unkompliziert und transparent. Sag uns einfach, was du fährst (Modell, Jahr, km), dann bekommst du ein ehrliches Angebot.",
+      chips: [{ label: "Auto bewerten lassen", action: "anfrage" }, { label: "Anrufen", action: "call" }] },
+
+    { keys: ["auto kaufen", "fahrzeug kaufen", "gebrauchtwagen", "occasion", "kaufen"],
+      reply: "Wir vermitteln <strong>geprüfte Fahrzeuge</strong> zu fairen Preisen und helfen bei der Wunschsuche. Aktuelle Angebote gibt's auf Anfrage – sag uns, was du suchst.",
+      chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Anrufen", action: "call" }] },
 
     { keys: ["preis", "preise", "koste", "kostet", "teuer", "guenstig", "offerte", "angebot", "festpreis", "was kostet"],
       reply: "Der Preis hängt von <strong>Fahrzeug und Umfang</strong> ab – wir machen keine Pauschalpreise, sondern ein <strong>transparentes Festpreis-Angebot vorab</strong>. Stell einfach eine kostenlose Anfrage, meist bekommst du noch am selben Tag eine Antwort.",
@@ -118,7 +130,7 @@
         "<li><strong>Pop &amp; Bang / Launch Control</strong> – Sound &amp; Sport</li>" +
         "<li><strong>Vmax &amp; Limiter</strong> – individuell</li>" +
         "<li><strong>Getriebe &amp; Schaltverhalten</strong> – besseres Schalten</li>" +
-        "</ul>Welche Leistung interessiert dich?",
+        "</ul>Ausserdem: <strong>Frontscheiben-Service</strong> (Steinschlag/Riss) und <strong>Fahrzeug An- &amp; Verkauf</strong>. Welche Leistung interessiert dich?",
       chips: [{ label: "Stage 1", q: "stage 1" }, { label: "Stage 2/3", q: "stage 2" }, { label: "Eco-Tuning", q: "eco" }, { label: "Was kostet es?", q: "preis" }] },
 
     { keys: ["kontakt", "anrufen", "telefon", "nummer", "email", "mail", "whatsapp", "erreich", "termin", "buchen", "anfrage", "anfragen", "melden"],
