@@ -8,6 +8,11 @@
      (z. B. Gemini ueber eine Netlify-Funktion) als Fallback ersetzen,
      ohne die Oberflaeche unten anzufassen.
    - Der Rest baut nur das Widget und zeigt Nachrichten an.
+
+   Hinweis: Die Schluesselwoerter (keys) stehen absichtlich OHNE Umlaute,
+   weil normalize() die Nutzereingabe ebenfalls auf ae/oe/ue umstellt.
+   Die sichtbaren Antworten nutzen korrekte Umlaute (ä/ö/ü); Schweizer
+   "ss" (Strasse, ausschliesslich) bleibt erhalten.
    ===================================================== */
 (function () {
   "use strict";
@@ -36,8 +41,8 @@
     { label: "Kontakt", q: "kontakt" }
   ];
   var CONTACT_CHIPS = [
-    { label: "Kostenlose Anfrage", action: "anfrage" },
-    { label: "Anrufen", action: "call" }
+    { label: "WhatsApp schreiben", action: "wa" },
+    { label: "Kostenlose Anfrage", action: "anfrage" }
   ];
 
   /* --- Textnormalisierung: klein, ohne Umlaute, ohne Satzzeichen --- */
@@ -60,65 +65,75 @@
       reply: "Gern! 🚗 Wenn du loslegen willst, stell einfach eine kostenlose Anfrage – meist gibt's noch am selben Tag eine Antwort.", chips: CONTACT_CHIPS },
 
     { keys: ["preis", "preise", "koste", "kostet", "teuer", "guenstig", "offerte", "angebot", "festpreis", "was kostet"],
-      reply: "Der Preis haengt von <strong>Fahrzeug und Umfang</strong> ab – wir machen keine Pauschalpreise, sondern ein <strong>transparentes Festpreis-Angebot vorab</strong>. Stell einfach eine kostenlose Anfrage, meist bekommst du noch am selben Tag eine Antwort.",
+      reply: "Der Preis hängt von <strong>Fahrzeug und Umfang</strong> ab – wir machen keine Pauschalpreise, sondern ein <strong>transparentes Festpreis-Angebot vorab</strong>. Stell einfach eine kostenlose Anfrage, meist bekommst du noch am selben Tag eine Antwort.",
       chips: CONTACT_CHIPS },
 
     { keys: ["stage 2", "stage2", "stage 3", "stage3", "stage zwei", "stage drei"],
-      reply: "<strong>Stage 2 &amp; 3:</strong> Abstimmung fuer Hardware-Umbauten wie Downpipe, Ladeluftkuehler oder groesserer Turbo – maximale Performance, sauber kalibriert. Was faehrst du?",
+      reply: "<strong>Stage 2 &amp; 3:</strong> Abstimmung für Hardware-Umbauten wie Downpipe, Ladeluftkühler oder grösserer Turbo – maximale Performance, sauber kalibriert. Was fährst du?",
       chips: CONTACT_CHIPS },
 
     { keys: ["stage 1", "stage1", "stage eins"],
-      reply: "<strong>Stage 1:</strong> optimierte Software auf der Serienhardware – mehr PS und Drehmoment, besseres Ansprech- und Schaltverhalten, im sicheren Rahmen. Kein Umbau noetig.",
+      reply: "<strong>Stage 1:</strong> optimierte Software auf der Serienhardware – mehr PS und Drehmoment, besseres Ansprech- und Schaltverhalten, im sicheren Rahmen. Kein Umbau nötig.",
       chips: CONTACT_CHIPS },
-
-    { keys: ["leistung", "leistungen", "stage", "chiptuning", "tuning", "mehr ps", "leistungssteigerung", "optimierung"],
-      reply: "Wir bieten u. a.:<ul><li><strong>Stage 1</strong> – Software auf Serienhardware</li><li><strong>Stage 2 &amp; 3</strong> – mit Hardware-Umbauten</li><li><strong>Eco-Tuning</strong> – weniger Verbrauch</li><li>Getriebe &amp; Schaltverhalten</li><li>DPF/OPF, AGR/EGR, AdBlue/SCR</li><li>Pop &amp; Bang, Launch Control, Vmax/Limiter</li></ul>Welche Leistung interessiert dich?",
-      chips: [{ label: "Stage 1", q: "stage 1" }, { label: "Stage 2/3", q: "stage 2" }, { label: "Eco-Tuning", q: "eco" }, { label: "Was kostet es?", q: "preis" }] },
 
     { keys: ["wie lange", "dauer", "dauert", "schnell", "wann fertig", "wie schnell"],
       reply: "Meist innerhalb von <strong>30 Minuten bis wenigen Stunden</strong> nach Eingang deiner Originaldatei. Komplexe Projekte stimmen wir vorher individuell ab." },
 
     { keys: ["sicher", "gefaehrlich", "motor kaputt", "schaden", "garantie", "risiko", "schadet", "haltbar"],
-      reply: "Ja. Wir stimmen jede Datei in <strong>sicheren Toleranzen</strong> ab – Bauteilschutz, Abgaswerte und Fahrbarkeit bleiben im Blick. Stage 1 bleibt im Rahmen dessen, was die Hardware dauerhaft vertraegt. Deine Originaldatei sichern wir vorher." },
+      reply: "Ja. Wir stimmen jede Datei in <strong>sicheren Toleranzen</strong> ab – Bauteilschutz, Abgaswerte und Fahrbarkeit bleiben im Blick. Stage 1 bleibt im Rahmen dessen, was die Hardware dauerhaft verträgt. Deine Originaldatei sichern wir vorher." },
 
     { keys: ["zurueck", "serienstand", "serie", "original zurueck", "rueckbau", "rueckruest", "ruecksetzen"],
       reply: "Ja. Wir sichern deine Originaldatei vor der Optimierung – du kannst jederzeit wieder den <strong>Serienstand</strong> aufspielen, z. B. vor einem Werkstattbesuch oder Verkauf." },
 
     { keys: ["geraet", "auslese", "auslesen", "obd", "equipment", "tool", "was brauche", "brauche ich"],
-      reply: "Du brauchst ein <strong>Auslesegeraet</strong>, um die Software deines Steuergeraets zu lesen und zurueckzuschreiben. Wir beraten dich, welches zu deinem Fahrzeug passt – oder vermitteln einen Partner in deiner Naehe." },
+      reply: "Du brauchst ein <strong>Auslesegerät</strong>, um die Software deines Steuergeräts zu lesen und zurückzuschreiben. Wir beraten dich, welches zu deinem Fahrzeug passt – oder vermitteln einen Partner in deiner Nähe." },
 
     { keys: ["welche auto", "welches auto", "fahrzeug", "marke", "audi", "bmw", "mercedes", "vw", "golf", "diesel", "benziner", "suv", "modell", "passt mein"],
-      reply: "Wir sind auf <strong>PKW</strong> spezialisiert – Benziner und Diesel jeder Klasse: Kompakt &amp; Limousine, SUV &amp; Gelaendewagen, Sport &amp; Performance, Eco &amp; Vielfahrer. Sag mir gern dein Modell, dann passt's." },
+      reply: "Wir sind auf <strong>PKW</strong> spezialisiert – Benziner und Diesel jeder Klasse: Kompakt &amp; Limousine, SUV &amp; Geländewagen, Sport &amp; Performance, Eco &amp; Vielfahrer. Sag mir gern dein Modell, dann passt's." },
 
     { keys: ["dpf", "opf", "egr", "agr", "adblue", "scr", "partikelfilter", "abgas"],
-      reply: "Wir bieten Software-Loesungen rund um DPF/OPF, AGR/EGR und AdBlue/SCR. <strong>Wichtig:</strong> Filter- und Abgas-Optimierungen sind ausschliesslich fuer den <strong>Motorsport- und Exporteinsatz ausserhalb oeffentlicher Strassen</strong> bestimmt." },
+      reply: "Wir bieten Software-Lösungen rund um DPF/OPF, AGR/EGR und AdBlue/SCR. <strong>Wichtig:</strong> Filter- und Abgas-Optimierungen sind ausschliesslich für den <strong>Motorsport- und Exporteinsatz ausserhalb öffentlicher Strassen</strong> bestimmt." },
 
     { keys: ["eco", "verbrauch", "sparen", "sprit", "spritspar", "weniger verbrauch"],
-      reply: "<strong>Eco-Tuning:</strong> Spritspar-Optimierung – mehr Drehmoment im unteren Bereich fuer entspanntes Fahren bei weniger Verbrauch." },
+      reply: "<strong>Eco-Tuning:</strong> Spritspar-Optimierung – mehr Drehmoment im unteren Bereich für entspanntes Fahren bei weniger Verbrauch." },
 
     { keys: ["ablauf", "wie funktioniert", "wie laeuft", "prozess", "vorgehen", "schritte"],
-      reply: "So laeuft's:<ul><li>1. Kostenlose Anfrage mit deinem Fahrzeug</li><li>2. Transparentes Festpreis-Angebot vorab</li><li>3. Originaldatei sichern &amp; optimieren</li><li>4. Datei aufspielen – fertig</li></ul>",
+      reply: "So läuft's:<ul><li>1. Kostenlose Anfrage mit deinem Fahrzeug</li><li>2. Transparentes Festpreis-Angebot vorab</li><li>3. Originaldatei sichern &amp; optimieren</li><li>4. Datei aufspielen – fertig</li></ul>",
       chips: CONTACT_CHIPS },
 
     { keys: ["wo ", "wo seid", "wo finde", "standort", "adresse", "winterthur", "anfahrt", "werkstatt", "wo ist"],
-      reply: 'Du findest uns in <strong>Winterthur</strong>:<br>Zuercherstrasse 300, 8406 Winterthur, Schweiz.<br><a href="' + CONTACT.maps + '" target="_blank" rel="noopener">Route in Google Maps</a>',
+      reply: 'Du findest uns in <strong>Winterthur</strong>:<br>Zürcherstrasse 300, 8406 Winterthur, Schweiz.<br><a href="' + CONTACT.maps + '" target="_blank" rel="noopener">Route in Google Maps</a>',
       chips: CONTACT_CHIPS },
 
     { keys: ["oeffnungszeit", "geoeffnet", "wann offen", "wann habt", "offen", "zeiten"],
-      reply: "Feste Oeffnungszeiten haben wir online nicht hinterlegt. Am schnellsten geht's per Anfrage oder Anruf – Francesco meldet sich zuegig, meist am selben Tag.",
+      reply: "<strong>Anrufen</strong> am besten während der Arbeitszeiten. Rund um die Uhr erreichst du uns per <strong>WhatsApp</strong> oder über das Anfrageformular – Francesco meldet sich zügig, meist am selben Tag.",
       chips: CONTACT_CHIPS },
 
     { keys: ["eintrag", "tuev", "tuv", "strassenverkehrsamt", "versicherung", "legal", "gesetz", "eingetragen"],
-      reply: "Hinweis: Leistungssteigerungen muessen beim zustaendigen <strong>Strassenverkehrsamt</strong> eingetragen und der Versicherung gemeldet werden. Filter-/Abgas-Optimierungen sind nur fuer Motorsport/Export ausserhalb oeffentlicher Strassen bestimmt." },
+      reply: "Hinweis: Leistungssteigerungen müssen beim zuständigen <strong>Strassenverkehrsamt</strong> eingetragen und der Versicherung gemeldet werden. Filter-/Abgas-Optimierungen sind nur für Motorsport/Export ausserhalb öffentlicher Strassen bestimmt." },
+
+    { keys: ["leistung", "leistungen", "stage", "chiptuning", "tuning", "mehr ps", "leistungssteigerung", "optimierung", "bietet", "anbieten", "service", "was macht ihr", "was koennt ihr"],
+      reply: "Wir bieten <strong>individuelle Software-Optimierung</strong> – das komplette Angebot:<ul>" +
+        "<li><strong>Stage 1</strong> Leistungssteigerung – mehr Leistung</li>" +
+        "<li><strong>Stage 2 &amp; Stage 3</strong> – Hardware-abgestimmt</li>" +
+        "<li><strong>Eco-Tuning</strong> – weniger Verbrauch</li>" +
+        "<li><strong>DPF / OPF Optimierung</strong> – Motorsport / Export</li>" +
+        "<li><strong>AGR / EGR Optimierung</strong> – weniger Verkokung</li>" +
+        "<li><strong>AdBlue / SCR Optimierung</strong> – Diesel / Export</li>" +
+        "<li><strong>Pop &amp; Bang / Launch Control</strong> – Sound &amp; Sport</li>" +
+        "<li><strong>Vmax &amp; Limiter</strong> – individuell</li>" +
+        "<li><strong>Getriebe &amp; Schaltverhalten</strong> – besseres Schalten</li>" +
+        "</ul>Welche Leistung interessiert dich?",
+      chips: [{ label: "Stage 1", q: "stage 1" }, { label: "Stage 2/3", q: "stage 2" }, { label: "Eco-Tuning", q: "eco" }, { label: "Was kostet es?", q: "preis" }] },
 
     { keys: ["kontakt", "anrufen", "telefon", "nummer", "email", "mail", "whatsapp", "erreich", "termin", "buchen", "anfrage", "anfragen", "melden"],
-      reply: "Gern! So erreichst du Dimasi Garage:<ul><li>📞 " + callLink() + "</li><li>✉️ " + mailLink() + "</li><li>💬 " + waLink() + "</li></ul>Oder direkt eine kostenlose Anfrage stellen:",
-      chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }] }
+      reply: "Am schnellsten erreichst du uns per <strong>WhatsApp</strong> – rund um die Uhr:<ul><li>💬 " + waLink() + " <em>(jederzeit, am besten)</em></li><li>✉️ " + mailLink() + "</li><li>📞 " + callLink() + " <em>(nur während der Arbeitszeiten)</em></li></ul>Oder stell direkt eine kostenlose Anfrage:",
+      chips: [{ label: "WhatsApp schreiben", action: "wa" }, { label: "Kostenlose Anfrage", action: "anfrage" }] }
   ];
 
   var FALLBACK = {
-    reply: "Das kann ich dir hier nicht sicher beantworten – aber Francesco hilft dir persoenlich weiter. Stell eine kostenlose Anfrage oder ruf an (" + callLink() + "), meist gibt's noch am selben Tag eine Antwort.",
-    chips: [{ label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Leistungen", q: "leistungen" }, { label: "Preis", q: "preis" }]
+    reply: "Das kann ich dir hier nicht sicher beantworten – aber Francesco hilft dir persönlich weiter. Am besten per <strong>WhatsApp</strong> (rund um die Uhr) oder mit einer kostenlosen Anfrage; Anrufe am besten während der Arbeitszeiten. Meist gibt's noch am selben Tag eine Antwort.",
+    chips: [{ label: "WhatsApp schreiben", action: "wa" }, { label: "Kostenlose Anfrage", action: "anfrage" }, { label: "Preis", q: "preis" }]
   };
 
   /* --- DAS GEHIRN: Text -> Antwort. Hier kaeme spaeter ein KI-Fallback rein. --- */
@@ -131,7 +146,11 @@
         var it = INTENTS[i];
         for (var k = 0; k < it.keys.length; k++) {
           var key = it.keys[k];
-          var hit = key.indexOf(" ") >= 0 ? n.indexOf(key) >= 0 : words.indexOf(" " + key + " ") >= 0;
+          // Wortstamm-Treffer (Substring) fuer laengere/zusammengesetzte Schluessel,
+          // wortgenau nur fuer kurze (<=3), damit z. B. "hi" nicht in "chiptuning" trifft.
+          var hit = (key.indexOf(" ") >= 0 || key.length >= 4)
+            ? n.indexOf(key) >= 0
+            : words.indexOf(" " + key + " ") >= 0;
           if (hit) return { reply: it.reply, chips: it.chips || DEFAULT_CHIPS };
         }
       }
@@ -193,6 +212,10 @@
         var name = document.querySelector('#anfrageForm input[name="name"]');
         if (name) name.focus({ preventScroll: true });
       }, 600);
+    } else if (action === "wa") {
+      var wa = "https://wa.me/" + CONTACT.phone.replace(/[^0-9]/g, "") +
+        "?text=" + encodeURIComponent(CONTACT.waText);
+      window.open(wa, "_blank", "noopener");
     } else if (action === "call") {
       window.location.href = "tel:" + CONTACT.phone;
     }
@@ -225,7 +248,7 @@
     var launcher = el("button", "dg-chat__launcher",
       ICON_CHAT + '<span class="dg-chat__launcher-label">Fragen? Chat</span>');
     launcher.type = "button";
-    launcher.setAttribute("aria-label", "Chat oeffnen");
+    launcher.setAttribute("aria-label", "Chat öffnen");
     launcher.addEventListener("click", open);
 
     panel = el("div", "dg-chat__panel");
