@@ -1,0 +1,114 @@
+/* =====================================================
+   Dimasi Garage — FAQ-Chatbot (kostenlos, ohne Drittanbieter)
+   Nutzt die Design-Tokens aus styles.css.
+   ===================================================== */
+
+.dg-chat,
+.dg-chat * { box-sizing: border-box; }
+
+/* --- Starter-Button unten rechts --- */
+.dg-chat__launcher {
+  position: fixed; right: 20px; bottom: 20px; z-index: 9990;
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .8rem 1.15rem; border: none; cursor: pointer;
+  font-family: var(--font-head, system-ui); font-weight: 700; font-size: .98rem;
+  color: #0a0b0f; background: var(--gradient, linear-gradient(135deg, #ff7a00, #ff3d00));
+  border-radius: 999px; box-shadow: 0 10px 30px rgba(255, 77, 0, .35), 0 2px 8px rgba(0,0,0,.4);
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.dg-chat__launcher:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(255, 77, 0, .45); }
+.dg-chat__launcher svg { width: 20px; height: 20px; }
+.dg-chat__launcher-label { white-space: nowrap; }
+.dg-chat.is-open .dg-chat__launcher { opacity: 0; pointer-events: none; transform: scale(.85); }
+
+/* Den bestehenden "Nach oben"-Button anheben, damit er den Chat nicht ueberdeckt */
+.to-top { bottom: 5.75rem; }
+
+/* --- Panel --- */
+.dg-chat__panel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 9991;
+  width: min(380px, calc(100vw - 32px));
+  height: min(560px, calc(100dvh - 110px));
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--surface, #14151b);
+  border: 1px solid var(--border, rgba(255,255,255,.1));
+  border-radius: 18px; box-shadow: 0 24px 60px rgba(0,0,0,.55);
+  opacity: 0; transform: translateY(16px) scale(.98); pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+}
+.dg-chat.is-open .dg-chat__panel { opacity: 1; transform: none; pointer-events: auto; }
+
+/* --- Kopfzeile --- */
+.dg-chat__head {
+  display: flex; align-items: center; gap: .7rem;
+  padding: .9rem 1rem; border-bottom: 1px solid var(--border, rgba(255,255,255,.1));
+  background: linear-gradient(180deg, rgba(255,77,0,.12), transparent);
+}
+.dg-chat__avatar {
+  width: 38px; height: 38px; border-radius: 10px; flex: none;
+  display: grid; place-items: center; color: #0a0b0f;
+  background: var(--gradient, linear-gradient(135deg, #ff7a00, #ff3d00)); font-weight: 800;
+  font-family: var(--font-head, system-ui);
+}
+.dg-chat__title { font-family: var(--font-head, system-ui); font-weight: 700; font-size: 1rem; line-height: 1.1; }
+.dg-chat__status { font-size: .78rem; color: var(--text-muted, #9aa0ad); display: flex; align-items: center; gap: .35rem; }
+.dg-chat__status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; box-shadow: 0 0 0 3px rgba(46,204,113,.18); }
+.dg-chat__close {
+  margin-left: auto; background: transparent; border: none; cursor: pointer;
+  color: var(--text-muted, #9aa0ad); padding: 6px; border-radius: 8px; line-height: 0;
+}
+.dg-chat__close:hover { color: #fff; background: rgba(255,255,255,.06); }
+.dg-chat__close svg { width: 20px; height: 20px; }
+
+/* --- Nachrichtenbereich --- */
+.dg-chat__body {
+  flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .7rem;
+  scrollbar-width: thin;
+}
+.dg-msg { max-width: 85%; padding: .7rem .9rem; border-radius: 14px; font-size: .92rem; line-height: 1.5; word-wrap: break-word; }
+.dg-msg a { color: var(--accent, #ff7a00); font-weight: 600; }
+.dg-msg--bot { align-self: flex-start; background: var(--surface-2, #1c1e26); border: 1px solid var(--border, rgba(255,255,255,.08)); border-bottom-left-radius: 5px; color: var(--text, #eef0f4); }
+.dg-msg--user { align-self: flex-end; background: var(--gradient, linear-gradient(135deg, #ff7a00, #ff3d00)); color: #0a0b0f; font-weight: 600; border-bottom-right-radius: 5px; }
+.dg-msg strong { font-weight: 700; }
+.dg-msg ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.dg-msg li { margin: .15rem 0; }
+
+/* Tipp-Animation */
+.dg-typing { display: inline-flex; gap: 4px; align-items: center; }
+.dg-typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted, #9aa0ad); animation: dg-bounce 1.2s infinite ease-in-out; }
+.dg-typing span:nth-child(2) { animation-delay: .15s; }
+.dg-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes dg-bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-5px); opacity: 1; } }
+
+/* --- Schnellantworten (Chips) --- */
+.dg-chat__chips { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0 1rem .75rem; }
+.dg-chip {
+  font-family: inherit; font-size: .84rem; cursor: pointer;
+  padding: .5rem .8rem; border-radius: 999px;
+  color: var(--text, #eef0f4); background: var(--surface-2, #1c1e26);
+  border: 1px solid var(--border-strong, rgba(255,255,255,.18));
+  transition: border-color .2s ease, background .2s ease, transform .1s ease;
+}
+.dg-chip:hover { border-color: var(--accent, #ff7a00); background: rgba(255,122,0,.1); }
+.dg-chip:active { transform: scale(.97); }
+
+/* --- Eingabe --- */
+.dg-chat__form { display: flex; gap: .5rem; padding: .75rem; border-top: 1px solid var(--border, rgba(255,255,255,.1)); background: var(--bg, #0c0d12); }
+.dg-chat__input {
+  flex: 1; min-width: 0; font-family: inherit; font-size: .92rem;
+  padding: .7rem .9rem; color: var(--text, #eef0f4);
+  background: var(--surface, #14151b); border: 1px solid var(--border, rgba(255,255,255,.12)); border-radius: 12px;
+}
+.dg-chat__input:focus { outline: none; border-color: var(--accent, #ff7a00); }
+.dg-chat__send {
+  flex: none; width: 42px; height: 42px; border-radius: 12px; border: none; cursor: pointer;
+  display: grid; place-items: center; color: #0a0b0f;
+  background: var(--gradient, linear-gradient(135deg, #ff7a00, #ff3d00));
+}
+.dg-chat__send:hover { filter: brightness(1.08); }
+.dg-chat__send svg { width: 19px; height: 19px; }
+.dg-chat__hint { font-size: .72rem; color: var(--text-dim, #6b7180); text-align: center; padding: 0 1rem .6rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-chat__launcher, .dg-chat__panel, .dg-typing span { transition: none; animation: none; }
+}

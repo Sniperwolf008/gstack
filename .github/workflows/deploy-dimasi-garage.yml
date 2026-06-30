@@ -39,7 +39,12 @@ jobs:
       - name: Cache-bust asset references
         run: |
           ver="${GITHUB_SHA::8}"
-          sed -i "s#href=\"css/styles.css\"#href=\"css/styles.css?v=${ver}\"#g; s#src=\"js/main.js\"#src=\"js/main.js?v=${ver}\"#g" ./*.html
+          sed -i \
+            -e "s#href=\"css/styles.css\"#href=\"css/styles.css?v=${ver}\"#g" \
+            -e "s#href=\"css/chat.css\"#href=\"css/chat.css?v=${ver}\"#g" \
+            -e "s#src=\"js/main.js\"#src=\"js/main.js?v=${ver}\"#g" \
+            -e "s#src=\"js/chat.js\"#src=\"js/chat.js?v=${ver}\"#g" \
+            ./*.html
           echo "Asset-Version: ${ver}"
 
       - name: Deploy to Netlify
