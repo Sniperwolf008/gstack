@@ -11,7 +11,7 @@
    Alle Werte werden final immer individuell am Fahrzeug geprueft.
    ===================================================== */
 window.DIMASI_TUNING = {
-  "Fiat": {
+  "Abarth": {
     "124": {
       "2017→": [
         { label: "1.4 Multiair Turbo 140hp", fuel: "Benzin", ps: 140, nm: 240,
