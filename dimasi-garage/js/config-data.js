@@ -27,6 +27,10 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
         },
         {
+          label: "1.4 T-Jet 140hp", fuel: "Benzin", ps: 140, nm: 206,
+          stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
+        },
+        {
           label: "1.4 T-Jet 160hp", fuel: "Benzin", ps: 160, nm: 230,
           stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
         },
