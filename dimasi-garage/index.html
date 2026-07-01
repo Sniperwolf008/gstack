@@ -67,6 +67,7 @@
 
       <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
         <a href="#leistungen">Tuning</a>
+        <a href="#konfigurator">Konfigurator</a>
         <a href="#frontscheiben">Frontscheiben</a>
         <a href="#fahrzeughandel">An- &amp; Verkauf</a>
         <a href="#ablauf">Ablauf</a>
@@ -253,6 +254,46 @@
             <p>Optimierung von DSG- und Automatikgetrieben für schnellere, sauberere Schaltvorgänge – plus DTC-Bereinigung gespeicherter Fehlercodes.</p>
             <span class="card__tag">besseres Schalten</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tuning-Konfigurator ============ -->
+    <section class="section" id="konfigurator">
+      <div class="container">
+        <div class="section__head reveal" data-reveal>
+          <span class="eyebrow">Tuning-Konfigurator</span>
+          <h2 class="section__title">Was steckt in <span class="text-gradient">deinem Auto?</span></h2>
+          <p class="section__lead">Wähle Marke, Modell und Motor – und sieh sofort, welches Potenzial mit einer
+            Stage-1-Optimierung realistisch drin ist. Danach kannst du die Konfiguration direkt anfragen.</p>
+        </div>
+
+        <div class="konfig reveal" data-reveal>
+          <div class="konfig__form">
+            <label class="konfig__field">
+              <span>Marke</span>
+              <select id="kMarke" aria-label="Marke wählen"><option value="">Marke wählen …</option></select>
+            </label>
+            <label class="konfig__field">
+              <span>Modell</span>
+              <select id="kModell" aria-label="Modell wählen" disabled><option value="">Zuerst Marke wählen</option></select>
+            </label>
+            <label class="konfig__field">
+              <span>Motorisierung</span>
+              <select id="kMotor" aria-label="Motorisierung wählen" disabled><option value="">Zuerst Modell wählen</option></select>
+            </label>
+            <p class="konfig__hint">Unverbindliche Richtwerte für Stage 1 (Software auf Seriehardware). Die
+              finalen Werte prüfen wir immer individuell an deinem Fahrzeug. Stage 2/3 mit Hardware auf Anfrage.
+              Dein Modell ist nicht dabei? Frag uns einfach – wir decken deutlich mehr Fahrzeuge ab.</p>
+          </div>
+
+          <div class="konfig__result">
+            <div class="konfig__empty" id="kEmpty">
+              <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8M12 12 8 8m4 4 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              <p>Wähle dein Fahrzeug, um Serie- und Tuning-Werte direkt zu vergleichen.</p>
+            </div>
+            <div class="konfig__panel" id="kPanel" aria-live="polite" hidden></div>
+          </div>
         </div>
       </div>
     </section>
@@ -703,6 +744,7 @@
       <div class="footer__col">
         <h4>Leistungen</h4>
         <a href="#leistungen">Chiptuning &amp; Stages</a>
+        <a href="#konfigurator">Tuning-Konfigurator</a>
         <a href="#leistungen">Eco-Tuning</a>
         <a href="#frontscheiben">Frontscheiben</a>
         <a href="#fahrzeughandel">An- &amp; Verkauf</a>
@@ -746,6 +788,8 @@
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
   </button>
 
+  <script src="js/config-data.js" defer></script>
+  <script src="js/konfigurator.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/chat.js" defer></script>
 </body>

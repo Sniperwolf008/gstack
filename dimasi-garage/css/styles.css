@@ -230,6 +230,68 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .gauge__meta span { font-size: .78rem; color: var(--text-dim); }
 
 /* =====================================================
+   Tuning-Konfigurator
+   ===================================================== */
+.konfig { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: stretch; }
+.konfig__form,
+.konfig__result {
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.8rem; box-shadow: var(--shadow);
+}
+.konfig__form { display: flex; flex-direction: column; gap: 1.2rem; }
+.konfig__field { display: flex; flex-direction: column; gap: .5rem; }
+.konfig__field > span { font-size: .85rem; font-weight: 600; color: var(--text-muted); }
+.konfig__field select {
+  width: 100%; padding: .9rem 1rem; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text); font-size: 1rem; font-family: inherit; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ff7a1a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.6rem;
+}
+.konfig__field select:disabled { opacity: .5; cursor: not-allowed; }
+.konfig__field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.konfig__hint { font-size: .8rem; color: var(--text-dim); line-height: 1.55; margin-top: .2rem; }
+
+.konfig__result { display: flex; flex-direction: column; }
+.konfig__panel { display: flex; flex-direction: column; flex: 1; }
+/* hidden-Attribut muss die display-Regeln schlagen (sonst bleibt der
+   Leer-Zustand sichtbar, waehrend das Ergebnis darunter erscheint). */
+.konfig__empty[hidden], .konfig__panel[hidden] { display: none; }
+.konfig__empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 1rem; flex: 1; min-height: 280px; color: var(--text-dim);
+}
+.konfig__empty svg { color: var(--accent); opacity: .55; }
+.konfig__empty p { max-width: 24ch; }
+
+.konfig__vehicle {
+  font-family: var(--font-head); font-weight: 600; font-size: 1.2rem;
+  margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);
+}
+.konfig__vehicle span {
+  display: block; font-family: var(--font-body); font-size: .82rem;
+  color: var(--text-dim); font-weight: 500; margin-top: .3rem;
+}
+.konfig__metric { margin-bottom: 1.6rem; }
+.konfig__metric-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .8rem; }
+.konfig__metric-head > span { font-size: .82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.konfig__delta { color: var(--accent); font-family: var(--font-head); font-size: 1rem; }
+.konfig__bars { display: flex; flex-direction: column; gap: .6rem; }
+.konfig__bar { display: grid; grid-template-columns: 58px 1fr 74px; align-items: center; gap: .8rem; }
+.konfig__bar > i { font-style: normal; font-size: .8rem; color: var(--text-dim); }
+.konfig__track { height: 26px; border-radius: 8px; background: var(--surface); overflow: hidden; }
+.konfig__track > b { display: block; height: 100%; width: 0; border-radius: 8px; background: rgba(255,255,255,.14); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+.konfig__bar--tuned .konfig__track > b { background: var(--gradient); }
+.konfig__bar > em { font-style: normal; font-weight: 600; font-size: .95rem; text-align: right; }
+.konfig__panel .btn { margin-top: auto; }
+
+@media (max-width: 820px) {
+  .konfig { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
    Marken-Strip
    ===================================================== */
 .strip { border-block: 1px solid var(--border); background: var(--bg-soft); padding: 1.6rem 0; }
