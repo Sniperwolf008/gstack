@@ -17,6 +17,10 @@ window.DIMASI_TUNING = {
         {
           label: "1.4 Multiar Turbo 140hp", fuel: "Benzin", ps: 140, nm: 240,
           stages: { "Stage 1": { ps: 190, nm: 300 }, "Stage 2": { ps: 205, nm: 315 } }
+        },
+        {
+          label: "1.4 Multiar Turbo 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          stages: { "Stage 1": { ps: 195, nm: 300 }, "Stage 2": { ps: 205, nm: 315 } }
         }
       ]
     },
