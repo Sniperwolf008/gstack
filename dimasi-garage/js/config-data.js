@@ -17,6 +17,10 @@ window.DIMASI_TUNING = {
         {
           label: "1.4 Multi-Air 165hp", fuel: "Benzin", ps: 165, nm: 250,
           stages: { "Stage 1": { ps: 180, nm: 300 }, "Stage 2": { ps: 200, nm: 320 } }
+        },
+        {
+          label: "1.4 Multi-Air 180hp", fuel: "Benzin", ps: 180, nm: 270,
+          stages: { "Stage 1": { ps: 200, nm: 320 }, "Stage 2": { ps: 210, nm: 340 } }
         }
       ]
     }
