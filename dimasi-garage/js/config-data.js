@@ -20,6 +20,14 @@ window.DIMASI_TUNING = {
         }
       ]
     },
+    "500": {
+      "2014 – 2016": [
+        {
+          label: "1.4 T-Jet 135hp", fuel: "Benzin", ps: 135, nm: 206,
+          stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
+        }
+      ]
+    },
     "Punto": {
       "2010→": [
         {
