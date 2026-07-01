@@ -42,6 +42,12 @@ window.DIMASI_TUNING = {
           label: "1.4 T-Jet Biposto 190hp", fuel: "Benzin", ps: 190, nm: 250,
           stages: { "Stage 1": { ps: 220, nm: 340 }, "Stage 2": { ps: 230, nm: 360 } }
         }
+      ],
+      "2016 – 2023": [
+        {
+          label: "1.4 T-Jet 595 145hp", fuel: "Benzin", ps: 145, nm: 210,
+          stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
+        }
       ]
     },
     "Punto": {
