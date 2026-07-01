@@ -264,8 +264,8 @@
         <div class="section__head reveal" data-reveal>
           <span class="eyebrow">Tuning-Konfigurator</span>
           <h2 class="section__title">Was steckt in <span class="text-gradient">deinem Auto?</span></h2>
-          <p class="section__lead">Wähle Marke, Modell und Motor – und sieh sofort, welches Potenzial mit einer
-            Stage-1-Optimierung realistisch drin ist. Danach kannst du die Konfiguration direkt anfragen.</p>
+          <p class="section__lead">Wähle Marke, Modell, Baujahr und Motor – und sieh sofort, welches Potenzial in
+            Stage 1 und Stage 2 realistisch drin ist. Danach kannst du die Konfiguration direkt anfragen.</p>
         </div>
 
         <div class="konfig reveal" data-reveal>
@@ -279,12 +279,16 @@
               <select id="kModell" aria-label="Modell wählen" disabled><option value="">Zuerst Marke wählen</option></select>
             </label>
             <label class="konfig__field">
-              <span>Motorisierung</span>
-              <select id="kMotor" aria-label="Motorisierung wählen" disabled><option value="">Zuerst Modell wählen</option></select>
+              <span>Baujahr</span>
+              <select id="kBaujahr" aria-label="Baujahr wählen" disabled><option value="">Zuerst Modell wählen</option></select>
             </label>
-            <p class="konfig__hint">Unverbindliche Richtwerte für Stage 1 (Software auf Seriehardware). Die
-              finalen Werte prüfen wir immer individuell an deinem Fahrzeug. Stage 2/3 mit Hardware auf Anfrage.
-              Dein Modell ist nicht dabei? Frag uns einfach – wir decken deutlich mehr Fahrzeuge ab.</p>
+            <label class="konfig__field">
+              <span>Motorisierung</span>
+              <select id="kMotor" aria-label="Motorisierung wählen" disabled><option value="">Zuerst Baujahr wählen</option></select>
+            </label>
+            <p class="konfig__hint">Unverbindliche Richtwerte. Stage 1 = Software auf Seriehardware, Stage 2 mit
+              passender Hardware. Die finalen Werte prüfen wir immer individuell an deinem Fahrzeug.
+              Dein Modell ist noch nicht dabei? Frag uns einfach – wir bauen den Konfigurator laufend aus.</p>
           </div>
 
           <div class="konfig__result">

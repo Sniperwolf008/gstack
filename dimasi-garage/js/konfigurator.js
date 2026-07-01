@@ -1,7 +1,7 @@
 /* =====================================================
    Dimasi Garage — Tuning-Konfigurator
-   Kaskadierende Auswahl Marke -> Modell -> Motor, zeigt Serie- gegen
-   Getunt-Werte (PS/Nm) und uebergibt die Konfiguration ans Anfrageformular.
+   Kaskade Marke -> Modell -> Baujahr -> Motor, zeigt Serie gegen
+   Getunt (PS/Nm) je Stage und uebergibt die Wahl ans Anfrageformular.
    Reine Client-Logik, keine externen Aufrufe.
    ===================================================== */
 (function () {
@@ -10,15 +10,19 @@
   var DATA = window.DIMASI_TUNING || {};
   var mk = document.getElementById("kMarke");
   var md = document.getElementById("kModell");
+  var bj = document.getElementById("kBaujahr");
   var mo = document.getElementById("kMotor");
   var empty = document.getElementById("kEmpty");
   var panel = document.getElementById("kPanel");
-  if (!mk || !md || !mo || !panel || !empty) return;
+  if (!mk || !md || !bj || !mo || !panel || !empty) return;
+
+  var current = null;   // aktuell gewaehlter Motor
+  var currentStage = null;
+  var currentLabel = "";
 
   function opt(value, text) {
     var o = document.createElement("option");
-    o.value = value;
-    o.textContent = text;
+    o.value = value; o.textContent = text;
     return o;
   }
   function fill(sel, items, placeholder) {
@@ -26,26 +30,20 @@
     sel.appendChild(opt("", placeholder));
     items.forEach(function (it) { sel.appendChild(opt(it, it)); });
   }
-  function reset() {
-    panel.hidden = true;
-    empty.hidden = false;
+  function disable(sel, placeholder) {
+    sel.innerHTML = "";
+    sel.appendChild(opt("", placeholder));
+    sel.disabled = true;
   }
+  function reset() { panel.hidden = true; empty.hidden = false; current = null; }
 
-  // Marken initial befuellen
   fill(mk, Object.keys(DATA), "Marke wählen …");
 
   mk.addEventListener("change", function () {
     var brand = mk.value;
-    mo.innerHTML = "";
-    mo.appendChild(opt("", "Zuerst Modell wählen"));
-    mo.disabled = true;
-    if (!brand) {
-      md.innerHTML = "";
-      md.appendChild(opt("", "Zuerst Marke wählen"));
-      md.disabled = true;
-      reset();
-      return;
-    }
+    disable(bj, "Zuerst Modell wählen");
+    disable(mo, "Zuerst Baujahr wählen");
+    if (!brand) { disable(md, "Zuerst Marke wählen"); reset(); return; }
     fill(md, Object.keys(DATA[brand]), "Modell wählen …");
     md.disabled = false;
     reset();
@@ -53,23 +51,34 @@
 
   md.addEventListener("change", function () {
     var brand = mk.value, model = md.value;
+    disable(mo, "Zuerst Baujahr wählen");
+    if (!model) { disable(bj, "Zuerst Modell wählen"); reset(); return; }
+    var years = Object.keys(DATA[brand][model]);
+    fill(bj, years, "Baujahr wählen …");
+    bj.disabled = false;
+    reset();
+    // Nur ein Baujahr? Direkt auswaehlen und Motoren laden.
+    if (years.length === 1) { bj.value = years[0]; loadMotors(); }
+  });
+
+  bj.addEventListener("change", function () { loadMotors(); });
+
+  function loadMotors() {
+    var brand = mk.value, model = md.value, year = bj.value;
     mo.innerHTML = "";
-    if (!model) {
-      mo.appendChild(opt("", "Zuerst Modell wählen"));
-      mo.disabled = true;
-      reset();
-      return;
-    }
+    if (!year) { disable(mo, "Zuerst Baujahr wählen"); reset(); return; }
     mo.appendChild(opt("", "Motor wählen …"));
-    DATA[brand][model].forEach(function (m, i) { mo.appendChild(opt(String(i), m.label)); });
+    DATA[brand][model][year].forEach(function (m, i) { mo.appendChild(opt(String(i), m.label)); });
     mo.disabled = false;
     reset();
-  });
+  }
 
   mo.addEventListener("change", function () {
     var idx = mo.value;
     if (idx === "") { reset(); return; }
-    render(mk.value, md.value, DATA[mk.value][md.value][parseInt(idx, 10)]);
+    var m = DATA[mk.value][md.value][bj.value][parseInt(idx, 10)];
+    currentLabel = mk.value + " " + md.value + " " + m.label;
+    render(m);
   });
 
   function bar(label, width, value, tuned) {
@@ -91,44 +100,65 @@
       "</div></div>";
   }
 
-  function render(brand, model, m) {
+  function render(m) {
+    current = m;
+    var stageNames = Object.keys(m.stages);
+    currentStage = stageNames.indexOf(currentStage) >= 0 ? currentStage : stageNames[0];
+
+    var tabs = stageNames.map(function (s) {
+      return '<button type="button" class="konfig__stage' + (s === currentStage ? " is-active" : "") +
+        '" data-stage="' + s + '">' + s + "</button>";
+    }).join("");
+
     panel.innerHTML =
-      '<div class="konfig__vehicle">' + brand + " " + model +
-        "<span>" + m.label + " · Stage 1 (Richtwert)</span></div>" +
-      metric("Leistung", "PS", m.ps[0], m.ps[1]) +
-      metric("Drehmoment", "Nm", m.nm[0], m.nm[1]) +
+      '<div class="konfig__vehicle">' + mk.value + " " + md.value +
+        "<span>" + m.label + (m.fuel ? " · " + m.fuel : "") + " · Richtwert</span></div>" +
+      (stageNames.length > 1 ? '<div class="konfig__stages" role="tablist">' + tabs + "</div>" : "") +
+      '<div id="kMetrics"></div>' +
       '<a href="#kontakt" class="btn btn--primary btn--large btn--block" id="kCta">' +
         "Diese Konfiguration anfragen" +
         '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
     empty.hidden = true;
     panel.hidden = false;
 
-    // Balken von 0 auf Zielbreite animieren
-    requestAnimationFrame(function () {
-      panel.querySelectorAll(".konfig__track > b").forEach(function (b) {
-        b.style.width = b.dataset.w;
+    panel.querySelectorAll(".konfig__stage").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentStage = btn.dataset.stage;
+        panel.querySelectorAll(".konfig__stage").forEach(function (b) { b.classList.toggle("is-active", b === btn); });
+        renderMetrics();
       });
     });
-
-    var cta = document.getElementById("kCta");
-    if (cta) cta.addEventListener("click", function () { prefill(brand, model, m); });
+    document.getElementById("kCta").addEventListener("click", prefill);
+    renderMetrics();
   }
 
-  function prefill(brand, model, m) {
+  function renderMetrics() {
+    if (!current) return;
+    var s = current.stages[currentStage];
+    var box = document.getElementById("kMetrics");
+    box.innerHTML = metric("Leistung", "PS", current.ps, s.ps) + metric("Drehmoment", "Nm", current.nm, s.nm);
+    requestAnimationFrame(function () {
+      box.querySelectorAll(".konfig__track > b").forEach(function (b) { b.style.width = b.dataset.w; });
+    });
+  }
+
+  function prefill() {
     var form = document.querySelector('form[name="anfrage"]');
-    if (!form) return;
+    if (!form || !current) return;
     var f = form.querySelector('[name="fahrzeug"]');
     var l = form.querySelector('[name="leistung"]');
     var n = form.querySelector('[name="nachricht"]');
-    if (f) f.value = brand + " " + model + " " + m.label;
+    var s = current.stages[currentStage];
+    if (f) f.value = currentLabel;
     if (l) {
+      var want = /stage 2/i.test(currentStage) ? /stage 2/i : /stage 1/i;
       for (var i = 0; i < l.options.length; i++) {
-        if (/stage 1/i.test(l.options[i].text)) { l.selectedIndex = i; break; }
+        if (want.test(l.options[i].text)) { l.selectedIndex = i; break; }
       }
     }
     if (n && !n.value) {
-      n.value = "Konfigurator: " + brand + " " + model + " " + m.label +
-        " → Stage 1 ca. " + m.ps[1] + " PS / " + m.nm[1] + " Nm. Bitte um ein Angebot.";
+      n.value = "Konfigurator: " + currentLabel + " → " + currentStage +
+        " ca. " + s.ps + " PS / " + s.nm + " Nm. Bitte um ein Angebot.";
     }
   }
 })();
