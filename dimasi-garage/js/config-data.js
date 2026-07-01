@@ -10,7 +10,7 @@
    immer individuell am Fahrzeug geprueft (Richtwerte).
    ===================================================== */
 window.DIMASI_TUNING = {
-  "Abarth": {
+  "Fiat": {
     "Punto": {
       "2010→": [
         {
