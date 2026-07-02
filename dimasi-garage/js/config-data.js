@@ -568,6 +568,45 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 540, nm: 720 }, "Stage 2": { ps: 567, nm: 756 } }
         }
       ]
+    },
+    "Giulietta": {
+      "2010-2014": [
+        {
+          label: "1.4 Turbo 105hp", fuel: "Benzin", ps: 105, nm: 206,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 280 }, "Stage 2": { ps: 165, nm: 308 } }
+        },
+        {
+          label: "1.4 Turbo 120hp", fuel: "Benzin", ps: 120, nm: 206,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 280 }, "Stage 2": { ps: 165, nm: 308 } }
+        },
+        {
+          label: "1.4 Turbo Multiair 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 180, nm: 300 }, "Stage 2": { ps: 197, nm: 330 } }
+        },
+        {
+          label: "1.6 JTDm 105hp", fuel: "Diesel", ps: 105, nm: 320,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 130, nm: 360 }, "Stage 2": { ps: 144, nm: 396 } }
+        },
+        {
+          label: "1.750 TBi Quadrifoglio Verde 235hp", fuel: "Benzin", ps: 235, nm: 340,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 265, nm: 400 }, "Stage 2": { ps: 292, nm: 440 } }
+        },
+        {
+          label: "2.0 JTDm 140hp", fuel: "Diesel", ps: 140, nm: 320,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 180, nm: 420 }, "Stage 2": { ps: 197, nm: 462 } }
+        },
+        {
+          label: "2.0 JTDm 170hp", fuel: "Diesel", ps: 170, nm: 350,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 200, nm: 425 }, "Stage 2": { ps: 220, nm: 468 } }
+        }
+      ]
     }
   }
 };
