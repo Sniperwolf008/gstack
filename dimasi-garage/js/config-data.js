@@ -69,6 +69,7 @@ window.DIMASI_TUNING = {
         },
         {
           label: "1.4 T-Jet 595 Pista 160hp", fuel: "Benzin", ps: 160, nm: 230,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 310 } }
         },
         {
