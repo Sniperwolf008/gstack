@@ -20,6 +20,10 @@
   var currentStage = null;
   var currentLabel = "";
 
+  // Optionale Zusatzleistungen, die in die Anfrage uebernommen werden.
+  var ADDONS = ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"];
+  var selectedAddons = [];
+
   function opt(value, text) {
     var o = document.createElement("option");
     o.value = value; o.textContent = text;
@@ -102,6 +106,7 @@
 
   function render(m) {
     current = m;
+    selectedAddons = [];
     var stageNames = Object.keys(m.stages);
     currentStage = stageNames.indexOf(currentStage) >= 0 ? currentStage : stageNames[0];
 
@@ -110,11 +115,17 @@
         '" data-stage="' + s + '">' + s + "</button>";
     }).join("");
 
+    var addonChips = ADDONS.map(function (a) {
+      return '<button type="button" class="konfig__addon" data-addon="' + a + '">' + a + "</button>";
+    }).join("");
+
     panel.innerHTML =
       '<div class="konfig__vehicle">' + mk.value + " " + md.value +
         "<span>" + m.label + (m.fuel ? " · " + m.fuel : "") + " · Richtwert</span></div>" +
       (stageNames.length > 1 ? '<div class="konfig__stages" role="tablist">' + tabs + "</div>" : "") +
       '<div id="kMetrics"></div>' +
+      '<div class="konfig__addons"><span class="konfig__addons-title">Add-ons (optional)</span>' +
+        '<div class="konfig__addon-list">' + addonChips + "</div></div>" +
       '<a href="#kontakt" class="btn btn--primary btn--large btn--block" id="kCta">' +
         "Diese Konfiguration anfragen" +
         '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
@@ -126,6 +137,14 @@
         currentStage = btn.dataset.stage;
         panel.querySelectorAll(".konfig__stage").forEach(function (b) { b.classList.toggle("is-active", b === btn); });
         renderMetrics();
+      });
+    });
+    panel.querySelectorAll(".konfig__addon").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var a = btn.dataset.addon;
+        var i = selectedAddons.indexOf(a);
+        if (i >= 0) { selectedAddons.splice(i, 1); btn.classList.remove("is-active"); }
+        else { selectedAddons.push(a); btn.classList.add("is-active"); }
       });
     });
     document.getElementById("kCta").addEventListener("click", prefill);
@@ -158,7 +177,9 @@
     }
     if (n && !n.value) {
       n.value = "Konfigurator: " + currentLabel + " → " + currentStage +
-        " ca. " + s.ps + " PS / " + s.nm + " Nm. Bitte um ein Angebot.";
+        " ca. " + s.ps + " PS / " + s.nm + " Nm" +
+        (selectedAddons.length ? ". Add-ons: " + selectedAddons.join(", ") : "") +
+        ". Bitte um ein Angebot.";
     }
   }
 })();
