@@ -32,7 +32,9 @@
     "Lambda OFF": "Lambda-/Katalysator-Überwachung aus (Motorsport / Export).",
     "Adblue OFF": "AdBlue-System deaktiviert (Motorsport / Export).",
     "DPF OFF": "Dieselpartikelfilter-Überwachung aus (Motorsport / Export).",
-    "EGR OFF": "Abgasrückführung (AGR) deaktiviert (Motorsport / Export)."
+    "EGR OFF": "Abgasrückführung (AGR) deaktiviert (Motorsport / Export).",
+    "OPF OFF": "Ottopartikelfilter-Überwachung aus (Motorsport / Export).",
+    "Start Stop OFF": "Automatische Start-Stopp-Funktion dauerhaft deaktiviert."
   };
   var selectedAddons = [];
 
