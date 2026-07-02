@@ -648,6 +648,43 @@ window.DIMASI_TUNING = {
           addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 205, nm: 425 }, "Stage 2": { ps: 226, nm: 468 } }
         }
+      ],
+      "2016→": [
+        {
+          label: "1.4 Turbo 120hp", fuel: "Benzin", ps: 120, nm: 215,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 300 }, "Stage 2": { ps: 165, nm: 330 } }
+        },
+        {
+          label: "1.4 Turbo Multiair 150hp", fuel: "Benzin", ps: 150, nm: 230,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.4 Turbo Multiair 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.6 JTDm 120hp", fuel: "Diesel", ps: 120, nm: 320,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 145, nm: 380 }, "Stage 2": { ps: 160, nm: 418 } }
+        },
+        {
+          label: "1.750 TBi 240hp", fuel: "Benzin", ps: 240, nm: 340,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 255, nm: 400 }, "Stage 2": { ps: 282, nm: 440 } }
+        },
+        {
+          label: "2.0 JTDm 150hp", fuel: "Diesel", ps: 150, nm: 380,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 215, nm: 460 }, "Stage 2": { ps: 237, nm: 506 } }
+        },
+        {
+          label: "2.0 JTDm 175hp", fuel: "Diesel", ps: 175, nm: 350,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 205, nm: 425 }, "Stage 2": { ps: 226, nm: 468 } }
+        }
       ]
     }
   }
