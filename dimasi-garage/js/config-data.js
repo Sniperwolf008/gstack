@@ -1172,5 +1172,33 @@ window.DIMASI_TUNING = {
         }
       ]
     }
+  },
+  "Alpine": {
+    "A110": {
+      "2017→": [
+        {
+          label: "1.8 Turbo 252hp", fuel: "Benzin", ps: 252, nm: 320,
+          addons: ["Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 280, nm: 400 }, "Stage 2": { ps: 295, nm: 420 } }
+        },
+        {
+          label: "1.8T (GPF) 252hp", fuel: "Benzin", ps: 252, nm: 320,
+          stages: { "Stage 1": { ps: 280, nm: 400 }, "Stage 2": { ps: 295, nm: 420 } }
+        },
+        {
+          label: "S 1.8 Turbo 292hp", fuel: "Benzin", ps: 292, nm: 320,
+          addons: ["Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 310, nm: 400 }, "Stage 2": { ps: 320, nm: 420 } }
+        },
+        {
+          label: "GT/S 1.8T 300hp", fuel: "Benzin", ps: 300, nm: 340,
+          stages: { "Stage 1": { ps: 320, nm: 400 }, "Stage 2": { ps: 330, nm: 420 } }
+        },
+        {
+          label: "R 1.8T 300hp", fuel: "Benzin", ps: 300, nm: 340,
+          stages: { "Stage 1": { ps: 320, nm: 400 }, "Stage 2": { ps: 330, nm: 420 } }
+        }
+      ]
+    }
   }
 };
