@@ -37,6 +37,7 @@ window.DIMASI_TUNING = {
         },
         {
           label: "1.4 T-Jet 140hp", fuel: "Benzin", ps: 140, nm: 206,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
         },
         {
