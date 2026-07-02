@@ -853,6 +853,45 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 185, nm: 300 }, "Stage 2": { ps: 204, nm: 330 } }
         }
       ]
+    },
+    "Spider": {
+      "Alle Baujahre": [
+        {
+          label: "1750 Turbo 200hp", fuel: "Benzin", ps: 200, nm: 320,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 240, nm: 400 }, "Stage 2": { ps: 265, nm: 440 } }
+        },
+        {
+          label: "2.0 JTD 163hp", fuel: "Diesel", ps: 163, nm: 360,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 425 }, "Stage 2": { ps: 214, nm: 468 } }
+        },
+        {
+          label: "2.0 JTD 170hp", fuel: "Diesel", ps: 170, nm: 360,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 425 }, "Stage 2": { ps: 214, nm: 468 } }
+        },
+        {
+          label: "2.2 JTS 185hp", fuel: "Benzin", ps: 185, nm: 230,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 240 }, "Stage 2": { ps: 214, nm: 264 } }
+        },
+        {
+          label: "2.4 JTDm 20V 200hp", fuel: "Diesel", ps: 200, nm: 400,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 235, nm: 470 }, "Stage 2": { ps: 258, nm: 517 } }
+        },
+        {
+          label: "2.4 JTDm 20V 210hp", fuel: "Diesel", ps: 210, nm: 400,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 240, nm: 480 }, "Stage 2": { ps: 265, nm: 528 } }
+        },
+        {
+          label: "3.2 V6 JTS 260hp", fuel: "Benzin", ps: 260, nm: 300,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 275, nm: 325 }, "Stage 2": { ps: 302, nm: 358 } }
+        }
+      ]
     }
   }
 };
