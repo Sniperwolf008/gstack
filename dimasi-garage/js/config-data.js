@@ -1139,6 +1139,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
         }
       ]
+    },
+    "D5 S": {
+      "2017→": [
+        {
+          label: "3.0D 388hp", fuel: "Diesel", ps: 388, nm: 770,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
+        }
+      ]
     }
   }
 };
