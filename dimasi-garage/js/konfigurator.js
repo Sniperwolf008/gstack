@@ -21,7 +21,11 @@
   var currentLabel = "";
 
   // Optionale Zusatzleistungen, die in die Anfrage uebernommen werden.
-  var ADDONS = ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"];
+  var ADDONS = [
+    { name: "E85 Flexfuel", desc: "Umbau für E85-Bioethanol – mehr Leistung und günstigerer Sprit." },
+    { name: "Pop & Bang", desc: "Knallen und Fehlzündungen beim Gaswegnehmen – sportlicher Sound." },
+    { name: "Vmax OFF", desc: "Werkseitige Geschwindigkeits-Abriegelung aufheben." }
+  ];
   var selectedAddons = [];
 
   function opt(value, text) {
@@ -116,7 +120,11 @@
     }).join("");
 
     var addonChips = ADDONS.map(function (a) {
-      return '<button type="button" class="konfig__addon" data-addon="' + a + '">' + a + "</button>";
+      return '<button type="button" class="konfig__addon" data-addon="' + a.name + '">' +
+        '<span class="konfig__addon-name">' + a.name + "</span>" +
+        '<span class="konfig__addon-desc">' + a.desc + "</span>" +
+        '<span class="konfig__addon-check" aria-hidden="true"></span>' +
+      "</button>";
     }).join("");
 
     panel.innerHTML =
