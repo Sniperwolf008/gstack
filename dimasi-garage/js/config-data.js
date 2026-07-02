@@ -1029,6 +1029,13 @@ window.DIMASI_TUNING = {
           label: "4.4 V8 Bi-Turbo 608hp", fuel: "Benzin", ps: 608, nm: 800,
           stages: { "Stage 1": { ps: 680, nm: 900 }, "Stage 2": { ps: 690, nm: 920 } }
         }
+      ],
+      "F90 (2020→)": [
+        {
+          label: "4.4 V8 Bi-Turbo 621hp", fuel: "Benzin", ps: 621, nm: 800,
+          addons: ["CAT OFF", "E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 700, nm: 900 }, "Stage 2": { ps: 720, nm: 920 } }
+        }
       ]
     }
   }
