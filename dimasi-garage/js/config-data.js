@@ -519,6 +519,55 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 182, nm: 385 }, "Stage 2": { ps: 200, nm: 424 } }
         }
       ]
+    },
+    "Giulia": {
+      "2016→": [
+        {
+          label: "2.0T 200hp", fuel: "Benzin", ps: 200, nm: 330,
+          addons: ["E85 Flexfuel", "Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 300, nm: 450 }, "Stage 2": { ps: 315, nm: 473 } }
+        },
+        {
+          label: "2.0T Veloce 280hp", fuel: "Benzin", ps: 280, nm: 400,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 300, nm: 450 }, "Stage 2": { ps: 315, nm: 473 } }
+        },
+        {
+          label: "2.2 JTD 136hp", fuel: "Diesel", ps: 136, nm: 380,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 530 }, "Stage 2": { ps: 232, nm: 558 } }
+        },
+        {
+          label: "2.2 JTD 150hp", fuel: "Diesel", ps: 150, nm: 380,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Lambda OFF", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 530 }, "Stage 2": { ps: 232, nm: 557 } }
+        },
+        {
+          label: "2.2 JTD 160hp", fuel: "Diesel", ps: 160, nm: 450,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Lambda OFF", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 530 }, "Stage 2": { ps: 232, nm: 553 } }
+        },
+        {
+          label: "2.2 JTD 180hp", fuel: "Diesel", ps: 180, nm: 450,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Lambda OFF", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 530 }, "Stage 2": { ps: 232, nm: 557 } }
+        },
+        {
+          label: "2.2 JTD 190hp", fuel: "Diesel", ps: 190, nm: 450,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Lambda OFF", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 530 }, "Stage 2": { ps: 232, nm: 557 } }
+        },
+        {
+          label: "2.2 JTD 210hp", fuel: "Diesel", ps: 210, nm: 470,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 230, nm: 550 }, "Stage 2": { ps: 242, nm: 578 } }
+        },
+        {
+          label: "2.9 V6 Quadrifoglio 510hp", fuel: "Benzin", ps: 510, nm: 600,
+          addons: ["DTC OFF", "E85 Flexfuel", "Exhaust flaps open", "Lambda OFF", "OPF OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 540, nm: 720 }, "Stage 2": { ps: 567, nm: 756 } }
+        }
+      ]
     }
   }
 };
