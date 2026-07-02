@@ -1209,6 +1209,14 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 360, nm: 500 }, "Stage 2": { ps: 375, nm: 520 } }
         }
       ]
+    },
+    "Nomad": {
+      "2015→": [
+        {
+          label: "2.4 16V i-VTEC (Honda K24) 235hp", fuel: "Benzin", ps: 235, nm: 300,
+          stages: { "Stage 1": { ps: 245, nm: 320 }, "Stage 2": { ps: 255, nm: 340 } }
+        }
+      ]
     }
   }
 };
