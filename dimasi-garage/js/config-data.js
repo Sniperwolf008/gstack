@@ -1148,6 +1148,20 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
         }
       ]
+    },
+    "XD3": {
+      "Alle Baujahre": [
+        {
+          label: "3.0D Bi-Turbo 350hp", fuel: "Diesel", ps: 350, nm: 700,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 395, nm: 750 }, "Stage 2": { ps: 410, nm: 820 } }
+        },
+        {
+          label: "3.0D Quad-Turbo 388hp", fuel: "Diesel", ps: 388, nm: 770,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Sportdisplay Calibration", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
+        }
+      ]
     }
   }
 };
