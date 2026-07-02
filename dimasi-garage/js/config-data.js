@@ -59,6 +59,7 @@ window.DIMASI_TUNING = {
       "2016 – 2023": [
         {
           label: "1.4 T-Jet 595 145hp", fuel: "Benzin", ps: 145, nm: 210,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
         },
         {
