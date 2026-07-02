@@ -445,6 +445,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 220, nm: 450 }, "Stage 2": { ps: 242, nm: 495 } }
         }
       ]
+    },
+    "4C": {
+      "2013": [
+        {
+          label: "1750 TBI 240hp", fuel: "Benzin", ps: 240, nm: 340,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 255, nm: 400 }, "Stage 2": { ps: 282, nm: 440 } }
+        }
+      ]
     }
   }
 };
