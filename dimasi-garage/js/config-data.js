@@ -1016,6 +1016,13 @@ window.DIMASI_TUNING = {
           addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 527, nm: 730 }, "Stage 2": { ps: 537, nm: 750 } }
         }
+      ],
+      "F10/F11 (2010-2013)": [
+        {
+          label: "4.4 V8 Bi-Turbo 540hp", fuel: "Benzin", ps: 540, nm: 730,
+          addons: ["CAT OFF", "Exhaust flaps open", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 575, nm: 800 }, "Stage 2": { ps: 585, nm: 820 } }
+        }
       ]
     }
   }
