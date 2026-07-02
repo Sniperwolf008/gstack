@@ -1162,6 +1162,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
         }
       ]
+    },
+    "XD4": {
+      "Alle Baujahre": [
+        {
+          label: "3.0D Quad-Turbo 388hp", fuel: "Diesel", ps: 388, nm: 770,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 495, nm: 935 } }
+        }
+      ]
     }
   }
 };
