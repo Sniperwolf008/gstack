@@ -936,6 +936,25 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 580, nm: 700 }, "Stage 2": { ps: 609, nm: 735 } }
         }
       ]
+    },
+    "Tonale": {
+      "2022→": [
+        {
+          label: "1.5T 130hp", fuel: "Benzin", ps: 130, nm: 240,
+          addons: ["E85 Flexfuel", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 170, nm: 300 }, "Stage 2": { ps: 180, nm: 320 } }
+        },
+        {
+          label: "1.5T 160hp", fuel: "Benzin", ps: 160, nm: 240,
+          addons: ["E85 Flexfuel", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 190, nm: 300 }, "Stage 2": { ps: 200, nm: 320 } }
+        },
+        {
+          label: "2.0 Multiair 260hp", fuel: "Benzin", ps: 260, nm: 400,
+          addons: ["CAT OFF", "E85 Flexfuel", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 300, nm: 460 }, "Stage 2": { ps: 315, nm: 483 } }
+        }
+      ]
     }
   }
 };
