@@ -710,6 +710,90 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 260, nm: 325 }, "Stage 2": { ps: 286, nm: 358 } }
         }
       ]
+    },
+    "MiTo": {
+      "2008-2013": [
+        {
+          label: "0.9 Twinair 85hp", fuel: "Benzin", ps: 85, nm: 145,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 95, nm: 190 }, "Stage 2": { ps: 105, nm: 209 } }
+        },
+        {
+          label: "1.3 JTDM 85hp", fuel: "Diesel", ps: 85, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 110, nm: 250 }, "Stage 2": { ps: 121, nm: 275 } }
+        },
+        {
+          label: "1.3 JTDM 90hp", fuel: "Diesel", ps: 90, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 110, nm: 250 }, "Stage 2": { ps: 121, nm: 275 } }
+        },
+        {
+          label: "1.3 JTDM 95hp", fuel: "Diesel", ps: 95, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 115, nm: 240 }, "Stage 2": { ps: 128, nm: 264 } }
+        },
+        {
+          label: "1.3 JTDM S&S 95hp", fuel: "Diesel", ps: 95, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 115, nm: 240 }, "Stage 2": { ps: 128, nm: 264 } }
+        },
+        {
+          label: "1.4 Multiair 135hp", fuel: "Benzin", ps: 135, nm: 205,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 270 }, "Stage 2": { ps: 165, nm: 297 } }
+        },
+        {
+          label: "1.4 Turbo 115hp", fuel: "Benzin", ps: 115, nm: 200,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 250 }, "Stage 2": { ps: 165, nm: 275 } }
+        },
+        {
+          label: "1.4 Turbo 120hp", fuel: "Benzin", ps: 120, nm: 200,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 250 }, "Stage 2": { ps: 165, nm: 275 } }
+        },
+        {
+          label: "1.4 Turbo 155hp", fuel: "Benzin", ps: 155, nm: 230,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 175, nm: 300 }, "Stage 2": { ps: 193, nm: 330 } }
+        },
+        {
+          label: "1.4 Turbo 163hp", fuel: "Benzin", ps: 163, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.4 Turbo 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.4i 16v 78hp", fuel: "Benzin", ps: 78, nm: 120,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 100, nm: 130 }, "Stage 2": { ps: 110, nm: 143 } }
+        },
+        {
+          label: "1.4i 16v 95hp", fuel: "Benzin", ps: 95, nm: 120,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 100, nm: 130 }, "Stage 2": { ps: 110, nm: 143 } }
+        },
+        {
+          label: "1.6 JTDM 115hp", fuel: "Diesel", ps: 115, nm: 320,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 145, nm: 380 }, "Stage 2": { ps: 160, nm: 418 } }
+        },
+        {
+          label: "1.6 JTDM 120hp", fuel: "Diesel", ps: 120, nm: 300,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 145, nm: 380 }, "Stage 2": { ps: 160, nm: 418 } }
+        },
+        {
+          label: "GTA 235hp", fuel: "Benzin", ps: 235, nm: 340,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 265, nm: 380 }, "Stage 2": { ps: 292, nm: 418 } }
+        }
+      ]
     }
   }
 };
