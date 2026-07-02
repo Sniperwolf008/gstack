@@ -999,6 +999,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 450, nm: 680 }, "Stage 2": { ps: 460, nm: 700 } }
         }
       ]
+    },
+    "B4 S": {
+      "2017→": [
+        {
+          label: "3.0T 440hp", fuel: "Benzin", ps: 440, nm: 660,
+          addons: ["CAT OFF", "E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 480, nm: 700 }, "Stage 2": { ps: 490, nm: 720 } }
+        }
+      ]
     }
   }
 };
