@@ -510,6 +510,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 270, nm: 325 }, "Stage 2": { ps: 283, nm: 341 } }
         }
       ]
+    },
+    "Crosswagon": {
+      "2005-2007": [
+        {
+          label: "1.9 JTD 150hp", fuel: "Diesel", ps: 150, nm: 305,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 182, nm: 385 }, "Stage 2": { ps: 200, nm: 424 } }
+        }
+      ]
     }
   }
 };
