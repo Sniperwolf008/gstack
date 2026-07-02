@@ -976,6 +976,20 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 490, nm: 760 }, "Stage 2": { ps: 500, nm: 780 } }
         }
       ]
+    },
+    "B3 S": {
+      "Alle Baujahre": [
+        {
+          label: "3.5i 400hp", fuel: "Benzin", ps: 400, nm: 540,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 600 }, "Stage 2": { ps: 460, nm: 620 } }
+        },
+        {
+          label: "3.0T 440hp", fuel: "Benzin", ps: 440, nm: 660,
+          addons: ["CAT OFF", "E85 Flexfuel", "Hard Cut limiter", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 480, nm: 700 }, "Stage 2": { ps: 490, nm: 720 } }
+        }
+      ]
     }
   }
 };
