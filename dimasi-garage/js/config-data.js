@@ -427,6 +427,23 @@ window.DIMASI_TUNING = {
           addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
           stages: { "Stage 1": { ps: 185, nm: 385 }, "Stage 2": { ps: 204, nm: 424 } }
         }
+      ],
+      "2003-2010": [
+        {
+          label: "2.4 JTD 150hp", fuel: "Diesel", ps: 150, nm: 305,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 385 }, "Stage 2": { ps: 204, nm: 424 } }
+        },
+        {
+          label: "2.4 JTD 163hp", fuel: "Diesel", ps: 163, nm: 385,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 440 }, "Stage 2": { ps: 242, nm: 484 } }
+        },
+        {
+          label: "2.4 JTD 175hp", fuel: "Diesel", ps: 175, nm: 385,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 220, nm: 450 }, "Stage 2": { ps: 242, nm: 495 } }
+        }
       ]
     }
   }
