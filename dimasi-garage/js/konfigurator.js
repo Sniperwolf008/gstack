@@ -20,12 +20,15 @@
   var currentStage = null;
   var currentLabel = "";
 
-  // Optionale Zusatzleistungen, die in die Anfrage uebernommen werden.
-  var ADDONS = [
-    { name: "E85 Flexfuel", desc: "Umbau für E85-Bioethanol – mehr Leistung und günstigerer Sprit." },
-    { name: "Pop & Bang", desc: "Knallen und Fehlzündungen beim Gaswegnehmen – sportlicher Sound." },
-    { name: "Vmax OFF", desc: "Werkseitige Geschwindigkeits-Abriegelung aufheben." }
-  ];
+  // Beschreibungen der optionalen Zusatzleistungen. Welche Add-ons ein
+  // Motor hat, steht pro Motor im Datensatz (Feld "addons").
+  var ADDON_DESC = {
+    "E85 Flexfuel": "Umbau für E85-Bioethanol – mehr Leistung und günstigerer Sprit.",
+    "Pop & Bang": "Knallen und Fehlzündungen beim Gaswegnehmen – sportlicher Sound.",
+    "Vmax OFF": "Werkseitige Geschwindigkeits-Abriegelung aufheben.",
+    "Launch Control": "Optimaler Ampelstart mit definierter Drehzahl.",
+    "DTC OFF": "Bereinigung gespeicherter Fehlercodes im Steuergerät."
+  };
   var selectedAddons = [];
 
   function opt(value, text) {
@@ -119,10 +122,12 @@
         '" data-stage="' + s + '">' + s + "</button>";
     }).join("");
 
-    var addonChips = ADDONS.map(function (a) {
-      return '<button type="button" class="konfig__addon" data-addon="' + a.name + '">' +
-        '<span class="konfig__addon-name">' + a.name + "</span>" +
-        '<span class="konfig__addon-desc">' + a.desc + "</span>" +
+    var engineAddons = m.addons || [];
+    var addonChips = engineAddons.map(function (name) {
+      var desc = ADDON_DESC[name] || "";
+      return '<button type="button" class="konfig__addon" data-addon="' + name + '">' +
+        '<span class="konfig__addon-name">' + name + "</span>" +
+        (desc ? '<span class="konfig__addon-desc">' + desc + "</span>" : "") +
         '<span class="konfig__addon-check" aria-hidden="true"></span>' +
       "</button>";
     }).join("");
@@ -132,8 +137,8 @@
         "<span>" + m.label + (m.fuel ? " · " + m.fuel : "") + " · Richtwert</span></div>" +
       (stageNames.length > 1 ? '<div class="konfig__stages" role="tablist">' + tabs + "</div>" : "") +
       '<div id="kMetrics"></div>' +
-      '<div class="konfig__addons"><span class="konfig__addons-title">Add-ons (optional)</span>' +
-        '<div class="konfig__addon-list">' + addonChips + "</div></div>" +
+      (engineAddons.length ? '<div class="konfig__addons"><span class="konfig__addons-title">Add-ons (optional)</span>' +
+        '<div class="konfig__addon-list">' + addonChips + "</div></div>" : "") +
       '<a href="#kontakt" class="btn btn--primary btn--large btn--block" id="kCta">' +
         "Diese Konfiguration anfragen" +
         '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';

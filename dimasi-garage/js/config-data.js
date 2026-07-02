@@ -6,6 +6,8 @@
      fuel  : Kraftstoff
      ps/nm : Serienwerte (Original)
      stages: { "Stage 1": {ps, nm}, "Stage 2": {ps, nm} }
+     addons: optionale Zusatzleistungen dieses Motors (Namen aus
+             ADDON_DESC in konfigurator.js), z.B. ["E85 Flexfuel","Vmax OFF"]
    Es sind ausschliesslich gepruefte Werte aus dem realen
    Ergebnis-Screen hinterlegt. Neue Motoren kommen dazu, sobald der
    echte Ergebnis-Screenshot vorliegt.
@@ -20,6 +22,7 @@ window.DIMASI_TUNING = {
         },
         {
           label: "1.4 Multiar Turbo 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["E85 Flexfuel", "Vmax OFF"],
           stages: { "Stage 1": { ps: 195, nm: 300 }, "Stage 2": { ps: 205, nm: 315 } }
         }
       ]
