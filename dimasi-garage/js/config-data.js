@@ -956,5 +956,26 @@ window.DIMASI_TUNING = {
         }
       ]
     }
+  },
+  "Alpina": {
+    "B3": {
+      "Alle Baujahre": [
+        {
+          label: "3.5i 360hp", fuel: "Benzin", ps: 360, nm: 500,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 400, nm: 560 }, "Stage 2": { ps: 410, nm: 580 } }
+        },
+        {
+          label: "Bi-Turbo 410hp", fuel: "Benzin", ps: 410, nm: 600,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 680 }, "Stage 2": { ps: 460, nm: 700 } }
+        },
+        {
+          label: "Bi-Turbo 462hp", fuel: "Benzin", ps: 462, nm: 700,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Lambda OFF", "Launch Control", "OPF OFF", "Pop & Bang", "Sportdisplay Calibration", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 490, nm: 760 }, "Stage 2": { ps: 500, nm: 780 } }
+        }
+      ]
+    }
   }
 };
