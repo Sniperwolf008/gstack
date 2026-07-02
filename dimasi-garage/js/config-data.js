@@ -18,6 +18,7 @@ window.DIMASI_TUNING = {
       "2017→": [
         {
           label: "1.4 Multiar Turbo 140hp", fuel: "Benzin", ps: 140, nm: 240,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 190, nm: 300 }, "Stage 2": { ps: 205, nm: 315 } }
         },
         {
