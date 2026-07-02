@@ -1023,6 +1023,12 @@ window.DIMASI_TUNING = {
           addons: ["CAT OFF", "Exhaust flaps open", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 575, nm: 800 }, "Stage 2": { ps: 585, nm: 820 } }
         }
+      ],
+      "F10/F11 LCI (2013-2017)": [
+        {
+          label: "4.4 V8 Bi-Turbo 608hp", fuel: "Benzin", ps: 608, nm: 800,
+          stages: { "Stage 1": { ps: 680, nm: 900 }, "Stage 2": { ps: 690, nm: 920 } }
+        }
       ]
     }
   }
