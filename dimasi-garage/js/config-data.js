@@ -88,6 +88,7 @@ window.DIMASI_TUNING = {
       "2010→": [
         {
           label: "1.4 Multi-Air 165hp", fuel: "Benzin", ps: 165, nm: 250,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 180, nm: 300 }, "Stage 2": { ps: 200, nm: 320 } }
         },
         {
