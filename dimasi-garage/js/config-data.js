@@ -1200,5 +1200,15 @@ window.DIMASI_TUNING = {
         }
       ]
     }
+  },
+  "Ariel": {
+    "Atom": {
+      "2018→": [
+        {
+          label: "2.0T 320hp", fuel: "Benzin", ps: 320, nm: 420,
+          stages: { "Stage 1": { ps: 360, nm: 500 }, "Stage 2": { ps: 375, nm: 520 } }
+        }
+      ]
+    }
   }
 };
