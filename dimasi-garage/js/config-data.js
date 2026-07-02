@@ -820,6 +820,38 @@ window.DIMASI_TUNING = {
           addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 150, nm: 250 }, "Stage 2": { ps: 165, nm: 275 } }
         }
+      ],
+      "2016→": [
+        {
+          label: "0.9 TwinAir 90hp", fuel: "Benzin", ps: 90, nm: 145,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 110, nm: 190 }, "Stage 2": { ps: 121, nm: 209 } }
+        },
+        {
+          label: "0.9 TwinAir 105hp", fuel: "Benzin", ps: 105, nm: 145,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 110, nm: 190 }, "Stage 2": { ps: 121, nm: 209 } }
+        },
+        {
+          label: "1.3 JTDm 80hp", fuel: "Diesel", ps: 80, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 105, nm: 250 }, "Stage 2": { ps: 116, nm: 275 } }
+        },
+        {
+          label: "1.3 JTDm 95hp", fuel: "Diesel", ps: 95, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 115, nm: 250 }, "Stage 2": { ps: 128, nm: 275 } }
+        },
+        {
+          label: "1.4 Multiair 140hp", fuel: "Benzin", ps: 140, nm: 230,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 180, nm: 285 }, "Stage 2": { ps: 197, nm: 314 } }
+        },
+        {
+          label: "1.4 Multiair 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 300 }, "Stage 2": { ps: 204, nm: 330 } }
+        }
       ]
     }
   }
