@@ -113,7 +113,7 @@
       chips: CONTACT_CHIPS },
 
     { keys: ["oeffnungszeit", "geoeffnet", "wann offen", "wann habt", "offen", "zeiten"],
-      reply: "<strong>Anrufen</strong> am besten während der Arbeitszeiten. Rund um die Uhr erreichst du uns über das <strong>Anfrageformular</strong> – Francesco meldet sich zügig, meist am selben Tag.",
+      reply: "<strong>Öffnungszeiten:</strong><ul><li>Mo, Mi, Fr: 18:00–22:00 Uhr</li><li>Sa: 08:00–14:00 Uhr</li></ul>Rund um die Uhr erreichst du uns über das <strong>Anfrageformular</strong> – Francesco meldet sich zügig, meist am selben Tag.",
       chips: CONTACT_CHIPS },
 
     { keys: ["eintrag", "tuev", "tuv", "strassenverkehrsamt", "versicherung", "legal", "gesetz", "eingetragen"],
