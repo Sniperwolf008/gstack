@@ -108,5 +108,15 @@ window.DIMASI_TUNING = {
         }
       ]
     }
+  },
+  "Aixam": {
+    "Mega": {
+      "e-Scouty": [
+        {
+          label: "iBSG 48V - Electric", fuel: "Elektro", ps: 8, nm: 48,
+          stages: { "Stage 1": { ps: 10, nm: 52 } }
+        }
+      ]
+    }
   }
 };
