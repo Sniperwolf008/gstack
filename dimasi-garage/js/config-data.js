@@ -990,6 +990,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 480, nm: 700 }, "Stage 2": { ps: 490, nm: 720 } }
         }
       ]
+    },
+    "B4": {
+      "2014-2017": [
+        {
+          label: "Bi-Turbo 410hp", fuel: "Benzin", ps: 410, nm: 600,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Launch Control", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 680 }, "Stage 2": { ps: 460, nm: 700 } }
+        }
+      ]
     }
   }
 };
