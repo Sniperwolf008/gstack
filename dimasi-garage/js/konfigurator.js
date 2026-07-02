@@ -29,7 +29,10 @@
     "Launch Control": "Optimaler Ampelstart mit definierter Drehzahl.",
     "DTC OFF": "Bereinigung gespeicherter Fehlercodes im Steuergerät.",
     "Exhaust flaps open": "Abgasklappen dauerhaft geöffnet – kräftigerer Sound.",
-    "Lambda OFF": "Lambda-/Katalysator-Überwachung aus (Motorsport / Export)."
+    "Lambda OFF": "Lambda-/Katalysator-Überwachung aus (Motorsport / Export).",
+    "Adblue OFF": "AdBlue-System deaktiviert (Motorsport / Export).",
+    "DPF OFF": "Dieselpartikelfilter-Überwachung aus (Motorsport / Export).",
+    "EGR OFF": "Abgasrückführung (AGR) deaktiviert (Motorsport / Export)."
   };
   var selectedAddons = [];
 

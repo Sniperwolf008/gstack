@@ -131,6 +131,36 @@ window.DIMASI_TUNING = {
           label: "1.6 T-Spark 120hp", fuel: "Benzin", ps: 120, nm: 146,
           addons: ["Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 130, nm: 161 }, "Stage 2": { ps: 144, nm: 177 } }
+        },
+        {
+          label: "1.9 JTD 100hp", fuel: "Diesel", ps: 100, nm: 200,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 135, nm: 265 }, "Stage 2": { ps: 148, nm: 292 } }
+        },
+        {
+          label: "1.9 JTD 115hp", fuel: "Diesel", ps: 115, nm: 275,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 145, nm: 330 }, "Stage 2": { ps: 160, nm: 363 } }
+        },
+        {
+          label: "1.9 JTD 136hp", fuel: "Diesel", ps: 136, nm: 305,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 175, nm: 380 }, "Stage 2": { ps: 193, nm: 418 } }
+        },
+        {
+          label: "1.9 JTD 140hp", fuel: "Diesel", ps: 140, nm: 305,
+          addons: ["DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 175, nm: 380 }, "Stage 2": { ps: 193, nm: 418 } }
+        },
+        {
+          label: "2.0 T-Spark 150hp", fuel: "Benzin", ps: 150, nm: 172,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 165, nm: 192 }, "Stage 2": { ps: 181, nm: 211 } }
+        },
+        {
+          label: "3.2 V6 GTA 250hp", fuel: "Benzin", ps: 250, nm: 300,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 270, nm: 320 }, "Stage 2": { ps: 298, nm: 352 } }
         }
       ]
     }
