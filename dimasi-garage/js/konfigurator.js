@@ -35,7 +35,9 @@
     "EGR OFF": "Abgasrückführung (AGR) deaktiviert (Motorsport / Export).",
     "OPF OFF": "Ottopartikelfilter-Überwachung aus (Motorsport / Export).",
     "Start Stop OFF": "Automatische Start-Stopp-Funktion dauerhaft deaktiviert.",
-    "CAT OFF": "Katalysator-Überwachung aus (Motorsport / Export)."
+    "CAT OFF": "Katalysator-Überwachung aus (Motorsport / Export).",
+    "Hard Cut limiter": "Harte Drehzahlbegrenzung – knackiger Schaltsound und definiertes Limit.",
+    "Sportdisplay Calibration": "Sportanzeige im Kombiinstrument freigeschaltet und kalibriert."
   };
   var selectedAddons = [];
 
