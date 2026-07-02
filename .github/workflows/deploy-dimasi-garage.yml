@@ -42,6 +42,8 @@ jobs:
           sed -i \
             -e "s#href=\"css/styles.css\"#href=\"css/styles.css?v=${ver}\"#g" \
             -e "s#href=\"css/chat.css\"#href=\"css/chat.css?v=${ver}\"#g" \
+            -e "s#src=\"js/config-data.js\"#src=\"js/config-data.js?v=${ver}\"#g" \
+            -e "s#src=\"js/konfigurator.js\"#src=\"js/konfigurator.js?v=${ver}\"#g" \
             -e "s#src=\"js/main.js\"#src=\"js/main.js?v=${ver}\"#g" \
             -e "s#src=\"js/chat.js\"#src=\"js/chat.js?v=${ver}\"#g" \
             ./*.html
