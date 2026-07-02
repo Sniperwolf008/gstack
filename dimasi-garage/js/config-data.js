@@ -79,6 +79,7 @@ window.DIMASI_TUNING = {
         },
         {
           label: "1.4 T-Jet 695 Biposto 190hp", fuel: "Benzin", ps: 190, nm: 250,
+          addons: ["E85 Flexfuel", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 220, nm: 340 }, "Stage 2": { ps: 225, nm: 360 } }
         }
       ]
