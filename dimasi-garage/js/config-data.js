@@ -125,7 +125,7 @@ window.DIMASI_TUNING = {
         {
           label: "1.6 T-Spark 105hp", fuel: "Benzin", ps: 105, nm: 140,
           addons: ["Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
-          stages: { "Stage 1": { ps: 115, nm: 155 } }
+          stages: { "Stage 1": { ps: 115, nm: 155 }, "Stage 2": { ps: 128, nm: 171 } }
         }
       ]
     }
