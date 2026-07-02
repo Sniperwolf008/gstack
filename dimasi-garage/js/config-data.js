@@ -1131,6 +1131,13 @@ window.DIMASI_TUNING = {
           addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 395, nm: 750 }, "Stage 2": { ps: 405, nm: 770 } }
         }
+      ],
+      "G30/G31 (2017-2019)": [
+        {
+          label: "3.0D Bi-Turbo 388hp", fuel: "Diesel", ps: 388, nm: 800,
+          addons: ["DPF OFF", "EGR OFF"],
+          stages: { "Stage 1": { ps: 450, nm: 850 }, "Stage 2": { ps: 460, nm: 870 } }
+        }
       ]
     }
   }
