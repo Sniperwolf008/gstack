@@ -1072,6 +1072,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 600, nm: 800 }, "Stage 2": { ps: 610, nm: 820 } }
         }
       ]
+    },
+    "B7": {
+      "Alle Baujahre": [
+        {
+          label: "4.4 V8 Bi-Turbo 507hp", fuel: "Benzin", ps: 507, nm: 700,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 600, nm: 800 }, "Stage 2": { ps: 610, nm: 820 } }
+        }
+      ]
     }
   }
 };
