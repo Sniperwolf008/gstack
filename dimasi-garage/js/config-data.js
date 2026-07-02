@@ -1044,6 +1044,25 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 700, nm: 900 }, "Stage 2": { ps: 720, nm: 920 } }
         }
       ]
+    },
+    "B6": {
+      "Alle Baujahre": [
+        {
+          label: "4.4 V8 Bi-Turbo 500hp", fuel: "Benzin", ps: 500, nm: 700,
+          addons: ["CAT OFF", "Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 600, nm: 800 }, "Stage 2": { ps: 610, nm: 820 } }
+        },
+        {
+          label: "4.4 V8 Bi-Turbo 540hp", fuel: "Benzin", ps: 540, nm: 730,
+          addons: ["CAT OFF", "Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 575, nm: 800 }, "Stage 2": { ps: 585, nm: 820 } }
+        },
+        {
+          label: "4.4 V8 Bi-Turbo 600hp", fuel: "Benzin", ps: 600, nm: 800,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 680, nm: 850 }, "Stage 2": { ps: 690, nm: 870 } }
+        }
+      ]
     }
   }
 };
