@@ -34,7 +34,8 @@
     "DPF OFF": "Dieselpartikelfilter-Überwachung aus (Motorsport / Export).",
     "EGR OFF": "Abgasrückführung (AGR) deaktiviert (Motorsport / Export).",
     "OPF OFF": "Ottopartikelfilter-Überwachung aus (Motorsport / Export).",
-    "Start Stop OFF": "Automatische Start-Stopp-Funktion dauerhaft deaktiviert."
+    "Start Stop OFF": "Automatische Start-Stopp-Funktion dauerhaft deaktiviert.",
+    "CAT OFF": "Katalysator-Überwachung aus (Motorsport / Export)."
   };
   var selectedAddons = [];
 
