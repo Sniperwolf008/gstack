@@ -606,6 +606,48 @@ window.DIMASI_TUNING = {
           addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
           stages: { "Stage 1": { ps: 200, nm: 425 }, "Stage 2": { ps: 220, nm: 468 } }
         }
+      ],
+      "2014-2016": [
+        {
+          label: "1.4 Turbo 105hp", fuel: "Benzin", ps: 105, nm: 206,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 280 }, "Stage 2": { ps: 165, nm: 308 } }
+        },
+        {
+          label: "1.4 Turbo 120hp", fuel: "Benzin", ps: 120, nm: 206,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 150, nm: 280 }, "Stage 2": { ps: 165, nm: 308 } }
+        },
+        {
+          label: "1.4 Turbo Multiair 150hp", fuel: "Benzin", ps: 150, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.4 Turbo Multiair 170hp", fuel: "Benzin", ps: 170, nm: 250,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 290 }, "Stage 2": { ps: 204, nm: 319 } }
+        },
+        {
+          label: "1.6 JTDm 105hp", fuel: "Diesel", ps: 105, nm: 320,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 130, nm: 360 }, "Stage 2": { ps: 144, nm: 396 } }
+        },
+        {
+          label: "1.750 TBi Quadrifoglio Verde 240hp", fuel: "Benzin", ps: 240, nm: 340,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 255, nm: 400 }, "Stage 2": { ps: 282, nm: 440 } }
+        },
+        {
+          label: "2.0 JTDm 150hp", fuel: "Diesel", ps: 150, nm: 380,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 180, nm: 440 }, "Stage 2": { ps: 197, nm: 484 } }
+        },
+        {
+          label: "2.0 JTDm 175hp", fuel: "Diesel", ps: 175, nm: 350,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 205, nm: 425 }, "Stage 2": { ps: 226, nm: 468 } }
+        }
       ]
     }
   }
