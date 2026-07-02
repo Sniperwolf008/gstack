@@ -686,6 +686,30 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 205, nm: 425 }, "Stage 2": { ps: 226, nm: 468 } }
         }
       ]
+    },
+    "GT": {
+      "Alle Baujahre": [
+        {
+          label: "1.9 JTD 16v 150hp", fuel: "Diesel", ps: 150, nm: 305,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 185, nm: 380 }, "Stage 2": { ps: 204, nm: 418 } }
+        },
+        {
+          label: "1.9 JTD 16V 170hp", fuel: "Diesel", ps: 170, nm: 330,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 200, nm: 400 }, "Stage 2": { ps: 220, nm: 440 } }
+        },
+        {
+          label: "2.0 JTS 165hp", fuel: "Benzin", ps: 165, nm: 206,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 177, nm: 218 }, "Stage 2": { ps: 194, nm: 240 } }
+        },
+        {
+          label: "3.2 V6 240hp", fuel: "Benzin", ps: 240, nm: 300,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 260, nm: 325 }, "Stage 2": { ps: 286, nm: 358 } }
+        }
+      ]
     }
   }
 };
