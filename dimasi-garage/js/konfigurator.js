@@ -27,7 +27,9 @@
     "Pop & Bang": "Knallen und Fehlzündungen beim Gaswegnehmen – sportlicher Sound.",
     "Vmax OFF": "Werkseitige Geschwindigkeits-Abriegelung aufheben.",
     "Launch Control": "Optimaler Ampelstart mit definierter Drehzahl.",
-    "DTC OFF": "Bereinigung gespeicherter Fehlercodes im Steuergerät."
+    "DTC OFF": "Bereinigung gespeicherter Fehlercodes im Steuergerät.",
+    "Exhaust flaps open": "Abgasklappen dauerhaft geöffnet – kräftigerer Sound.",
+    "Lambda OFF": "Lambda-/Katalysator-Überwachung aus (Motorsport / Export)."
   };
   var selectedAddons = [];
 

@@ -118,5 +118,16 @@ window.DIMASI_TUNING = {
         }
       ]
     }
+  },
+  "Alfa Romeo": {
+    "147": {
+      "2001-2005": [
+        {
+          label: "1.6 T-Spark 105hp", fuel: "Benzin", ps: 105, nm: 140,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 115, nm: 155 } }
+        }
+      ]
+    }
   }
 };
