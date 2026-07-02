@@ -1114,6 +1114,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 395, nm: 750 }, "Stage 2": { ps: 405, nm: 770 } }
         }
       ]
+    },
+    "D4": {
+      "Alle Baujahre": [
+        {
+          label: "3.0D Bi-Turbo 350hp", fuel: "Diesel", ps: 350, nm: 700,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 395, nm: 750 }, "Stage 2": { ps: 405, nm: 770 } }
+        }
+      ]
     }
   }
 };
