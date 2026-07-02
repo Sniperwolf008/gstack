@@ -1081,6 +1081,25 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 600, nm: 800 }, "Stage 2": { ps: 610, nm: 820 } }
         }
       ]
+    },
+    "D3": {
+      "E90/E91 (2005-2013)": [
+        {
+          label: "2.0D 200hp", fuel: "Diesel", ps: 200, nm: 410,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 230, nm: 460 }, "Stage 2": { ps: 240, nm: 470 } }
+        },
+        {
+          label: "2.0D 214hp", fuel: "Diesel", ps: 214, nm: 450,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 265, nm: 480 }, "Stage 2": { ps: 275, nm: 500 } }
+        },
+        {
+          label: "3.0D Bi-Turbo 350hp", fuel: "Diesel", ps: 350, nm: 700,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Start Stop OFF", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 395, nm: 750 }, "Stage 2": { ps: 405, nm: 770 } }
+        }
+      ]
     }
   }
 };
