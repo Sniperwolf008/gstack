@@ -1063,6 +1063,15 @@ window.DIMASI_TUNING = {
           stages: { "Stage 1": { ps: 680, nm: 850 }, "Stage 2": { ps: 690, nm: 870 } }
         }
       ]
+    },
+    "B6 S": {
+      "Alle Baujahre": [
+        {
+          label: "4.4 V8 Bi-Turbo 530hp", fuel: "Benzin", ps: 530, nm: 725,
+          addons: ["CAT OFF", "E85 Flexfuel", "Exhaust flaps open", "Hard Cut limiter", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 600, nm: 800 }, "Stage 2": { ps: 610, nm: 820 } }
+        }
+      ]
     }
   }
 };
