@@ -472,6 +472,43 @@ window.DIMASI_TUNING = {
           addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
           stages: { "Stage 1": { ps: 270, nm: 340 }, "Stage 2": { ps: 298, nm: 374 } }
         }
+      ],
+      "2008-2011": [
+        {
+          label: "1750 TBI 200hp", fuel: "Benzin", ps: 200, nm: 320,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 255, nm: 400 }, "Stage 2": { ps: 270, nm: 420 } }
+        },
+        {
+          label: "2.0 JTDm 163hp", fuel: "Diesel", ps: 163, nm: 360,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 425 }, "Stage 2": { ps: 205, nm: 451 } }
+        },
+        {
+          label: "2.0 JTDm 170hp", fuel: "Diesel", ps: 170, nm: 360,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 425 }, "Stage 2": { ps: 214, nm: 446 } }
+        },
+        {
+          label: "2.2 JTS 185hp", fuel: "Benzin", ps: 185, nm: 230,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 195, nm: 240 }, "Stage 2": { ps: 205, nm: 252 } }
+        },
+        {
+          label: "2.4 JTDm 20V 200hp", fuel: "Diesel", ps: 200, nm: 400,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 240, nm: 480 }, "Stage 2": { ps: 252, nm: 504 } }
+        },
+        {
+          label: "2.4 JTDm 20V 210hp", fuel: "Diesel", ps: 210, nm: 400,
+          addons: ["Adblue OFF", "DPF OFF", "EGR OFF", "Exhaust flaps open", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 235, nm: 480 }, "Stage 2": { ps: 238, nm: 504 } }
+        },
+        {
+          label: "3.2 JTS V6 260hp", fuel: "Benzin", ps: 260, nm: 322,
+          addons: ["Exhaust flaps open", "Lambda OFF", "Pop & Bang", "Vmax OFF"],
+          stages: { "Stage 1": { ps: 270, nm: 325 }, "Stage 2": { ps: 283, nm: 341 } }
+        }
       ]
     }
   }
